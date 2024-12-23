@@ -1,0 +1,58 @@
+name:                ogma
+version:             0.1.0.0
+github:              "AugmenTab/ogma"
+license:             BSD-3-Clause
+author:              "Tyler Baum"
+maintainer:          "tyler.baum@protonmail.com"
+copyright:           "2024 Tyler Baum"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/AugmenTab/ogma#readme>
+
+default-extensions:
+- DeriveDataTypeable
+- DerivingStrategies
+- FlexibleContexts
+- GeneralizedNewtypeDeriving
+- ImportQualifiedPost
+- MultiParamTypeClasses
+- OverloadedStrings
+
+dependencies:
+- base
+- bytestring
+- text
+
+ghc-options:
+- -j
+- -Werror
+- -Wall
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wpartial-fields
+- -Wredundant-constraints
+- -fno-warn-orphans
+
+library:
+  source-dirs: src
+
+tests:
+  ogma-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - ogma

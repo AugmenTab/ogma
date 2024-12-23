@@ -1,0 +1,18 @@
+services:
+  html:
+    image: ghcr.io/flipstone/haskell-tools:debian-stable-ghc-9.4.7-2023-10-31-3286ef4
+    volumes:
+      - .:${PROJECT_DIR}
+      - launchpad_stack_root:/stack-root
+    environment:
+      STACK_ROOT: /stack-root
+      IN_DEV_CONTAINER: 'true'
+      # Pass through the CI variable from GitHub (or set it to 'true' locally
+      # for debugging CI builds).
+      CI:
+    working_dir: ${PROJECT_DIR}
+    tty: true
+
+volumes:
+  launchpad_stack_root:
+    external: true

@@ -1,0 +1,70 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           ogma
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/AugmenTab/ogma#readme>
+homepage:       https://github.com/AugmenTab/ogma#readme
+bug-reports:    https://github.com/AugmenTab/ogma/issues
+author:         Tyler Baum
+maintainer:     tyler.baum@protonmail.com
+copyright:      2024 Tyler Baum
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/AugmenTab/ogma
+
+library
+  other-modules:
+      Paths_ogma
+  autogen-modules:
+      Paths_ogma
+  hs-source-dirs:
+      src
+  default-extensions:
+      DeriveDataTypeable
+      DerivingStrategies
+      FlexibleContexts
+      GeneralizedNewtypeDeriving
+      ImportQualifiedPost
+      MultiParamTypeClasses
+      OverloadedStrings
+  ghc-options: -j -Werror -Wall -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fno-warn-orphans
+  build-depends:
+      base
+    , bytestring
+    , text
+  default-language: Haskell2010
+
+test-suite ogma-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_ogma
+  autogen-modules:
+      Paths_ogma
+  hs-source-dirs:
+      test
+  default-extensions:
+      DeriveDataTypeable
+      DerivingStrategies
+      FlexibleContexts
+      GeneralizedNewtypeDeriving
+      ImportQualifiedPost
+      MultiParamTypeClasses
+      OverloadedStrings
+  ghc-options: -j -Werror -Wall -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fno-warn-orphans -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , bytestring
+    , ogma
+    , text
+  default-language: Haskell2010
