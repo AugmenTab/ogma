@@ -4,7 +4,7 @@ from pathlib import Path
 from re import split
 from time import time
 
-from helpers import get_soup, indent, process_name, upper_camel_case
+from helpers import get_soup, indent, process_name, upper_camel_case, with_prepend
 
 
 __LANGUAGE_SCOPE = {
@@ -34,24 +34,21 @@ def __create_language_module(languages):
     open(str(Path.cwd()) + '/src/Ogma/Internal/Language.hs', 'w').close()
 
     with open(str(Path.cwd()) + '/src/Ogma/Internal/Language.hs', 'a') as f:
-        def write_with_prepend(spaces, prepend, name):
-            f.write("\n" + indent(spaces) + prepend + " " + name)
-
         f.write(module_comment)
         f.write("module Ogma.Internal.Language")
-        write_with_prepend(2, "(", "Language")
-        write_with_prepend(6, "(", languages[0]['constructor'])
+        f.write(with_prepend(2, "(", "Language"))
+        f.write(with_prepend(6, "(", languages[0]['constructor']))
 
         for language in languages[1:]:
-            write_with_prepend(6, ",", language['constructor'])
+            f.write(with_prepend(6, ",", language['constructor']))
 
         f.write("\n" + indent(6) + ")")
         f.write("\n" + indent(2) + ") where\n")
         f.write("\n" + "data Language")
-        write_with_prepend(2, "=", languages[0]['constructor'])
+        f.write(with_prepend(2, "=", languages[0]['constructor']))
 
         for language in languages[1:]:
-            write_with_prepend(2, "|", language['constructor'])
+            f.write(with_prepend(2, "|", language['constructor']))
 
         f.write("\n" + indent(2) + "deriving stock (Bounded, Enum, Eq, Show)")
 

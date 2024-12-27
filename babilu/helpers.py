@@ -101,3 +101,7 @@ async def get_soup(url):
 
     return await to_thread(fetch)
 
+
+def with_prepend(spaces, prepend, name):
+    return "\n" + indent(spaces) + prepend + " " + name
+
