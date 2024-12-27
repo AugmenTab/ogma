@@ -4,4 +4,4 @@ services:
     volumes:
       - .:${PROJECT_DIR}
     working_dir: ${PROJECT_DIR}
-    command: python3 language_maker/language_maker.py
+    command: python3 babilu/babilu.py
