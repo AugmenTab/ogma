@@ -25,7 +25,7 @@ source-repository head
 library
   exposed-modules:
       Ogma
-      Ogma.Language.Language
+      Ogma.Internal.Language
   other-modules:
       Paths_ogma
   autogen-modules:

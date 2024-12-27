@@ -2,12 +2,79 @@
 
 from asyncio import run, to_thread
 from pathlib import Path
-from re import split, sub, UNICODE
+from re import escape, findall, split, sub, UNICODE
 from string import capwords, punctuation
+from time import time
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
+
+
+LANGUAGE_SCOPE = {
+    'I': "Individual",
+    'M': "Macrolanguage"
+}
+
+
+LANGUAGE_TYPE = {
+    'A': "Ancient",
+    'C': "Constructed",
+    'E': "Extinct",
+    'H': "Historical",
+    'L': "Living"
+}
+
+
+TRANSLATION_TABLE = str.maketrans({
+    'Ä': 'A',
+    'À': 'A',
+    'Á': 'A',
+    'ä': 'a',
+    'à': 'a',
+    'á': 'a',
+    'ā': 'a',
+    'ã': 'a',
+    'â': 'a',
+    'å': 'a',
+    'ɓ': 'b',
+    'ç': 'c',
+    'è': 'e',
+    'é': 'e',
+    'ë': 'e',
+    'ê': 'e',
+    'ə': 'e',
+    'ì': 'i',
+    'í': 'i',
+    'ī': 'i',
+    'ï': 'i',
+    'î': 'i',
+    'ɨ': 'i',
+    'ñ': 'n',
+    'ŋ': "ng",
+    'Ö': 'O',
+    'ö': 'o',
+    'ó': 'o',
+    'õ': 'o',
+    'ô': 'o',
+    'ṣ': 's',
+    'ṭ': 't',
+    'Ü': 'U',
+    'ü': 'u',
+    'ù': 'u',
+    'ú': 'u',
+    '\'': '',
+    '’': '',
+    '´': '',
+    '(': '_ ',
+    ')': '',
+    '.': '',
+    '!': '',
+    'ǂ': '',
+    '-': ' ',
+    '=': '',
+    'ǁ': "ll"
+})
 
 
 def indent(n):
@@ -20,17 +87,17 @@ def create_language_module(languages):
 -- A complete list of the codes and their details (from which this module was
 -- assembled) can be found here:
 --
--- https://en.wikipedia.org/wiki/List_of_language_names
+-- https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes
 --
 '''
-    open(str(Path.cwd()) + '/src/Ogma/Language/Language.hs', 'w').close()
+    open(str(Path.cwd()) + '/src/Ogma/Internal/Language.hs', 'w').close()
 
-    with open(str(Path.cwd()) + '/src/Ogma/Language/Language.hs', 'a') as f:
+    with open(str(Path.cwd()) + '/src/Ogma/Internal/Language.hs', 'a') as f:
         def write_with_prepend(spaces, prepend, name):
             f.write("\n" + indent(spaces) + prepend + " " + name)
 
         f.write(module_comment)
-        f.write("module Ogma.Language.Language")
+        f.write("module Ogma.Internal.Language")
         write_with_prepend(2, "(", "Language")
         write_with_prepend(6, "(", languages[0]['constructor'])
 
@@ -45,78 +112,103 @@ def create_language_module(languages):
         for language in languages[1:]:
             write_with_prepend(2, "|", language['constructor'])
 
-        f.write("\n" + indent(2) + "deriving stock (Eq, Show)")
+        f.write("\n" + indent(2) + "deriving stock (Bounded, Enum, Eq, Show)")
 
 
 def upper_camel_case(words):
     return ''.join(word.capitalize() for word in words)
 
 
-def process_name(name, translation_table):
-    sanitized = name.split('/')[0].translate(translation_table)
+def process_name(name):
+    def not_in_outlier(text):
+        return text not in [' ', '', '=']
+
+    matches = findall(r'\(([^)]*?)\)', name)
+
+    for match in matches:
+        if any(char.isdigit() for char in match) or "specifically" in match.lower():
+            name = sub(r'\(' + escape(match) + r'\)', '', name)
+
+    replaced = name.replace("(New)", "New")
+    flipped = list(map(lambda x: x.strip(), replaced.split(', ')))[::-1]
+
+    if len(name.split(' ')) == 1:
+        chunked = [''.join(' '.join(flipped).split('/'))]
+    else:
+        chunked = list(filter(not_in_outlier, ' '.join(flipped).split('/')))
+
+    sanitized = chunked[0].translate(TRANSLATION_TABLE)
     return upper_camel_case(split(r'\s+|(?<=\w)-(?=\w)', sanitized))
 
 
-async def parse_languages(rows):
-    replacements = {
-        'Ä': 'A',
-        'ä': 'a',
-        'á': 'a',
-        'ā': 'a',
-        'ã': 'a',
-        'â': 'a',
-        'è': 'e',
-        'é': 'e',
-        'ë': 'e',
-        'í': 'i',
-        'ï': 'i',
-        'ñ': 'n',
-        'õ': 'o',
-        'ö': 'o',
-        'ü': 'u',
-        'Ü': 'U',
-        '\'': '',
-        '(': ' ',
-        ')': ''
-    }
+def chunk_words(txt):
+    return split("; | or ", txt)
 
-    translation_table = str.maketrans(replacements)
+
+def parse_scope_and_type(txt):
+    if txt == '—':
+        return []
+
+    pieces = txt.split('/')
+
+    if pieces == ['']:
+        return [None, None]
+    elif 'S' in pieces:
+        return []
+    else:
+        return [LANGUAGE_SCOPE[pieces[0]], LANGUAGE_TYPE[pieces[1]]]
+
+
+def get_code(row):
+    th = row.find('th')
+    th_code = th.find('code')
+
+    if th_code is None:
+        th_a = th.find('a')
+
+        if th_a is None:
+            return row.find_all('td')[1].find('code').find('a')
+        else:
+            return th_a
+    else:
+        return th_code.find('a')
+
+
+async def parse_languages(rows):
     languages = {}
 
     for row in rows:
-        lang_name = row.contents[0].get_text()
-        # lang_page = await get_soup(row.get('href'))
+        code = get_code(row)
+
+        if code is None:
+            continue
+
+        cells = row.find_all('td')
+        scope_and_type = parse_scope_and_type(cells[2].get_text())
+
+        if scope_and_type == []:
+            continue
+
+        names = list(map(lambda x: x.strip(), chunk_words(cells[5].get_text())))
+        # lang_page = await get_soup(code.get('href'))
 
         language = {
-            'constructor': process_name(lang_name, translation_table),
-            'name': lang_name,
-            'linguonym': None,
+            'constructor': process_name(names[0]),
+            'names': names,
+            'scope': scope_and_type[0],
+            'type': scope_and_type[1],
+            'endonym': None,
             'romanized': None,
-            'script': None,
+            'scripts': None,
             'dialects': None,
             'iso-639-1': None,
             'iso-639-2': None,
-            'iso-639-3': None
+            'iso-639-3': code.get_text()
         }
 
-        # if language['iso-639-3'] not in languages:
         languages[language['constructor']] = language
 
-    return sorted(list(languages.values()), key=lambda x: x['constructor'])
-
-
-def get_table_rows(res):
-    languages_section = res.find("div", class_="mw-heading mw-heading2")
-    p_tags = []
-
-    if languages_section:
-        for sibling in languages_section.find_all_next():
-            if sibling.get("class") == ["mw-heading", "mw-heading2"]:
-                break
-            if sibling.name == "p":
-                p_tags.append(sibling.find_all('a')[0])
-
-    return p_tags
+    return languages
 
 
 async def get_soup(url):
@@ -145,16 +237,36 @@ def validate_url(url):
         err_out()
 
 
-async def main():
+async def get_languages():
     print("Fetching languages...")
-    soup = await get_soup("/wiki/List_of_language_names")
-    print("Languages fetched.")
+    start = time()
+    letters = [chr(i) for i in range(ord('a'), ord('z') + 1)]
+    languages = {}
 
-    print("Parsing languages...")
-    languages = await parse_languages(get_table_rows(soup))
-    print("Languages parsed..")
+    for letter in letters:
+        upper = letter.upper()
 
-    print("Writing Ogma.Language.Language...")
+        print(f"Fetching {upper} languages...")
+        start_letter = time()
+        soup = await get_soup(f"/wiki/ISO_639:{letter}")
+        print(f"{upper} languages fetched.")
+
+        print(f"Parsing {upper} languages...")
+        parsed = await parse_languages(soup.find('table').find_all('tr')[2:])
+        languages.update(parsed)
+        end_letter = time()
+        print(f"{upper} languages parsed in {end_letter - start_letter} seconds.")
+
+    end = time()
+    print(f"Fetched all languages in {end - start} seconds.")
+    return sorted(list(languages.values()), key=lambda x: x['constructor'])
+
+
+async def main():
+    # scripts = await get_scripts()
+    languages = await get_languages()
+
+    print("Writing Ogma.Internal.Language...")
     create_language_module(languages)
     print("Done.")
     exit(0)
