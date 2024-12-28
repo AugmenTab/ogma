@@ -172,7 +172,6 @@ module Ogma.Internal.Script.Script
       , PsalterPahlaviScript
       , RanjanaScript
       , RejangScript
-      , ReservedForPrivateUse
       , RongorongoScript
       , RunicScript
       , SamaritanScript
@@ -398,7 +397,6 @@ data Script
   | PsalterPahlaviScript
   | RanjanaScript
   | RejangScript
-  | ReservedForPrivateUse
   | RongorongoScript
   | RunicScript
   | SamaritanScript

@@ -85,6 +85,10 @@ async def __parse_scripts(rows):
             continue
 
         name = cells[2].get_text().strip()
+        code = cells[0].get_text().strip()
+
+        if len(code) > 4:
+            continue
 
         script = {
             'constructor': process_name(name),
@@ -95,8 +99,8 @@ async def __parse_scripts(rows):
             'parent': None,
             'endonym': None,
             'romanized': None,
-            'iso-15924-code': cells[0].get_text(),
-            'iso-15924-number': cells[1].get_text(),
+            'iso-15924-code': code,
+            'iso-15924-number': cells[1].get_text().strip(),
             'unicode_alias': None,
             'unicode_range_min': None,
             'unicode_range_max': None
@@ -125,4 +129,5 @@ async def get_scripts():
     print("Writing Ogma.Internal.Script...")
     __create_scripts_module(scripts)
     print("Done.")
+    return scripts
 
