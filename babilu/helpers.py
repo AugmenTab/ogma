@@ -65,28 +65,6 @@ def upper_camel_case(words):
     return ''.join(word.capitalize() for word in words)
 
 
-def process_name(name):
-    def not_in_outlier(text):
-        return text not in [' ', '', '=']
-
-    matches = findall(r'\(([^)]*?)\)', name)
-
-    for match in matches:
-        if any(char.isdigit() for char in match) or "specifically" in match.lower():
-            name = sub(r'\(' + escape(match) + r'\)', '', name)
-
-    replaced = name.replace("(New)", "New")
-    flipped = list(map(lambda x: x.strip(), replaced.split(', ')))[::-1]
-
-    if len(name.split(' ')) == 1:
-        chunked = [''.join(' '.join(flipped).split('/'))]
-    else:
-        chunked = list(filter(not_in_outlier, ' '.join(flipped).split('/')))
-
-    sanitized = chunked[0].translate(TRANSLATION_TABLE)
-    return upper_camel_case(split(r'\s+|(?<=\w)-(?=\w)', sanitized))
-
-
 async def get_soup(url):
     req = Request("https://en.wikipedia.org" + url)
 

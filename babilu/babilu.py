@@ -4,11 +4,12 @@ from asyncio import run
 from urllib.error import HTTPError
 
 from get_languages import get_languages
+from get_scripts import get_scripts
 
 
 async def main():
-    # scripts = await get_scripts()
-    await get_languages()
+    scripts = await get_scripts()
+    # await get_languages()
 
     exit(0)
 

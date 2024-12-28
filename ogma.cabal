@@ -26,6 +26,7 @@ library
   exposed-modules:
       Ogma
       Ogma.Internal.Language
+      Ogma.Internal.Script.Script
   other-modules:
       Paths_ogma
   autogen-modules:

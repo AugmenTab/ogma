@@ -4,7 +4,7 @@ from pathlib import Path
 from re import split
 from time import time
 
-from helpers import get_soup, indent, process_name, upper_camel_case, with_prepend
+from helpers import get_soup, indent, with_prepend
 
 
 __LANGUAGE_SCOPE = {
@@ -86,6 +86,28 @@ def __get_code(row):
         return th_code.find('a')
 
 
+def __process_name(name):
+    def not_in_outlier(text):
+        return text not in [' ', '', '=']
+
+    matches = findall(r'\(([^)]*?)\)', name)
+
+    for match in matches:
+        if any(char.isdigit() for char in match) or "specifically" in match.lower():
+            name = sub(r'\(' + escape(match) + r'\)', '', name)
+
+    replaced = name.replace("(New)", "New")
+    flipped = list(map(lambda x: x.strip(), replaced.split(', ')))[::-1]
+
+    if len(name.split(' ')) == 1:
+        chunked = [''.join(' '.join(flipped).split('/'))]
+    else:
+        chunked = list(filter(not_in_outlier, ' '.join(flipped).split('/')))
+
+    sanitized = chunked[0].translate(TRANSLATION_TABLE)
+    return upper_camel_case(split(r'\s+|(?<=\w)-(?=\w)', sanitized))
+
+
 async def __parse_languages(rows):
     languages = {}
 
@@ -105,14 +127,16 @@ async def __parse_languages(rows):
         # lang_page = await get_soup(code.get('href'))
 
         language = {
-            'constructor': process_name(names[0]),
+            'constructor': __process_name(names[0]),
             'names': names,
             'scope': scope_and_type[0],
             'type': scope_and_type[1],
-            'endonym': None,
+            'endonyms': None,
             'romanized': None,
-            'scripts': None,
+            'family': None,
             'dialects': None,
+            'scripts': None,
+            'official_language_in': None,
             'iso-639-1': None,
             'iso-639-2': None,
             'iso-639-3': code.get_text()
