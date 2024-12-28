@@ -2,7 +2,6 @@
 
 from asyncio import to_thread
 from bs4 import BeautifulSoup
-from re import escape, findall, split, sub
 from urllib.request import Request, urlopen
 
 

@@ -5,7 +5,7 @@
 --
 -- https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes
 --
-module Ogma.Internal.Language
+module Ogma.Internal.Language.Language
   ( Language
       ( APucikwar
       , Aari

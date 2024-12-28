@@ -1,10 +1,10 @@
 #! python3
 
 from pathlib import Path
-from re import split
+from re import escape, findall, split, sub
 from time import time
 
-from helpers import get_soup, indent, with_prepend
+from helpers import get_soup, indent, TRANSLATION_TABLE, upper_camel_case, with_prepend
 
 
 __LANGUAGE_SCOPE = {
@@ -31,11 +31,11 @@ def __create_language_module(languages):
 -- https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes
 --
 '''
-    open(str(Path.cwd()) + '/src/Ogma/Internal/Language.hs', 'w').close()
+    open(str(Path.cwd()) + '/src/Ogma/Internal/Language/Language.hs', 'w').close()
 
-    with open(str(Path.cwd()) + '/src/Ogma/Internal/Language.hs', 'a') as f:
+    with open(str(Path.cwd()) + '/src/Ogma/Internal/Language/Language.hs', 'a') as f:
         f.write(module_comment)
-        f.write("module Ogma.Internal.Language")
+        f.write("module Ogma.Internal.Language.Language")
         f.write(with_prepend(2, "(", "Language"))
         f.write(with_prepend(6, "(", languages[0]['constructor']))
 
@@ -175,4 +175,5 @@ async def get_languages():
     print("Writing Ogma.Internal.Language...")
     __create_language_module(langs)
     print("Done.")
+    return langs
 
