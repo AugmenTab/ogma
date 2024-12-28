@@ -14,17 +14,20 @@ def __write_module(langs, val):
         f.write(f"module Ogma.Internal.Language.ISO_639_{val}")
         f.write("\n" + indent(2) + f"( ISO_639_{val}")
         f.write(with_prepend(2, ",", f"iso639_{val}FromText"))
+        f.write(with_prepend(2, ",", f"iso639_{val}ToBytes"))
         f.write(with_prepend(2, ",", f"iso639_{val}ToText"))
 
         f.write(with_prepend(2, ",", f"languageISO639_{val}"))
         f.write("\n" + indent(2) + ") where\n")
 
-        f.write("\n" + "import Data.Text qualified as T\n")
+        f.write("\n" + "import Data.ByteString.Lazy qualified as LBS\n")
+        f.write("import Data.ByteString.Lazy.Char8 qualified as LBS8\n")
+        f.write("import Data.Text qualified as T\n")
         f.write("\n" + "import Ogma.Internal.Language.Language (Language (..))\n")
 
         f.write("\n" + f"newtype ISO_639_{val} =\n")
         f.write(indent(2) + f"ISO_639_{val}\n")
-        f.write(indent(4) + "{ iso639_" + val + "ToText :: T.Text\n")
+        f.write(indent(4) + "{ unISO_639_" + val + " :: String\n")
         f.write(indent(4) + "} deriving newtype (Eq, Show)\n")
 
         f.write(f"\niso639_{val}FromText :: T.Text -> Either String ISO_639_{val}\n")
@@ -38,7 +41,13 @@ def __write_module(langs, val):
                 f.write(f"{indent(4)}\"{lang[field]}\" -> ")
                 f.write(f"Right $ ISO_639_{val} \"{lang[field]}\"\n")
 
-        f.write(f"{indent(4)}_ -> Left $ \"Unknown ISO_639_{val}: \" <> txt\n")
+        f.write(f"{indent(4)}_ -> Left $ \"Unknown ISO_639_{val}: \" <> T.unpack txt\n")
+
+        f.write(f"\niso639_{val}ToBytes :: ISO_639_{val} -> LBS.ByteString\n")
+        f.write(f"iso639_{val}ToBytes = LBS8.pack . unISO_639_{val}\n")
+
+        f.write(f"\niso639_{val}ToText :: ISO_639_{val} -> T.Text\n")
+        f.write(f"iso639_{val}ToText = T.pack . unISO_639_{val}\n")
 
         f.write(f"\nlanguageISO639_{val} :: Language -> ")
 

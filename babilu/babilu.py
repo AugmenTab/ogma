@@ -10,12 +10,12 @@ from iso_639 import write_iso_639_1_module, write_iso_639_2_module, write_iso_63
 
 
 async def main():
-    # scripts = await get_scripts()
-    # write_code_module(scripts)
-    # write_number_module(scripts)
+    scripts = await get_scripts()
+    write_code_module(scripts)
+    write_number_module(scripts)
 
     languages = await get_languages()
-    # write_iso_639_1_module(languages)
+    write_iso_639_1_module(languages)
     write_iso_639_2_module(languages)
     write_iso_639_3_module(languages)
 

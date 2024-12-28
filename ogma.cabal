@@ -25,7 +25,12 @@ source-repository head
 library
   exposed-modules:
       Ogma
-      Ogma.Internal.Language
+      Ogma.Internal.Language.ISO_639_1
+      Ogma.Internal.Language.ISO_639_2
+      Ogma.Internal.Language.ISO_639_3
+      Ogma.Internal.Language.Language
+      Ogma.Internal.Script.ISO_15924_Code
+      Ogma.Internal.Script.ISO_15924_Number
       Ogma.Internal.Script.Script
   other-modules:
       Paths_ogma

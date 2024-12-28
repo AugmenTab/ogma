@@ -1,9 +1,9 @@
-module Ogma.Internal.Language.ISO_639_2
-  ( ISO_639_2
-  , iso639_2FromText
-  , iso639_2ToBytes
-  , iso639_2ToText
-  , languageISO639_2
+module Ogma.Internal.Language.ISO_639_1
+  ( ISO_639_1
+  , iso639_1FromText
+  , iso639_1ToBytes
+  , iso639_1ToText
+  , languageISO639_1
   ) where
 
 import Data.ByteString.Lazy qualified as LBS
@@ -12,24 +12,24 @@ import Data.Text qualified as T
 
 import Ogma.Internal.Language.Language (Language (..))
 
-newtype ISO_639_2 =
-  ISO_639_2
-    { unISO_639_2 :: String
+newtype ISO_639_1 =
+  ISO_639_1
+    { unISO_639_1 :: String
     } deriving newtype (Eq, Show)
 
-iso639_2FromText :: T.Text -> Either String ISO_639_2
-iso639_2FromText txt =
+iso639_1FromText :: T.Text -> Either String ISO_639_1
+iso639_1FromText txt =
   case T.toLower txt of
-    _ -> Left $ "Unknown ISO_639_2: " <> T.unpack txt
+    _ -> Left $ "Unknown ISO_639_1: " <> T.unpack txt
 
-iso639_2ToBytes :: ISO_639_2 -> LBS.ByteString
-iso639_2ToBytes = LBS8.pack . unISO_639_2
+iso639_1ToBytes :: ISO_639_1 -> LBS.ByteString
+iso639_1ToBytes = LBS8.pack . unISO_639_1
 
-iso639_2ToText :: ISO_639_2 -> T.Text
-iso639_2ToText = T.pack . unISO_639_2
+iso639_1ToText :: ISO_639_1 -> T.Text
+iso639_1ToText = T.pack . unISO_639_1
 
-languageISO639_2 :: Language -> Maybe ISO_639_2
-languageISO639_2 lang =
+languageISO639_1 :: Language -> Maybe ISO_639_1
+languageISO639_1 lang =
   case lang of
     APucikwar -> Nothing
     Aari -> Nothing

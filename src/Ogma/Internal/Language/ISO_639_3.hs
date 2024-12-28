@@ -1,17 +1,20 @@
 module Ogma.Internal.Language.ISO_639_3
   ( ISO_639_3
   , iso639_3FromText
+  , iso639_3ToBytes
   , iso639_3ToText
   , languageISO639_3
   ) where
 
+import Data.ByteString.Lazy qualified as LBS
+import Data.ByteString.Lazy.Char8 qualified as LBS8
 import Data.Text qualified as T
 
 import Ogma.Internal.Language.Language (Language (..))
 
 newtype ISO_639_3 =
   ISO_639_3
-    { iso639_3ToText :: T.Text
+    { unISO_639_3 :: String
     } deriving newtype (Eq, Show)
 
 iso639_3FromText :: T.Text -> Either String ISO_639_3
@@ -8257,7 +8260,13 @@ iso639_3FromText txt =
     "zun" -> Right $ ISO_639_3 "zun"
     "zzj" -> Right $ ISO_639_3 "zzj"
     "zyp" -> Right $ ISO_639_3 "zyp"
-    _ -> Left $ "Unknown ISO_639_3: " <> txt
+    _ -> Left $ "Unknown ISO_639_3: " <> T.unpack txt
+
+iso639_3ToBytes :: ISO_639_3 -> LBS.ByteString
+iso639_3ToBytes = LBS8.pack . unISO_639_3
+
+iso639_3ToText :: ISO_639_3 -> T.Text
+iso639_3ToText = T.pack . unISO_639_3
 
 languageISO639_3 :: Language -> ISO_639_3
 languageISO639_3 lang =

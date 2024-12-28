@@ -1,17 +1,20 @@
 module Ogma.Internal.Script.ISO_15924_Code
   ( ISO_15924_Code
   , iso15924CodeFromText
+  , iso15924CodeToBytes
   , iso15924CodeToText
-  , script15924Code
+  , scriptISO15924Code
   ) where
 
+import Data.ByteString.Lazy qualified as LBS
+import Data.ByteString.Lazy.Char8 qualified as LBS8
 import Data.Text qualified as T
 
 import Ogma.Internal.Script.Script (Script (..))
 
 newtype ISO_15924_Code =
   ISO_15924_Code
-    { iso15924CodeToText :: T.Text
+    { unISO_15924Code :: String
     } deriving newtype (Eq, Show)
 
 iso15924CodeFromText :: T.Text -> Either String ISO_15924_Code
@@ -238,7 +241,13 @@ iso15924CodeFromText txt =
     "yezi" -> Right $ ISO_15924_Code "Yezi"
     "yiii" -> Right $ ISO_15924_Code "Yiii"
     "zanb" -> Right $ ISO_15924_Code "Zanb"
-    _ -> Left $ "Unknown ISO_15924_Code: " <> txt
+    _ -> Left $ "Unknown ISO_15924_Code: " <> T.unpack txt
+
+iso15924CodeToBytes :: ISO_15924_Code -> LBS.ByteString
+iso15924CodeToBytes = LBS8.pack . unISO_15924Code
+
+iso15924CodeToText :: ISO_15924_Code -> T.Text
+iso15924CodeToText = T.pack . unISO_15924Code
 
 scriptISO15924Code :: Script -> ISO_15924_Code
 scriptISO15924Code script =
