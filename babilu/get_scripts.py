@@ -114,11 +114,11 @@ async def __parse_scripts(rows):
 async def get_scripts():
     print("Fetching scripts...")
     start = time()
-    soup = await get_soup('/wiki/ISO_15924')
+    table = await get_soup('/wiki/ISO_15924')
     print("Scripts fetched.")
 
     print("Parsing scripts...")
-    parsed = await __parse_scripts(soup.find('table').find_all('tr')[3:])
+    parsed = await __parse_scripts(table.find_all('tr')[3:])
     print("Scripts parsed.")
 
     end = time()

@@ -27,4 +27,5 @@ cabal.project.local~
 __pycache__
 
 # Project-specific
+babilu/cache
 .env

@@ -158,11 +158,11 @@ async def get_languages():
 
         print(f"Fetching {upper} languages...")
         start_letter = time()
-        soup = await get_soup(f"/wiki/ISO_639:{letter}")
+        table = await get_soup(f"/wiki/ISO_639:{letter}")
         print(f"{upper} languages fetched.")
 
         print(f"Parsing {upper} languages...")
-        parsed = await __parse_languages(soup.find('table').find_all('tr')[2:])
+        parsed = await __parse_languages(table.find_all('tr')[2:])
         languages.update(parsed)
         end_letter = time()
         print(f"{upper} languages parsed in {end_letter - start_letter} seconds.\n")
