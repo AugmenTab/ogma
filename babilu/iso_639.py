@@ -13,11 +13,11 @@ def __write_module(langs, val):
     with open(str(Path.cwd()) + f'/src/Ogma/Internal/Language/ISO_639_{val}.hs', 'a') as f:
         f.write(f"module Ogma.Internal.Language.ISO_639_{val}")
         f.write("\n" + indent(2) + f"( ISO_639_{val}")
-        f.write(with_prepend(2, ",", f"iso639_{val}FromText"))
-        f.write(with_prepend(2, ",", f"iso639_{val}ToBytes"))
-        f.write(with_prepend(2, ",", f"iso639_{val}ToText"))
+        f.write(with_prepend(2, ",", f"iso_639_{val}FromText"))
+        f.write(with_prepend(2, ",", f"iso_639_{val}ToBytes"))
+        f.write(with_prepend(2, ",", f"iso_639_{val}ToText"))
 
-        f.write(with_prepend(2, ",", f"languageISO639_{val}"))
+        f.write(with_prepend(2, ",", f"languageISO_639_{val}"))
         f.write("\n" + indent(2) + ") where\n")
 
         f.write("\n" + "import Data.ByteString.Lazy qualified as LBS\n")
@@ -30,8 +30,8 @@ def __write_module(langs, val):
         f.write(indent(4) + "{ unISO_639_" + val + " :: String\n")
         f.write(indent(4) + "} deriving newtype (Eq, Show)\n")
 
-        f.write(f"\niso639_{val}FromText :: T.Text -> Either String ISO_639_{val}\n")
-        f.write(f"iso639_{val}FromText txt =\n")
+        f.write(f"\niso_639_{val}FromText :: T.Text -> Either String ISO_639_{val}\n")
+        f.write(f"iso_639_{val}FromText txt =\n")
         f.write(indent(2) + "case T.toLower txt of\n")
 
         for lang in langs:
@@ -43,20 +43,20 @@ def __write_module(langs, val):
 
         f.write(f"{indent(4)}_ -> Left $ \"Unknown ISO_639_{val}: \" <> T.unpack txt\n")
 
-        f.write(f"\niso639_{val}ToBytes :: ISO_639_{val} -> LBS.ByteString\n")
-        f.write(f"iso639_{val}ToBytes = LBS8.pack . unISO_639_{val}\n")
+        f.write(f"\niso_639_{val}ToBytes :: ISO_639_{val} -> LBS.ByteString\n")
+        f.write(f"iso_639_{val}ToBytes = LBS8.pack . unISO_639_{val}\n")
 
-        f.write(f"\niso639_{val}ToText :: ISO_639_{val} -> T.Text\n")
-        f.write(f"iso639_{val}ToText = T.pack . unISO_639_{val}\n")
+        f.write(f"\niso_639_{val}ToText :: ISO_639_{val} -> T.Text\n")
+        f.write(f"iso_639_{val}ToText = T.pack . unISO_639_{val}\n")
 
-        f.write(f"\nlanguageISO639_{val} :: Language -> ")
+        f.write(f"\nlanguageISO_639_{val} :: Language -> ")
 
-        if lang[field] is None:
+        if maybe:
             f.write("Maybe ")
 
         f.write(f"ISO_639_{val}\n")
 
-        f.write(f"languageISO639_{val} lang =\n")
+        f.write(f"languageISO_639_{val} lang =\n")
         f.write(indent(2) + "case lang of")
 
         for lang in langs:

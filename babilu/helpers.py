@@ -82,9 +82,12 @@ async def get_soup(url):
         req.add_header('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8')
         req.add_header('Accept-Language', 'en-US,en;q=0.5')
 
+        classes = ['infobox', 'wikitable']
+
         if path.exists(filename):
             with open(filename, "r", encoding="utf-8") as file:
-                return BeautifulSoup(file.read(), "html.parser").find('table')
+                soup = BeautifulSoup(file.read(), "html.parser")
+                return soup.find("table", {"class": classes})
 
         else:
             with urlopen(req) as response:
@@ -92,9 +95,10 @@ async def get_soup(url):
                 html = response.read().decode('utf-8')
 
                 with open(filename, "w", encoding="utf-8") as file:
-                    soup = BeautifulSoup(html, "html.parser").find('table')
-                    file.write(str(soup))
-                    return soup
+                    soup = BeautifulSoup(html, "html.parser")
+                    table = soup.find("table", {"class": classes})
+                    file.write(str(table))
+                    return table
 
     return await to_thread(fetch)
 

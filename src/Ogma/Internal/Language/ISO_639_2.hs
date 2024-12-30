@@ -1,9 +1,9 @@
 module Ogma.Internal.Language.ISO_639_2
   ( ISO_639_2
-  , iso639_2FromText
-  , iso639_2ToBytes
-  , iso639_2ToText
-  , languageISO639_2
+  , iso_639_2FromText
+  , iso_639_2ToBytes
+  , iso_639_2ToText
+  , languageISO_639_2
   ) where
 
 import Data.ByteString.Lazy qualified as LBS
@@ -17,19 +17,19 @@ newtype ISO_639_2 =
     { unISO_639_2 :: String
     } deriving newtype (Eq, Show)
 
-iso639_2FromText :: T.Text -> Either String ISO_639_2
-iso639_2FromText txt =
+iso_639_2FromText :: T.Text -> Either String ISO_639_2
+iso_639_2FromText txt =
   case T.toLower txt of
     _ -> Left $ "Unknown ISO_639_2: " <> T.unpack txt
 
-iso639_2ToBytes :: ISO_639_2 -> LBS.ByteString
-iso639_2ToBytes = LBS8.pack . unISO_639_2
+iso_639_2ToBytes :: ISO_639_2 -> LBS.ByteString
+iso_639_2ToBytes = LBS8.pack . unISO_639_2
 
-iso639_2ToText :: ISO_639_2 -> T.Text
-iso639_2ToText = T.pack . unISO_639_2
+iso_639_2ToText :: ISO_639_2 -> T.Text
+iso_639_2ToText = T.pack . unISO_639_2
 
-languageISO639_2 :: Language -> Maybe ISO_639_2
-languageISO639_2 lang =
+languageISO_639_2 :: Language -> Maybe ISO_639_2
+languageISO_639_2 lang =
   case lang of
     APucikwar -> Nothing
     Aari -> Nothing

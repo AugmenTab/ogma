@@ -4,10 +4,119 @@ from pathlib import Path
 from helpers import indent, with_prepend
 
 
+def write_unicode_range(f, maybe, unicode_range):
+    if maybe:
+        if unicode_range is None:
+            f.write(indent(6) + "Nothing")
+
+        elif len(unicode_range) == 1:
+            f.write(f"{indent(6)}Just $ UnicodeRange {unicode_range[0]}")
+
+        else:
+            f.write(indent(6) + "Just")
+            f.write(with_prepend(8, ".", "UnicodeRange"))
+            f.write(with_prepend(8, ".", "concat"))
+            f.write(with_prepend(8, "$", "[ " + unicode_range[0]))
+
+            for unicode_range in unicode_range[1:]:
+                f.write(with_prepend(10, ",", unicode_range))
+
+            f.write("\n" + indent(10) + "]")
+
+    else:
+        if len(unicode_range) == 1:
+            f.write(f"{indent(6)}UnicodeRange {unicode_range}")
+
+        else:
+            f.write("wut")
+
+
+def write_unicode_module(scripts):
+    maybe = any(map(lambda x: x['unicode_range'] is None, scripts))
+    module_comment = '''-- | TODO: Write module documentation
+--
+-- A complete list of the scripts and their details (from which this module was
+-- assembled) can be found here:
+--
+-- https://en.wikipedia.org/wiki/ISO_15924
+--
+'''
+    open(str(Path.cwd()) + '/src/Ogma/Internal/Script/UnicodeRange.hs', 'w').close()
+
+    with open(str(Path.cwd()) + '/src/Ogma/Internal/Script/UnicodeRange.hs', 'a') as f:
+        f.write(module_comment)
+        f.write(f"module Ogma.Internal.Script.UnicodeRange")
+        f.write(with_prepend(2, "(", "UnicodeRange (..)"))
+        f.write(with_prepend(2, ",", "scriptUnicodeRange"))
+        f.write("\n" + indent(2) + ") where\n")
+
+        f.write("\n" + "import Data.Char (chr)\n")
+        f.write("\n" + "import Ogma.Internal.Script.Script (Script (..))\n")
+
+        f.write("\n" + "newtype UnicodeRange = UnicodeRange [Char]\n")
+        f.write(indent(2) + "deriving newtype (Eq, Show)\n")
+
+        f.write(f"\nscriptUnicodeRange :: Script -> ")
+
+        if maybe:
+            f.write("Maybe ")
+
+        f.write(f"UnicodeRange\n")
+
+        f.write(f"scriptUnicodeRange script =\n")
+        f.write(indent(2) + "case script of")
+        f.write(f"\n{indent(4)}{scripts[0]['constructor']} ->\n")
+        write_unicode_range(f, maybe, scripts[0]['unicode_range'])
+
+        for script in scripts[1:]:
+            f.write(f"\n\n{indent(4)}{script['constructor']} ->\n")
+            write_unicode_range(f, maybe, script['unicode_range'])
+
+
+def write_script_type_module(scripts):
+    module_comment = '''-- | TODO: Write module documentation
+--
+-- A complete list of the scripts and their details (from which this module was
+-- assembled) can be found here:
+--
+-- https://en.wikipedia.org/wiki/ISO_15924
+--
+'''
+    open(str(Path.cwd()) + '/src/Ogma/Internal/Script/ScriptType.hs', 'w').close()
+
+    with open(str(Path.cwd()) + '/src/Ogma/Internal/Script/ScriptType.hs', 'a') as f:
+        f.write(module_comment)
+        f.write(f"module Ogma.Internal.Script.ScriptType")
+        f.write(with_prepend(2, "(", "ScriptType"))
+        f.write(with_prepend(6, "(", scripts[0]))
+
+        for script in scripts:
+            f.write(with_prepend(6, ",", script))
+
+        f.write("\n" + indent(6) + ")")
+
+        f.write("\n" + indent(2) + ") where\n")
+        f.write("\n" + "data ScriptType")
+        f.write(with_prepend(2, "=", scripts[0]))
+
+        for script in scripts[1:]:
+            f.write(with_prepend(2, "|", script))
+
+        f.write("\n" + indent(2) + "deriving stock (Eq, Show)\n")
+
 def __write_module(scripts, val):
+    module_comment = '''-- | TODO: Write module documentation
+--
+-- A complete list of the scripts and their details (from which this module was
+-- assembled) can be found here:
+--
+-- https://en.wikipedia.org/wiki/ISO_15924
+--
+'''
     open(str(Path.cwd()) + f'/src/Ogma/Internal/Script/ISO_15924_{val}.hs', 'w').close()
 
     with open(str(Path.cwd()) + f'/src/Ogma/Internal/Script/ISO_15924_{val}.hs', 'a') as f:
+        f.write(module_comment)
         f.write(f"module Ogma.Internal.Script.ISO_15924_{val}")
         f.write("\n" + indent(2) + f"( ISO_15924_{val}")
         f.write(with_prepend(2, ",", f"iso15924{val}FromText"))

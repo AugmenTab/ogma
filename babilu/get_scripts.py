@@ -1,7 +1,7 @@
 #! python3
 
 from pathlib import Path
-from re import IGNORECASE, sub
+from re import IGNORECASE, split, sub
 from time import time
 
 from helpers import get_soup, indent, TRANSLATION_TABLE, upper_camel_case, with_prepend
@@ -39,7 +39,66 @@ def __create_scripts_module(scripts):
         f.write("\n" + indent(2) + "deriving stock (Eq, Show)\n")
 
 
-def process_name(name):
+def __to_unicode_literal(name, txt):
+    broken = split(r'[-\s]*(?:or|to)[-\s]*|[–]', txt, flags=IGNORECASE)
+    literals = list(map(lambda x: f"chr 0x{x.strip()[2:]}", broken))
+    return f"[ {literals[0]}..{literals[1]} ]"
+
+
+def __parse_unicode_range(name, unicode_range):
+    def preserve_unicode_range(txt):
+        substrings = [
+            "Final",
+            "\xa0",
+            "full",
+            "[",
+            "Private",
+            "None",
+            "CSUR",
+            "Download",
+            "attached",
+            "Registry"
+        ]
+
+        return all(map(lambda x: x not in txt, substrings))
+
+    def replace_extra_words(txt):
+        return txt.replace(" Georgian", "").replace(" Supplement", "").replace(" Extended", "").replace('\u2009', "").replace("\"", "")
+
+    if unicode_range is None:
+        return None
+
+    code_tags = unicode_range.find_all('code')
+
+    if not code_tags:
+        a_tags = list(map(lambda x: x.get_text().strip(), unicode_range.find_all('a')))
+
+        if not a_tags:
+            li_tags = list(map(lambda x: x.get_text().strip(), unicode_range.find_all('li')))
+
+            if not li_tags:
+                return None
+
+            else:
+                tags = li_tags
+        else:
+            tags = a_tags
+    else:
+        tags = ['–'.join(map(lambda x: f"U+{x.get_text()}", code_tags))]
+
+    chunked = [x for xs in map(lambda x: x.split(','), tags) for x in xs]
+    filtered = list(filter(preserve_unicode_range, chunked))
+    return list(map(replace_extra_words, filtered))
+
+
+def __parse_script_type(script_type):
+    if script_type is None:
+        return None
+
+    return upper_camel_case(script_type.get_text().split())
+
+
+def __process_name(name):
     def replace_parentheses(match):
         content = match.group(1)
         if "variant" in content.lower():
@@ -75,6 +134,78 @@ def process_name(name):
         return f"{constructor}Script"
 
 
+async def scrape_script(link, names, code, number, unicode_alias):
+    soup = await get_soup(link)
+
+    if soup is None:
+        return {
+            'constructor': __process_name(names),
+            'names': None,
+            'type': None,
+            'axis': None,
+            'direction': None,
+            'parent': None,
+            'endonym': None,
+            'romanized': None,
+            'iso-15924-code': code,
+            'iso-15924-number': number,
+            'unicode_alias': unicode_alias,
+            'unicode_range': None
+            }
+
+    rows = soup.find('tbody').find_all('tr')
+    cell_map = {}
+
+    for row in rows:
+        th = row.find('th')
+        td = row.find('td')
+
+        if th and td:
+            cell_map[th.get_text(strip=True)] = td
+
+    # script_type = __parse_script_type(cell_map.get('Script type'))
+    # print(f"{names}: {script_type}")
+
+    if names == 'Latin':
+        unicode = [
+            'U+0000–U+007F',
+            'U+0080–U+00FF',
+            'U+0100–U+017F',
+            'U+0180–U+024F',
+            'U+1E00–U+1EFF'
+        ]
+
+    elif "Meetei" in names:
+        unicode = ['U+ABC0–U+ABFF']
+
+    elif names == "Egyptian hieratic":
+        unicode = ['U+13000–U+1342F', 'U+13460–U+143FF', 'U+13430–U+1345F']
+
+    else:
+        unicode = __parse_unicode_range(names, cell_map.get('Unicode range'))
+
+    if unicode:
+        unicode_range = list(map(lambda x: __to_unicode_literal(names, x), unicode))
+
+    else:
+        unicode_range = None
+
+    return {
+        'constructor': __process_name(names),
+        'names': None,
+        'type': None, # script_type,
+        'axis': None,
+        'direction': None,
+        'parent': None,
+        'endonym': None,
+        'romanized': None,
+        'iso-15924-code': code,
+        'iso-15924-number': number,
+        'unicode_alias': unicode_alias,
+        'unicode_range': unicode_range
+        }
+
+
 async def __parse_scripts(rows):
     scripts = {}
 
@@ -84,28 +215,22 @@ async def __parse_scripts(rows):
         if len(cells) < 3:
             continue
 
-        name = cells[2].get_text().strip()
         code = cells[0].get_text().strip()
-
         if len(code) > 4:
             continue
 
-        script = {
-            'constructor': process_name(name),
-            'names': None,
-            'type': None,
-            'axis': None,
-            'direction': None,
-            'parent': None,
-            'endonym': None,
-            'romanized': None,
-            'iso-15924-code': code,
-            'iso-15924-number': cells[1].get_text().strip(),
-            'unicode_alias': None,
-            'unicode_range_min': None,
-            'unicode_range_max': None
-        }
+        name_cell = cells[2]
+        names = name_cell.get_text().strip()
+        link = name_cell.find('a').get('href')
+        number = cells[1].get_text().strip()
 
+        if cells[4].has_attr('colspan'):
+            unicode_alias = None
+
+        else:
+            unicode_alias = cells[4].get_text().strip()
+
+        script = await scrape_script(link, names, code, number, unicode_alias)
         scripts[script['constructor']] = script
 
     return scripts

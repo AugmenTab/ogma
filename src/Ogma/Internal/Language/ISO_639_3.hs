@@ -1,9 +1,9 @@
 module Ogma.Internal.Language.ISO_639_3
   ( ISO_639_3
-  , iso639_3FromText
-  , iso639_3ToBytes
-  , iso639_3ToText
-  , languageISO639_3
+  , iso_639_3FromText
+  , iso_639_3ToBytes
+  , iso_639_3ToText
+  , languageISO_639_3
   ) where
 
 import Data.ByteString.Lazy qualified as LBS
@@ -17,8 +17,8 @@ newtype ISO_639_3 =
     { unISO_639_3 :: String
     } deriving newtype (Eq, Show)
 
-iso639_3FromText :: T.Text -> Either String ISO_639_3
-iso639_3FromText txt =
+iso_639_3FromText :: T.Text -> Either String ISO_639_3
+iso_639_3FromText txt =
   case T.toLower txt of
     "apq" -> Right $ ISO_639_3 "apq"
     "aiz" -> Right $ ISO_639_3 "aiz"
@@ -8262,14 +8262,14 @@ iso639_3FromText txt =
     "zyp" -> Right $ ISO_639_3 "zyp"
     _ -> Left $ "Unknown ISO_639_3: " <> T.unpack txt
 
-iso639_3ToBytes :: ISO_639_3 -> LBS.ByteString
-iso639_3ToBytes = LBS8.pack . unISO_639_3
+iso_639_3ToBytes :: ISO_639_3 -> LBS.ByteString
+iso_639_3ToBytes = LBS8.pack . unISO_639_3
 
-iso639_3ToText :: ISO_639_3 -> T.Text
-iso639_3ToText = T.pack . unISO_639_3
+iso_639_3ToText :: ISO_639_3 -> T.Text
+iso_639_3ToText = T.pack . unISO_639_3
 
-languageISO639_3 :: Language -> ISO_639_3
-languageISO639_3 lang =
+languageISO_639_3 :: Language -> ISO_639_3
+languageISO_639_3 lang =
   case lang of
     APucikwar -> ISO_639_3 "apq"
     Aari -> ISO_639_3 "aiz"

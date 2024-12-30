@@ -1,3 +1,10 @@
+-- | TODO: Write module documentation
+--
+-- A complete list of the scripts and their details (from which this module was
+-- assembled) can be found here:
+--
+-- https://en.wikipedia.org/wiki/ISO_15924
+--
 module Ogma.Internal.Script.ISO_15924_Code
   ( ISO_15924_Code
   , iso15924CodeFromText

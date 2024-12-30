@@ -32,6 +32,7 @@ library
       Ogma.Internal.Script.ISO_15924_Code
       Ogma.Internal.Script.ISO_15924_Number
       Ogma.Internal.Script.Script
+      Ogma.Internal.Script.UnicodeRange
   other-modules:
       Paths_ogma
   autogen-modules:
