@@ -20,6 +20,414 @@ newtype ISO_639_2 =
 iso_639_2FromText :: T.Text -> Either String ISO_639_2
 iso_639_2FromText txt =
   case T.toLower txt of
+    "aar" -> Right $ ISO_639_2 "aar"
+    "abk" -> Right $ ISO_639_2 "abk"
+    "ace" -> Right $ ISO_639_2 "ace"
+    "ach" -> Right $ ISO_639_2 "ach"
+    "ada" -> Right $ ISO_639_2 "ada"
+    "ady" -> Right $ ISO_639_2 "ady"
+    "afh" -> Right $ ISO_639_2 "afh"
+    "afr" -> Right $ ISO_639_2 "afr"
+    "ain" -> Right $ ISO_639_2 "ain"
+    "aka" -> Right $ ISO_639_2 "aka"
+    "akk" -> Right $ ISO_639_2 "akk"
+    "alb" -> Right $ ISO_639_2 "alb"
+    "ale" -> Right $ ISO_639_2 "ale"
+    "alt" -> Right $ ISO_639_2 "alt"
+    "amh" -> Right $ ISO_639_2 "amh"
+    "ang" -> Right $ ISO_639_2 "ang"
+    "anp" -> Right $ ISO_639_2 "anp"
+    "ara" -> Right $ ISO_639_2 "ara"
+    "arc" -> Right $ ISO_639_2 "arc"
+    "arg" -> Right $ ISO_639_2 "arg"
+    "arm" -> Right $ ISO_639_2 "arm"
+    "arn" -> Right $ ISO_639_2 "arn"
+    "arp" -> Right $ ISO_639_2 "arp"
+    "arw" -> Right $ ISO_639_2 "arw"
+    "asm" -> Right $ ISO_639_2 "asm"
+    "ast" -> Right $ ISO_639_2 "ast"
+    "ava" -> Right $ ISO_639_2 "ava"
+    "ave" -> Right $ ISO_639_2 "ave"
+    "awa" -> Right $ ISO_639_2 "awa"
+    "aym" -> Right $ ISO_639_2 "aym"
+    "aze" -> Right $ ISO_639_2 "aze"
+    "bak" -> Right $ ISO_639_2 "bak"
+    "bal" -> Right $ ISO_639_2 "bal"
+    "bam" -> Right $ ISO_639_2 "bam"
+    "ban" -> Right $ ISO_639_2 "ban"
+    "baq" -> Right $ ISO_639_2 "baq"
+    "bas" -> Right $ ISO_639_2 "bas"
+    "bej" -> Right $ ISO_639_2 "bej"
+    "bel" -> Right $ ISO_639_2 "bel"
+    "bem" -> Right $ ISO_639_2 "bem"
+    "ben" -> Right $ ISO_639_2 "ben"
+    "bho" -> Right $ ISO_639_2 "bho"
+    "bin" -> Right $ ISO_639_2 "bin"
+    "bis" -> Right $ ISO_639_2 "bis"
+    "bla" -> Right $ ISO_639_2 "bla"
+    "bos" -> Right $ ISO_639_2 "bos"
+    "bra" -> Right $ ISO_639_2 "bra"
+    "bre" -> Right $ ISO_639_2 "bre"
+    "bua" -> Right $ ISO_639_2 "bua"
+    "bug" -> Right $ ISO_639_2 "bug"
+    "bul" -> Right $ ISO_639_2 "bul"
+    "bur" -> Right $ ISO_639_2 "bur"
+    "byn" -> Right $ ISO_639_2 "byn"
+    "cad" -> Right $ ISO_639_2 "cad"
+    "car" -> Right $ ISO_639_2 "car"
+    "cat" -> Right $ ISO_639_2 "cat"
+    "ceb" -> Right $ ISO_639_2 "ceb"
+    "cha" -> Right $ ISO_639_2 "cha"
+    "chb" -> Right $ ISO_639_2 "chb"
+    "che" -> Right $ ISO_639_2 "che"
+    "chg" -> Right $ ISO_639_2 "chg"
+    "chi" -> Right $ ISO_639_2 "chi"
+    "chk" -> Right $ ISO_639_2 "chk"
+    "chm" -> Right $ ISO_639_2 "chm"
+    "chn" -> Right $ ISO_639_2 "chn"
+    "cho" -> Right $ ISO_639_2 "cho"
+    "chp" -> Right $ ISO_639_2 "chp"
+    "chr" -> Right $ ISO_639_2 "chr"
+    "chu" -> Right $ ISO_639_2 "chu"
+    "chv" -> Right $ ISO_639_2 "chv"
+    "chy" -> Right $ ISO_639_2 "chy"
+    "cnr" -> Right $ ISO_639_2 "cnr"
+    "cop" -> Right $ ISO_639_2 "cop"
+    "cor" -> Right $ ISO_639_2 "cor"
+    "cos" -> Right $ ISO_639_2 "cos"
+    "cre" -> Right $ ISO_639_2 "cre"
+    "crh" -> Right $ ISO_639_2 "crh"
+    "crp" -> Right $ ISO_639_2 "crp"
+    "csb" -> Right $ ISO_639_2 "csb"
+    "cze" -> Right $ ISO_639_2 "cze"
+    "dak" -> Right $ ISO_639_2 "dak"
+    "dan" -> Right $ ISO_639_2 "dan"
+    "dar" -> Right $ ISO_639_2 "dar"
+    "den" -> Right $ ISO_639_2 "den"
+    "dgr" -> Right $ ISO_639_2 "dgr"
+    "din" -> Right $ ISO_639_2 "din"
+    "div" -> Right $ ISO_639_2 "div"
+    "doi" -> Right $ ISO_639_2 "doi"
+    "dsb" -> Right $ ISO_639_2 "dsb"
+    "dua" -> Right $ ISO_639_2 "dua"
+    "dum" -> Right $ ISO_639_2 "dum"
+    "dut" -> Right $ ISO_639_2 "dut"
+    "dyu" -> Right $ ISO_639_2 "dyu"
+    "dzo" -> Right $ ISO_639_2 "dzo"
+    "efi" -> Right $ ISO_639_2 "efi"
+    "egy" -> Right $ ISO_639_2 "egy"
+    "eka" -> Right $ ISO_639_2 "eka"
+    "elx" -> Right $ ISO_639_2 "elx"
+    "eng" -> Right $ ISO_639_2 "eng"
+    "enm" -> Right $ ISO_639_2 "enm"
+    "epo" -> Right $ ISO_639_2 "epo"
+    "est" -> Right $ ISO_639_2 "est"
+    "ewe" -> Right $ ISO_639_2 "ewe"
+    "ewo" -> Right $ ISO_639_2 "ewo"
+    "fan" -> Right $ ISO_639_2 "fan"
+    "fao" -> Right $ ISO_639_2 "fao"
+    "fat" -> Right $ ISO_639_2 "fat"
+    "fij" -> Right $ ISO_639_2 "fij"
+    "fil" -> Right $ ISO_639_2 "fil"
+    "fin" -> Right $ ISO_639_2 "fin"
+    "fon" -> Right $ ISO_639_2 "fon"
+    "fre" -> Right $ ISO_639_2 "fre"
+    "frm" -> Right $ ISO_639_2 "frm"
+    "fro" -> Right $ ISO_639_2 "fro"
+    "frr" -> Right $ ISO_639_2 "frr"
+    "frs" -> Right $ ISO_639_2 "frs"
+    "fry" -> Right $ ISO_639_2 "fry"
+    "ful" -> Right $ ISO_639_2 "ful"
+    "fur" -> Right $ ISO_639_2 "fur"
+    "gaa" -> Right $ ISO_639_2 "gaa"
+    "gay" -> Right $ ISO_639_2 "gay"
+    "geo" -> Right $ ISO_639_2 "geo"
+    "ger" -> Right $ ISO_639_2 "ger"
+    "gez" -> Right $ ISO_639_2 "gez"
+    "gil" -> Right $ ISO_639_2 "gil"
+    "gla" -> Right $ ISO_639_2 "gla"
+    "gle" -> Right $ ISO_639_2 "gle"
+    "glg" -> Right $ ISO_639_2 "glg"
+    "glv" -> Right $ ISO_639_2 "glv"
+    "gmh" -> Right $ ISO_639_2 "gmh"
+    "goh" -> Right $ ISO_639_2 "goh"
+    "gon" -> Right $ ISO_639_2 "gon"
+    "gor" -> Right $ ISO_639_2 "gor"
+    "got" -> Right $ ISO_639_2 "got"
+    "grb" -> Right $ ISO_639_2 "grb"
+    "grc" -> Right $ ISO_639_2 "grc"
+    "gre" -> Right $ ISO_639_2 "gre"
+    "grn" -> Right $ ISO_639_2 "grn"
+    "guj" -> Right $ ISO_639_2 "guj"
+    "gwi" -> Right $ ISO_639_2 "gwi"
+    "hai" -> Right $ ISO_639_2 "hai"
+    "hat" -> Right $ ISO_639_2 "hat"
+    "hau" -> Right $ ISO_639_2 "hau"
+    "haw" -> Right $ ISO_639_2 "haw"
+    "heb" -> Right $ ISO_639_2 "heb"
+    "her" -> Right $ ISO_639_2 "her"
+    "hil" -> Right $ ISO_639_2 "hil"
+    "hin" -> Right $ ISO_639_2 "hin"
+    "hit" -> Right $ ISO_639_2 "hit"
+    "hmn" -> Right $ ISO_639_2 "hmn"
+    "hmo" -> Right $ ISO_639_2 "hmo"
+    "hrv" -> Right $ ISO_639_2 "hrv"
+    "hsb" -> Right $ ISO_639_2 "hsb"
+    "hun" -> Right $ ISO_639_2 "hun"
+    "hup" -> Right $ ISO_639_2 "hup"
+    "iba" -> Right $ ISO_639_2 "iba"
+    "ibo" -> Right $ ISO_639_2 "ibo"
+    "ice" -> Right $ ISO_639_2 "ice"
+    "ido" -> Right $ ISO_639_2 "ido"
+    "iii" -> Right $ ISO_639_2 "iii"
+    "iku" -> Right $ ISO_639_2 "iku"
+    "ile" -> Right $ ISO_639_2 "ile"
+    "ilo" -> Right $ ISO_639_2 "ilo"
+    "ina" -> Right $ ISO_639_2 "ina"
+    "ind" -> Right $ ISO_639_2 "ind"
+    "inh" -> Right $ ISO_639_2 "inh"
+    "ipk" -> Right $ ISO_639_2 "ipk"
+    "ita" -> Right $ ISO_639_2 "ita"
+    "jav" -> Right $ ISO_639_2 "jav"
+    "jbo" -> Right $ ISO_639_2 "jbo"
+    "jpn" -> Right $ ISO_639_2 "jpn"
+    "jpr" -> Right $ ISO_639_2 "jpr"
+    "jrb" -> Right $ ISO_639_2 "jrb"
+    "kaa" -> Right $ ISO_639_2 "kaa"
+    "kab" -> Right $ ISO_639_2 "kab"
+    "kac" -> Right $ ISO_639_2 "kac"
+    "kal" -> Right $ ISO_639_2 "kal"
+    "kam" -> Right $ ISO_639_2 "kam"
+    "kan" -> Right $ ISO_639_2 "kan"
+    "kar" -> Right $ ISO_639_2 "kar"
+    "kas" -> Right $ ISO_639_2 "kas"
+    "kau" -> Right $ ISO_639_2 "kau"
+    "kaw" -> Right $ ISO_639_2 "kaw"
+    "kaz" -> Right $ ISO_639_2 "kaz"
+    "kbd" -> Right $ ISO_639_2 "kbd"
+    "kbl" -> Right $ ISO_639_2 "kbl"
+    "kha" -> Right $ ISO_639_2 "kha"
+    "khm" -> Right $ ISO_639_2 "khm"
+    "kho" -> Right $ ISO_639_2 "kho"
+    "kik" -> Right $ ISO_639_2 "kik"
+    "kin" -> Right $ ISO_639_2 "kin"
+    "kir" -> Right $ ISO_639_2 "kir"
+    "kmb" -> Right $ ISO_639_2 "kmb"
+    "kok" -> Right $ ISO_639_2 "kok"
+    "kon" -> Right $ ISO_639_2 "kon"
+    "kor" -> Right $ ISO_639_2 "kor"
+    "kos" -> Right $ ISO_639_2 "kos"
+    "kpe" -> Right $ ISO_639_2 "kpe"
+    "krc" -> Right $ ISO_639_2 "krc"
+    "krl" -> Right $ ISO_639_2 "krl"
+    "kua" -> Right $ ISO_639_2 "kua"
+    "kum" -> Right $ ISO_639_2 "kum"
+    "kur" -> Right $ ISO_639_2 "kur"
+    "kut" -> Right $ ISO_639_2 "kut"
+    "lad" -> Right $ ISO_639_2 "lad"
+    "lah" -> Right $ ISO_639_2 "lah"
+    "lam" -> Right $ ISO_639_2 "lam"
+    "lao" -> Right $ ISO_639_2 "lao"
+    "lat" -> Right $ ISO_639_2 "lat"
+    "lav" -> Right $ ISO_639_2 "lav"
+    "lez" -> Right $ ISO_639_2 "lez"
+    "lim" -> Right $ ISO_639_2 "lim"
+    "lin" -> Right $ ISO_639_2 "lin"
+    "lit" -> Right $ ISO_639_2 "lit"
+    "lol" -> Right $ ISO_639_2 "lol"
+    "loz" -> Right $ ISO_639_2 "loz"
+    "ltz" -> Right $ ISO_639_2 "ltz"
+    "lua" -> Right $ ISO_639_2 "lua"
+    "lub" -> Right $ ISO_639_2 "lub"
+    "lug" -> Right $ ISO_639_2 "lug"
+    "lui" -> Right $ ISO_639_2 "lui"
+    "lun" -> Right $ ISO_639_2 "lun"
+    "luo" -> Right $ ISO_639_2 "luo"
+    "lus" -> Right $ ISO_639_2 "lus"
+    "mac" -> Right $ ISO_639_2 "mac"
+    "mad" -> Right $ ISO_639_2 "mad"
+    "mag" -> Right $ ISO_639_2 "mag"
+    "mah" -> Right $ ISO_639_2 "mah"
+    "mai" -> Right $ ISO_639_2 "mai"
+    "mak" -> Right $ ISO_639_2 "mak"
+    "mal" -> Right $ ISO_639_2 "mal"
+    "mao" -> Right $ ISO_639_2 "mao"
+    "mar" -> Right $ ISO_639_2 "mar"
+    "mas" -> Right $ ISO_639_2 "mas"
+    "may" -> Right $ ISO_639_2 "may"
+    "mdf" -> Right $ ISO_639_2 "mdf"
+    "mdr" -> Right $ ISO_639_2 "mdr"
+    "men" -> Right $ ISO_639_2 "men"
+    "mga" -> Right $ ISO_639_2 "mga"
+    "mic" -> Right $ ISO_639_2 "mic"
+    "min" -> Right $ ISO_639_2 "min"
+    "mlg" -> Right $ ISO_639_2 "mlg"
+    "mlt" -> Right $ ISO_639_2 "mlt"
+    "mnc" -> Right $ ISO_639_2 "mnc"
+    "mni" -> Right $ ISO_639_2 "mni"
+    "moh" -> Right $ ISO_639_2 "moh"
+    "mol" -> Right $ ISO_639_2 "mol"
+    "mon" -> Right $ ISO_639_2 "mon"
+    "mos" -> Right $ ISO_639_2 "mos"
+    "mus" -> Right $ ISO_639_2 "mus"
+    "mwl" -> Right $ ISO_639_2 "mwl"
+    "mwr" -> Right $ ISO_639_2 "mwr"
+    "myv" -> Right $ ISO_639_2 "myv"
+    "nap" -> Right $ ISO_639_2 "nap"
+    "nau" -> Right $ ISO_639_2 "nau"
+    "nav" -> Right $ ISO_639_2 "nav"
+    "nbl" -> Right $ ISO_639_2 "nbl"
+    "nde" -> Right $ ISO_639_2 "nde"
+    "ndo" -> Right $ ISO_639_2 "ndo"
+    "nds" -> Right $ ISO_639_2 "nds"
+    "nep" -> Right $ ISO_639_2 "nep"
+    "new" -> Right $ ISO_639_2 "new"
+    "nia" -> Right $ ISO_639_2 "nia"
+    "niu" -> Right $ ISO_639_2 "niu"
+    "nno" -> Right $ ISO_639_2 "nno"
+    "nob" -> Right $ ISO_639_2 "nob"
+    "nog" -> Right $ ISO_639_2 "nog"
+    "non" -> Right $ ISO_639_2 "non"
+    "nor" -> Right $ ISO_639_2 "nor"
+    "nqo" -> Right $ ISO_639_2 "nqo"
+    "nso" -> Right $ ISO_639_2 "nso"
+    "nwc" -> Right $ ISO_639_2 "nwc"
+    "nya" -> Right $ ISO_639_2 "nya"
+    "nym" -> Right $ ISO_639_2 "nym"
+    "nyn" -> Right $ ISO_639_2 "nyn"
+    "nyo" -> Right $ ISO_639_2 "nyo"
+    "nzi" -> Right $ ISO_639_2 "nzi"
+    "oci" -> Right $ ISO_639_2 "oci"
+    "oji" -> Right $ ISO_639_2 "oji"
+    "ori" -> Right $ ISO_639_2 "ori"
+    "orm" -> Right $ ISO_639_2 "orm"
+    "osa" -> Right $ ISO_639_2 "osa"
+    "oss" -> Right $ ISO_639_2 "oss"
+    "ota" -> Right $ ISO_639_2 "ota"
+    "pag" -> Right $ ISO_639_2 "pag"
+    "pal" -> Right $ ISO_639_2 "pal"
+    "pam" -> Right $ ISO_639_2 "pam"
+    "pan" -> Right $ ISO_639_2 "pan"
+    "pap" -> Right $ ISO_639_2 "pap"
+    "pau" -> Right $ ISO_639_2 "pau"
+    "peo" -> Right $ ISO_639_2 "peo"
+    "per" -> Right $ ISO_639_2 "per"
+    "phn" -> Right $ ISO_639_2 "phn"
+    "pli" -> Right $ ISO_639_2 "pli"
+    "pol" -> Right $ ISO_639_2 "pol"
+    "pon" -> Right $ ISO_639_2 "pon"
+    "por" -> Right $ ISO_639_2 "por"
+    "pro" -> Right $ ISO_639_2 "pro"
+    "pus" -> Right $ ISO_639_2 "pus"
+    "rap" -> Right $ ISO_639_2 "rap"
+    "rar" -> Right $ ISO_639_2 "rar"
+    "roh" -> Right $ ISO_639_2 "roh"
+    "rom" -> Right $ ISO_639_2 "rom"
+    "rum" -> Right $ ISO_639_2 "rum"
+    "run" -> Right $ ISO_639_2 "run"
+    "rup" -> Right $ ISO_639_2 "rup"
+    "rus" -> Right $ ISO_639_2 "rus"
+    "sad" -> Right $ ISO_639_2 "sad"
+    "sag" -> Right $ ISO_639_2 "sag"
+    "sah" -> Right $ ISO_639_2 "sah"
+    "sam" -> Right $ ISO_639_2 "sam"
+    "san" -> Right $ ISO_639_2 "san"
+    "sas" -> Right $ ISO_639_2 "sas"
+    "sat" -> Right $ ISO_639_2 "sat"
+    "scn" -> Right $ ISO_639_2 "scn"
+    "sco" -> Right $ ISO_639_2 "sco"
+    "sel" -> Right $ ISO_639_2 "sel"
+    "sga" -> Right $ ISO_639_2 "sga"
+    "sgn" -> Right $ ISO_639_2 "sgn"
+    "shn" -> Right $ ISO_639_2 "shn"
+    "sid" -> Right $ ISO_639_2 "sid"
+    "sin" -> Right $ ISO_639_2 "sin"
+    "slo" -> Right $ ISO_639_2 "slo"
+    "slv" -> Right $ ISO_639_2 "slv"
+    "sma" -> Right $ ISO_639_2 "sma"
+    "sme" -> Right $ ISO_639_2 "sme"
+    "smj" -> Right $ ISO_639_2 "smj"
+    "smn" -> Right $ ISO_639_2 "smn"
+    "smo" -> Right $ ISO_639_2 "smo"
+    "sms" -> Right $ ISO_639_2 "sms"
+    "sna" -> Right $ ISO_639_2 "sna"
+    "snd" -> Right $ ISO_639_2 "snd"
+    "snk" -> Right $ ISO_639_2 "snk"
+    "sog" -> Right $ ISO_639_2 "sog"
+    "som" -> Right $ ISO_639_2 "som"
+    "sot" -> Right $ ISO_639_2 "sot"
+    "spa" -> Right $ ISO_639_2 "spa"
+    "srd" -> Right $ ISO_639_2 "srd"
+    "srn" -> Right $ ISO_639_2 "srn"
+    "srp" -> Right $ ISO_639_2 "srp"
+    "srr" -> Right $ ISO_639_2 "srr"
+    "ssw" -> Right $ ISO_639_2 "ssw"
+    "suk" -> Right $ ISO_639_2 "suk"
+    "sun" -> Right $ ISO_639_2 "sun"
+    "sus" -> Right $ ISO_639_2 "sus"
+    "sux" -> Right $ ISO_639_2 "sux"
+    "swa" -> Right $ ISO_639_2 "swa"
+    "swe" -> Right $ ISO_639_2 "swe"
+    "syc" -> Right $ ISO_639_2 "syc"
+    "tah" -> Right $ ISO_639_2 "tah"
+    "tam" -> Right $ ISO_639_2 "tam"
+    "tat" -> Right $ ISO_639_2 "tat"
+    "tel" -> Right $ ISO_639_2 "tel"
+    "tem" -> Right $ ISO_639_2 "tem"
+    "ter" -> Right $ ISO_639_2 "ter"
+    "tet" -> Right $ ISO_639_2 "tet"
+    "tgk" -> Right $ ISO_639_2 "tgk"
+    "tgl" -> Right $ ISO_639_2 "tgl"
+    "tha" -> Right $ ISO_639_2 "tha"
+    "tib" -> Right $ ISO_639_2 "tib"
+    "tig" -> Right $ ISO_639_2 "tig"
+    "tir" -> Right $ ISO_639_2 "tir"
+    "tiv" -> Right $ ISO_639_2 "tiv"
+    "tkl" -> Right $ ISO_639_2 "tkl"
+    "tlh" -> Right $ ISO_639_2 "tlh"
+    "tli" -> Right $ ISO_639_2 "tli"
+    "tog" -> Right $ ISO_639_2 "tog"
+    "ton" -> Right $ ISO_639_2 "ton"
+    "tpi" -> Right $ ISO_639_2 "tpi"
+    "tsi" -> Right $ ISO_639_2 "tsi"
+    "tsn" -> Right $ ISO_639_2 "tsn"
+    "tso" -> Right $ ISO_639_2 "tso"
+    "tuk" -> Right $ ISO_639_2 "tuk"
+    "tum" -> Right $ ISO_639_2 "tum"
+    "tur" -> Right $ ISO_639_2 "tur"
+    "tvl" -> Right $ ISO_639_2 "tvl"
+    "twi" -> Right $ ISO_639_2 "twi"
+    "tyv" -> Right $ ISO_639_2 "tyv"
+    "udm" -> Right $ ISO_639_2 "udm"
+    "uga" -> Right $ ISO_639_2 "uga"
+    "uig" -> Right $ ISO_639_2 "uig"
+    "ukr" -> Right $ ISO_639_2 "ukr"
+    "umb" -> Right $ ISO_639_2 "umb"
+    "urd" -> Right $ ISO_639_2 "urd"
+    "uzb" -> Right $ ISO_639_2 "uzb"
+    "vai" -> Right $ ISO_639_2 "vai"
+    "ven" -> Right $ ISO_639_2 "ven"
+    "vie" -> Right $ ISO_639_2 "vie"
+    "vol" -> Right $ ISO_639_2 "vol"
+    "vot" -> Right $ ISO_639_2 "vot"
+    "wal" -> Right $ ISO_639_2 "wal"
+    "war" -> Right $ ISO_639_2 "war"
+    "was" -> Right $ ISO_639_2 "was"
+    "wel" -> Right $ ISO_639_2 "wel"
+    "wln" -> Right $ ISO_639_2 "wln"
+    "wol" -> Right $ ISO_639_2 "wol"
+    "xal" -> Right $ ISO_639_2 "xal"
+    "xho" -> Right $ ISO_639_2 "xho"
+    "yao" -> Right $ ISO_639_2 "yao"
+    "yap" -> Right $ ISO_639_2 "yap"
+    "yid" -> Right $ ISO_639_2 "yid"
+    "yor" -> Right $ ISO_639_2 "yor"
+    "zen" -> Right $ ISO_639_2 "zen"
+    "zgh" -> Right $ ISO_639_2 "zgh"
+    "zha" -> Right $ ISO_639_2 "zha"
+    "zul" -> Right $ ISO_639_2 "zul"
+    "zun" -> Right $ ISO_639_2 "zun"
+    "zza" -> Right $ ISO_639_2 "zza"
     _ -> Left $ "Unknown ISO_639_2: " <> T.unpack txt
 
 iso_639_2ToBytes :: ISO_639_2 -> LBS.ByteString
@@ -48,7 +456,7 @@ languageISO_639_2 lang =
     Abinomn -> Nothing
     Abipon -> Nothing
     Abishira -> Nothing
-    Abkhazian -> Nothing
+    Abkhazian -> Just $ ISO_639_2 "abk"
     Abnaki_Eastern -> Nothing
     Abom -> Nothing
     Abon -> Nothing
@@ -68,33 +476,33 @@ languageISO_639_2 lang =
     Ache -> Nothing
     AcheYi -> Nothing
     Acheron -> Nothing
-    Achinese -> Nothing
+    Achinese -> Just $ ISO_639_2 "ace"
     Achterhooks -> Nothing
     AchuarShiwiar -> Nothing
     Achumawi -> Nothing
     Acipa_Western -> Nothing
-    Acoli -> Nothing
+    Acoli -> Just $ ISO_639_2 "ach"
     Acroa -> Nothing
     Adabe -> Nothing
     Adai -> Nothing
     AdamorobeSignLanguage -> Nothing
     Adang -> Nothing
     Adangbe -> Nothing
-    Adangme -> Nothing
-    Adap -> Nothing
+    Adangme -> Just $ ISO_639_2 "ada"
+    Adap -> Just $ ISO_639_2 "dzo"
     AdasenItneg -> Nothing
     Adele -> Nothing
     Adhola -> Nothing
     Adi -> Nothing
     Adi_Galo -> Nothing
-    AdilabadGondi -> Nothing
+    AdilabadGondi -> Just $ ISO_639_2 "gon"
     Adioukrou -> Nothing
     Adithinngithigh -> Nothing
     AdivasiOriya -> Nothing
     AdiwasiGarasia -> Nothing
     Adonara -> Nothing
     Aduge -> Nothing
-    Adyghe -> Nothing
+    Adyghe -> Just $ ISO_639_2 "ady"
     Adynyamathanha -> Nothing
     Adzera -> Nothing
     Aeka -> Nothing
@@ -102,11 +510,11 @@ languageISO_639_2 lang =
     Aequian -> Nothing
     Aer -> Nothing
     Afade -> Nothing
-    Afar -> Nothing
+    Afar -> Just $ ISO_639_2 "aar"
     AfghanSignLanguage -> Nothing
     Afitti -> Nothing
-    Afrihili -> Nothing
-    Afrikaans -> Nothing
+    Afrihili -> Just $ ISO_639_2 "afh"
+    Afrikaans -> Just $ ISO_639_2 "afr"
     AfroSeminoleCreole -> Nothing
     Agarabi -> Nothing
     Agariya -> Nothing
@@ -132,7 +540,7 @@ languageISO_639_2 lang =
     Ahan -> Nothing
     Ahanta -> Nothing
     Ahe -> Nothing
-    AheriGondi -> Nothing
+    AheriGondi -> Just $ ISO_639_2 "gon"
     Aheu -> Nothing
     Ahirani -> Nothing
     Ahom -> Nothing
@@ -146,7 +554,7 @@ languageISO_639_2 lang =
     Aimol -> Nothing
     Ainbai -> Nothing
     Ainu_China -> Nothing
-    Ainu_Japan -> Nothing
+    Ainu_Japan -> Just $ ISO_639_2 "ain"
     Aiome -> Nothing
     Airoran -> Nothing
     Aiton -> Nothing
@@ -164,7 +572,7 @@ languageISO_639_2 lang =
     AkaKede -> Nothing
     AkaKol -> Nothing
     AkaKora -> Nothing
-    Akan -> Nothing
+    Akan -> Just $ ISO_639_2 "aka"
     AkarBale -> Nothing
     Akaselem -> Nothing
     Akawaio -> Nothing
@@ -174,7 +582,7 @@ languageISO_639_2 lang =
     Akeu -> Nothing
     Akha -> Nothing
     Akhvakh -> Nothing
-    Akkadian -> Nothing
+    Akkadian -> Just $ ISO_639_2 "akk"
     AkkalaSami -> Nothing
     Aklanon -> Nothing
     Akolet -> Nothing
@@ -203,7 +611,7 @@ languageISO_639_2 lang =
     Alapmunte -> Nothing
     Alatil -> Nothing
     Alawa -> Nothing
-    Albanian -> Nothing
+    Albanian -> Just $ ISO_639_2 "alb"
     AlbanianSignLanguage -> Nothing
     Albanian_ArberesheDialect -> Nothing
     Albanian_Arvanitika -> Nothing
@@ -215,7 +623,7 @@ languageISO_639_2 lang =
     Alege -> Nothing
     Alekano -> Nothing
     Alemannic -> Nothing
-    Aleut -> Nothing
+    Aleut -> Just $ ISO_639_2 "ale"
     AlgerianJewishSignLanguage -> Nothing
     AlgerianSignLanguage -> Nothing
     Algonquin -> Nothing
@@ -229,7 +637,7 @@ languageISO_639_2 lang =
     Alsea -> Nothing
     Alta_Northern -> Nothing
     Altai_Northern -> Nothing
-    Altai_Southern -> Nothing
+    Altai_Southern -> Just $ ISO_639_2 "alt"
     AluKurumba -> Nothing
     Alugu -> Nothing
     AlumuTesu -> Nothing
@@ -273,7 +681,7 @@ languageISO_639_2 lang =
     Amerax -> Nothing
     AmericanSignLanguage -> Nothing
     AmganadIfugao -> Nothing
-    Amharic -> Nothing
+    Amharic -> Just $ ISO_639_2 "amh"
     Ami -> Nothing
     Amikoana -> Nothing
     Amis -> Nothing
@@ -295,7 +703,7 @@ languageISO_639_2 lang =
     Anamgura -> Nothing
     Anasi -> Nothing
     Anca -> Nothing
-    AncientGreek -> Nothing
+    AncientGreek -> Just $ ISO_639_2 "grc"
     AncientHebrew -> Nothing
     AncientMacedonian -> Nothing
     AncientNorthArabian -> Nothing
@@ -325,10 +733,10 @@ languageISO_639_2 lang =
     AngalHeneng -> Nothing
     AngamiNaga -> Nothing
     AnggurukYali -> Nothing
-    Angika -> Nothing
+    Angika -> Just $ ISO_639_2 "anp"
     Angkamuthi -> Nothing
     AngloNorman -> Nothing
-    AngloSaxon -> Nothing
+    AngloSaxon -> Just $ ISO_639_2 "ang"
     Angloromani -> Nothing
     Angolar -> Nothing
     Angor -> Nothing
@@ -348,7 +756,7 @@ languageISO_639_2 lang =
     Anserma -> Nothing
     Ansus -> Nothing
     Antakarinya -> Nothing
-    AntankaranaMalagasy -> Nothing
+    AntankaranaMalagasy -> Just $ ISO_639_2 "mlg"
     AntiguaAndBarbudaCreoleEnglish -> Nothing
     Anu -> Nothing
     Anuak -> Nothing
@@ -382,7 +790,7 @@ languageISO_639_2 lang =
     Aquitanian -> Nothing
     Arabana -> Nothing
     Arabela -> Nothing
-    Arabic -> Nothing
+    Arabic -> Just $ ISO_639_2 "ara"
     Arabic_Algerian -> Nothing
     Arabic_AlgerianSaharan -> Nothing
     Arabic_Baharna -> Nothing
@@ -410,24 +818,24 @@ languageISO_639_2 lang =
     Arabic_Tajiki -> Nothing
     Arabic_Uzbeki -> Nothing
     Arafundi -> Nothing
-    Aragonese -> Nothing
+    Aragonese -> Just $ ISO_639_2 "arg"
     Arakanese -> Nothing
     Araki -> Nothing
     Arakwal -> Nothing
     AralleTabulahan -> Nothing
-    Aramaic -> Nothing
+    Aramaic -> Just $ ISO_639_2 "arc"
     Aramanik -> Nothing
     Arammba -> Nothing
     Aranadan -> Nothing
     AranamaTamique -> Nothing
     Arandai -> Nothing
     Araona -> Nothing
-    Arapaho -> Nothing
+    Arapaho -> Just $ ISO_639_2 "arp"
     Arapaso -> Nothing
     Arara_MatoGrosso -> Nothing
     Ararandewara -> Nothing
-    Araucanian -> Nothing
-    Arawak -> Nothing
+    Araucanian -> Just $ ISO_639_2 "arn"
+    Arawak -> Just $ ISO_639_2 "arw"
     Arawete -> Nothing
     Arawum -> Nothing
     Arbore -> Nothing
@@ -456,9 +864,9 @@ languageISO_639_2 lang =
     Aringa -> Nothing
     Arma -> Nothing
     Armazic -> Nothing
-    Armenian -> Nothing
+    Armenian -> Just $ ISO_639_2 "arm"
     ArmenianSignLanguage -> Nothing
-    Aromanian -> Nothing
+    Aromanian -> Just $ ISO_639_2 "rup"
     AropLukep -> Nothing
     AropSissano -> Nothing
     Arosi -> Nothing
@@ -483,12 +891,12 @@ languageISO_639_2 lang =
     Askopan -> Nothing
     Asmat_Yaosakor -> Nothing
     Asoa -> Nothing
-    Assamese -> Nothing
+    Assamese -> Just $ ISO_639_2 "asm"
     Assan -> Nothing
     Assangori -> Nothing
     Assiniboine -> Nothing
     AssyrianNeoAramaic -> Nothing
-    Asturian -> Nothing
+    Asturian -> Just $ ISO_639_2 "ast"
     Asu_Nigeria -> Nothing
     Asu_Tanzania -> Nothing
     AsueAwyu -> Nothing
@@ -536,10 +944,10 @@ languageISO_639_2 lang =
     Auye -> Nothing
     Auyokawa -> Nothing
     AvaCanoeiro -> Nothing
-    Avaric -> Nothing
+    Avaric -> Just $ ISO_639_2 "ava"
     Avatime -> Nothing
     Avau -> Nothing
-    Avestan -> Nothing
+    Avestan -> Just $ ISO_639_2 "ave"
     Avikam -> Nothing
     Avokaya -> Nothing
     Awa -> Nothing
@@ -547,7 +955,7 @@ languageISO_639_2 lang =
     Awa_China -> Nothing
     Awabakal -> Nothing
     AwadBing -> Nothing
-    Awadhi -> Nothing
+    Awadhi -> Just $ ISO_639_2 "awa"
     Awak -> Nothing
     Awar -> Nothing
     Awara -> Nothing
@@ -580,16 +988,16 @@ languageISO_639_2 lang =
     Ayiwo -> Nothing
     Ayizi -> Nothing
     AyizoGbe -> Nothing
-    Aymara -> Nothing
-    Aymara_Central -> Nothing
+    Aymara -> Just $ ISO_639_2 "aym"
+    Aymara_Central -> Just $ ISO_639_2 "aym"
     AyoquescoZapotec -> Nothing
     Ayoreo -> Nothing
     Ayta_Bataan -> Nothing
     Ayta_Sorsogon -> Nothing
     Ayu -> Nothing
     AyutlaMixtec -> Nothing
-    Azerbaijani -> Nothing
-    Azerbaijani_North -> Nothing
+    Azerbaijani -> Just $ ISO_639_2 "aze"
+    Azerbaijani_North -> Just $ ISO_639_2 "aze"
     Azha -> Nothing
     AzheYi -> Nothing
     AzoyuTlapanec -> Nothing
@@ -680,12 +1088,12 @@ languageISO_639_2 lang =
     BalantaGanja -> Nothing
     BalantaKentohe -> Nothing
     Balantak -> Nothing
-    Balau -> Nothing
+    Balau -> Just $ ISO_639_2 "iba"
     Baldemu -> Nothing
     BaliSignLanguage -> Nothing
     Bali_DemocraticRepublicOfCongo -> Nothing
     Bali_Nigeria -> Nothing
-    Balinese -> Nothing
+    Balinese -> Just $ ISO_639_2 "ban"
     BalineseMalay -> Nothing
     BalkanGagauzTurkish -> Nothing
     BalkanRomani -> Nothing
@@ -694,12 +1102,12 @@ languageISO_639_2 lang =
     Balti -> Nothing
     BalticRomani -> Nothing
     BaluanPam -> Nothing
-    Baluchi -> Nothing
+    Baluchi -> Just $ ISO_639_2 "bal"
     BamakoSignLanguage -> Nothing
     Bamali -> Nothing
     Bambalang -> Nothing
     Bambam -> Nothing
-    Bambara -> Nothing
+    Bambara -> Just $ ISO_639_2 "bam"
     Bambassi -> Nothing
     BambiliBambui -> Nothing
     Bamenyam -> Nothing
@@ -747,7 +1155,7 @@ languageISO_639_2 lang =
     Bantik -> Nothing
     Bantoanon -> Nothing
     Baoule -> Nothing
-    BaraMalagasy -> Nothing
+    BaraMalagasy -> Just $ ISO_639_2 "mlg"
     Baraamu -> Nothing
     Barababaraba -> Nothing
     Barai -> Nothing
@@ -761,7 +1169,7 @@ languageISO_639_2 lang =
     Barasana -> Nothing
     Barbacoas -> Nothing
     Barbareno -> Nothing
-    BarclayvilleGrebo -> Nothing
+    BarclayvilleGrebo -> Just $ ISO_639_2 "grb"
     Bardi -> Nothing
     Bare -> Nothing
     Barein -> Nothing
@@ -781,14 +1189,14 @@ languageISO_639_2 lang =
     BarzaniJewishNeoAramaic -> Nothing
     BasaGumna -> Nothing
     BasaGurmana -> Nothing
-    Basa_Cameroon -> Nothing
+    Basa_Cameroon -> Just $ ISO_639_2 "bas"
     Basa_Nigeria -> Nothing
     Basap -> Nothing
     Basay -> Nothing
     Bashkardi -> Nothing
-    Bashkir -> Nothing
+    Bashkir -> Just $ ISO_639_2 "bak"
     Basketo -> Nothing
-    Basque -> Nothing
+    Basque -> Just $ ISO_639_2 "baq"
     Bassa -> Nothing
     BassaKontagora -> Nothing
     Bassari -> Nothing
@@ -848,14 +1256,14 @@ languageISO_639_2 lang =
     Befang -> Nothing
     BegbereEjar -> Nothing
     Beginci -> Nothing
-    Beja -> Nothing
+    Beja -> Just $ ISO_639_2 "bej"
     Bekati -> Nothing
     Bekwarra -> Nothing
     Bekwil -> Nothing
     Belait -> Nothing
     BelandaBor -> Nothing
     BelandaViri -> Nothing
-    Belarusian -> Nothing
+    Belarusian -> Just $ ISO_639_2 "bel"
     BelgianSignLanguage -> Nothing
     Belhariya -> Nothing
     Beli_PapuaNewGuinea -> Nothing
@@ -865,7 +1273,7 @@ languageISO_639_2 lang =
     Bellari -> Nothing
     Belning -> Nothing
     Bemba_DemocraticRepublicOfCongo -> Nothing
-    Bemba_Zambia -> Nothing
+    Bemba_Zambia -> Just $ ISO_639_2 "bem"
     Bembe -> Nothing
     BenTeyDogon -> Nothing
     Bena_Nigeria -> Nothing
@@ -877,7 +1285,7 @@ languageISO_639_2 lang =
     Bendi -> Nothing
     Beng -> Nothing
     Benga -> Nothing
-    Bengali -> Nothing
+    Bengali -> Just $ ISO_639_2 "ben"
     Benggoi -> Nothing
     Bengkulu -> Nothing
     Bentong -> Nothing
@@ -916,7 +1324,7 @@ languageISO_639_2 lang =
     Bhele -> Nothing
     Bhilali -> Nothing
     Bhili -> Nothing
-    Bhojpuri -> Nothing
+    Bhojpuri -> Just $ ISO_639_2 "bho"
     BhotiKinnauri -> Nothing
     Bhunjia -> Nothing
     Biafada -> Nothing
@@ -953,8 +1361,8 @@ languageISO_639_2 lang =
     Bilba -> Nothing
     Bilbil -> Nothing
     Bile -> Nothing
-    Bilin -> Nothing
-    BilmaKanuri -> Nothing
+    Bilin -> Just $ ISO_639_2 "byn"
+    BilmaKanuri -> Just $ ISO_639_2 "kau"
     Biloxi -> Nothing
     Bilua -> Nothing
     Bilur -> Nothing
@@ -967,7 +1375,7 @@ languageISO_639_2 lang =
     Binandere -> Nothing
     Bindal -> Nothing
     Bine -> Nothing
-    Bini -> Nothing
+    Bini -> Just $ ISO_639_2 "bin"
     Binji -> Nothing
     BinonganItneg -> Nothing
     Bintauna -> Nothing
@@ -984,12 +1392,12 @@ languageISO_639_2 lang =
     Birked -> Nothing
     Birri -> Nothing
     Birrpayi -> Nothing
-    Birwa -> Nothing
+    Birwa -> Just $ ISO_639_2 "nso"
     Biseni -> Nothing
     BishnupriyaManipuri -> Nothing
     Bishuo -> Nothing
     Bisis -> Nothing
-    Bislama -> Nothing
+    Bislama -> Just $ ISO_639_2 "bis"
     Bisorio -> Nothing
     Bissa -> Nothing
     Bisu -> Nothing
@@ -1000,7 +1408,7 @@ languageISO_639_2 lang =
     Biyo -> Nothing
     Biyom -> Nothing
     Blablanga -> Nothing
-    Blackfoot -> Nothing
+    Blackfoot -> Just $ ISO_639_2 "bla"
     Blafe -> Nothing
     Blagar -> Nothing
     Blang -> Nothing
@@ -1083,7 +1491,7 @@ languageISO_639_2 lang =
     Boruca -> Nothing
     Boselewa -> Nothing
     Bosngun -> Nothing
-    Bosnian -> Nothing
+    Bosnian -> Just $ ISO_639_2 "bos"
     BoteMajhi -> Nothing
     Botlikh -> Nothing
     BotolanSambal -> Nothing
@@ -1093,12 +1501,12 @@ languageISO_639_2 lang =
     Bozaba -> Nothing
     Bragat -> Nothing
     Brahui -> Nothing
-    Braj -> Nothing
+    Braj -> Just $ ISO_639_2 "bra"
     BrazilianSignLanguage -> Nothing
     BrekKaren -> Nothing
     Brem -> Nothing
     Breri -> Nothing
-    Breton -> Nothing
+    Breton -> Just $ ISO_639_2 "bre"
     Bribri -> Nothing
     BribriSignLanguage -> Nothing
     Brithenig -> Nothing
@@ -1132,7 +1540,7 @@ languageISO_639_2 lang =
     Bugan -> Nothing
     Bugawac -> Nothing
     Bughotu -> Nothing
-    Buginese -> Nothing
+    Buginese -> Just $ ISO_639_2 "bug"
     Buglere -> Nothing
     Bugun -> Nothing
     Buhid -> Nothing
@@ -1148,7 +1556,7 @@ languageISO_639_2 lang =
     Buksa -> Nothing
     Bukusu -> Nothing
     Bukwen -> Nothing
-    Bulgarian -> Nothing
+    Bulgarian -> Just $ ISO_639_2 "bul"
     BulgarianSignLanguage -> Nothing
     Bulgebi -> Nothing
     Buli -> Nothing
@@ -1184,10 +1592,10 @@ languageISO_639_2 lang =
     Burate -> Nothing
     Burduna -> Nothing
     Bure -> Nothing
-    Buriat -> Nothing
+    Buriat -> Just $ ISO_639_2 "bua"
     Burji -> Nothing
     Burmbar -> Nothing
-    Burmese -> Nothing
+    Burmese -> Just $ ISO_639_2 "bur"
     Burmeso -> Nothing
     Buru_Indonesia -> Nothing
     Buru_Nigeria -> Nothing
@@ -1236,7 +1644,7 @@ languageISO_639_2 lang =
     Cacaopera -> Nothing
     CacgiaRoglai -> Nothing
     Cacua -> Nothing
-    Caddo -> Nothing
+    Caddo -> Just $ ISO_639_2 "cad"
     CafundoCreole -> Nothing
     Cagua -> Nothing
     Cahuarano -> Nothing
@@ -1259,7 +1667,7 @@ languageISO_639_2 lang =
     CameroonPidgin -> Nothing
     Camling -> Nothing
     Campalagian -> Nothing
-    CampidaneseSardinian -> Nothing
+    CampidaneseSardinian -> Just $ ISO_639_2 "srd"
     Camsa -> Nothing
     Camtho -> Nothing
     Camunic -> Nothing
@@ -1278,9 +1686,9 @@ languageISO_639_2 lang =
     Caramanta -> Nothing
     Carapana -> Nothing
     Carian -> Nothing
-    Carib -> Nothing
+    Carib -> Just $ ISO_639_2 "car"
     CaribbeanHindustani -> Nothing
-    CaribbeanJavanese -> Nothing
+    CaribbeanJavanese -> Just $ ISO_639_2 "jav"
     Carijona -> Nothing
     CarolinaAlgonquian -> Nothing
     Carolinian -> Nothing
@@ -1292,7 +1700,7 @@ languageISO_639_2 lang =
     CasiguranDumagatAgta -> Nothing
     CasuarinaCoastAsmat -> Nothing
     CataelanoMandaya -> Nothing
-    Catalan -> Nothing
+    Catalan -> Just $ ISO_639_2 "cat"
     CatalanSignLanguage -> Nothing
     Catawba -> Nothing
     Cauca -> Nothing
@@ -1301,7 +1709,7 @@ languageISO_639_2 lang =
     Cayuga -> Nothing
     Cayuse -> Nothing
     CebaaraSenoufo -> Nothing
-    Cebuano -> Nothing
+    Cebuano -> Just $ ISO_639_2 "ceb"
     Celtiberian -> Nothing
     Cemuhi -> Nothing
     Cen -> Nothing
@@ -1316,8 +1724,8 @@ languageISO_639_2 lang =
     CentralCakchiquel -> Nothing
     CentralDusun -> Nothing
     CentralEasternNigerFulfulde -> Nothing
-    CentralGrebo -> Nothing
-    CentralHongshuiheZhuang -> Nothing
+    CentralGrebo -> Just $ ISO_639_2 "grb"
+    CentralHongshuiheZhuang -> Just $ ISO_639_2 "zha"
     CentralHuastecaNahuatl -> Nothing
     CentralHuishuiHmong -> Nothing
     CentralKanuri -> Nothing
@@ -1355,7 +1763,7 @@ languageISO_639_2 lang =
     Chacobo -> Nothing
     ChadianSignLanguage -> Nothing
     Chadong -> Nothing
-    Chagatai -> Nothing
+    Chagatai -> Just $ ISO_639_2 "chg"
     Chaima -> Nothing
     ChajulIxil -> Nothing
     Chak -> Nothing
@@ -1371,7 +1779,7 @@ languageISO_639_2 lang =
     Chambeali -> Nothing
     Chambri -> Nothing
     Chamicuro -> Nothing
-    Chamorro -> Nothing
+    Chamorro -> Just $ ISO_639_2 "cha"
     ChamulaTzotzil -> Nothing
     ChanSantaCruzMaya -> Nothing
     Chane -> Nothing
@@ -1389,7 +1797,7 @@ languageISO_639_2 lang =
     ChayucoMixtec -> Nothing
     ChazumbaMixtec -> Nothing
     Che -> Nothing
-    Chechen -> Nothing
+    Chechen -> Just $ ISO_639_2 "che"
     ChekeHolo -> Nothing
     Chemakum -> Nothing
     ChenalhoTzotzil -> Nothing
@@ -1399,19 +1807,19 @@ languageISO_639_2 lang =
     Chepang -> Nothing
     Chepya -> Nothing
     Cherepon -> Nothing
-    Cherokee -> Nothing
+    Cherokee -> Just $ ISO_639_2 "chr"
     Chesu -> Nothing
     Chetco -> Nothing
     Chewong -> Nothing
-    Cheyenne -> Nothing
+    Cheyenne -> Just $ ISO_639_2 "chy"
     Chhattisgarhi -> Nothing
     Chhintange -> Nothing
     Chhulung -> Nothing
     ChiangmaiSignLanguage -> Nothing
     Chiapanec -> Nothing
-    Chibcha -> Nothing
+    Chibcha -> Just $ ISO_639_2 "chb"
     ChicahuaxtlaTriqui -> Nothing
-    Chichewa -> Nothing
+    Chichewa -> Just $ ISO_639_2 "nya"
     ChichicapanZapotec -> Nothing
     ChichimecaJonaz -> Nothing
     Chickasaw -> Nothing
@@ -1428,17 +1836,17 @@ languageISO_639_2 lang =
     Chimariko -> Nothing
     ChimborazoHighlandQuichua -> Nothing
     Chimila -> Nothing
-    ChinaBuriat -> Nothing
+    ChinaBuriat -> Just $ ISO_639_2 "bua"
     Chinali -> Nothing
     ChinbonChin -> Nothing
     ChinchaQuechua -> Nothing
-    Chinese -> Nothing
+    Chinese -> Just $ ISO_639_2 "chi"
     ChinesePidginEnglish -> Nothing
     ChineseSignLanguage -> Nothing
     Chinook -> Nothing
-    ChinookJargon -> Nothing
+    ChinookJargon -> Just $ ISO_639_2 "chn"
     Chipaya -> Nothing
-    Chipewyan -> Nothing
+    Chipewyan -> Just $ ISO_639_2 "chp"
     Chipiajes -> Nothing
     Chippewa -> Nothing
     ChiquianAncashQuechua -> Nothing
@@ -1453,7 +1861,7 @@ languageISO_639_2 lang =
     ChoapanZapotec -> Nothing
     Chocangacakha -> Nothing
     Chochotec -> Nothing
-    Choctaw -> Nothing
+    Choctaw -> Just $ ISO_639_2 "cho"
     Chodri -> Nothing
     ChokriNaga -> Nothing
     Chokwe -> Nothing
@@ -1468,7 +1876,7 @@ languageISO_639_2 lang =
     Chorti -> Nothing
     ChotheNaga -> Nothing
     Chrau -> Nothing
-    ChuanqiandianClusterMiao -> Nothing
+    ChuanqiandianClusterMiao -> Just $ ISO_639_2 "hmn"
     Chuave -> Nothing
     Chug -> Nothing
     Chuj_SanSebastianCoatan -> Nothing
@@ -1481,11 +1889,11 @@ languageISO_639_2 lang =
     Chung -> Nothing
     Churahi -> Nothing
     Chut -> Nothing
-    Chuukese -> Nothing
+    Chuukese -> Just $ ISO_639_2 "chk"
     Chuvantsy -> Nothing
-    Chuvash -> Nothing
+    Chuvash -> Just $ ISO_639_2 "chv"
     Chuwabu -> Nothing
-    CiGbe -> Nothing
+    CiGbe -> Just $ ISO_639_2 "fon"
     CiaCia -> Nothing
     Cibak -> Nothing
     Cimbrian -> Nothing
@@ -1501,9 +1909,9 @@ languageISO_639_2 lang =
     ClassicalMandaic -> Nothing
     ClassicalMongolian -> Nothing
     ClassicalNahuatl -> Nothing
-    ClassicalNewari -> Nothing
+    ClassicalNewari -> Just $ ISO_639_2 "nwc"
     ClassicalQuechua -> Nothing
-    ClassicalSyriac -> Nothing
+    ClassicalSyriac -> Just $ ISO_639_2 "syc"
     ClassicalTibetan -> Nothing
     Clela -> Nothing
     Coahuilteco -> Nothing
@@ -1540,12 +1948,12 @@ languageISO_639_2 lang =
     Coos -> Nothing
     CopainalaZoque -> Nothing
     CopalaTriqui -> Nothing
-    Coptic -> Nothing
+    Coptic -> Just $ ISO_639_2 "cop"
     Coquille -> Nothing
     Cori -> Nothing
-    Cornish -> Nothing
+    Cornish -> Just $ ISO_639_2 "cor"
     CorongoAncashQuechua -> Nothing
-    Corsican -> Nothing
+    Corsican -> Just $ ISO_639_2 "cos"
     CostaRicanSignLanguage -> Nothing
     CotabatoManobo -> Nothing
     Cotoname -> Nothing
@@ -1554,15 +1962,15 @@ languageISO_639_2 lang =
     Coyaima -> Nothing
     CoyotepecPopoloca -> Nothing
     CoyutlaTotonac -> Nothing
-    Cree -> Nothing
+    Cree -> Just $ ISO_639_2 "cre"
     Cree_Moose -> Nothing
     Cree_Plains -> Nothing
     Cree_Swampy -> Nothing
     Cree_Woods -> Nothing
-    Creek -> Nothing
-    CrimeanTatar -> Nothing
+    Creek -> Just $ ISO_639_2 "mus"
+    CrimeanTatar -> Just $ ISO_639_2 "crh"
     CroatiaSignLanguage -> Nothing
-    Croatian -> Nothing
+    Croatian -> Just $ ISO_639_2 "hrv"
     CrossRiverMbembe -> Nothing
     Crow -> Nothing
     Cruzeno -> Nothing
@@ -1589,7 +1997,7 @@ languageISO_639_2 lang =
     CuyamecalcoMixtec -> Nothing
     Cuyonon -> Nothing
     CwiBwamu -> Nothing
-    Czech -> Nothing
+    Czech -> Just $ ISO_639_2 "cze"
     CzechSignLanguage -> Nothing
     DaaKaili -> Nothing
     DaaiChin -> Nothing
@@ -1616,7 +2024,7 @@ languageISO_639_2 lang =
     Dair -> Nothing
     Dakaka -> Nothing
     Dakka -> Nothing
-    Dakota -> Nothing
+    Dakota -> Just $ ISO_639_2 "dak"
     Dakpakha -> Nothing
     Dalmatian -> Nothing
     DaloaBete -> Nothing
@@ -1632,7 +2040,7 @@ languageISO_639_2 lang =
     DandamiMaria -> Nothing
     Dangaleat -> Nothing
     DangauraTharu -> Nothing
-    Danish -> Nothing
+    Danish -> Just $ ISO_639_2 "dan"
     DanishSignLanguage -> Nothing
     Dano -> Nothing
     Danu -> Nothing
@@ -1643,7 +2051,7 @@ languageISO_639_2 lang =
     DarSilaDaju -> Nothing
     Darai -> Nothing
     DarangDeng -> Nothing
-    Dargwa -> Nothing
+    Dargwa -> Just $ ISO_639_2 "dar"
     Dari_Persian -> Nothing
     Darkhat -> Nothing
     Darkinyung -> Nothing
@@ -1651,7 +2059,7 @@ languageISO_639_2 lang =
     Darlong -> Nothing
     Darmiya -> Nothing
     DaroMatu -> Nothing
-    Darwazi -> Nothing
+    Darwazi -> Just $ ISO_639_2 "per"
     Dass -> Nothing
     Datooga -> Nothing
     Daungwurrung -> Nothing
@@ -1671,7 +2079,7 @@ languageISO_639_2 lang =
     Deccan -> Nothing
     Dedua -> Nothing
     Defaka -> Nothing
-    DefiGbe -> Nothing
+    DefiGbe -> Just $ ISO_639_2 "fon"
     Deg -> Nothing
     Degaru -> Nothing
     Degema -> Nothing
@@ -1703,7 +2111,7 @@ languageISO_639_2 lang =
     Dewoin -> Nothing
     Dezfuli -> Nothing
     Dghwede -> Nothing
-    Dhaiso -> Nothing
+    Dhaiso -> Just $ ISO_639_2 "kam"
     Dhalandji -> Nothing
     Dhangu -> Nothing
     Dhanki -> Nothing
@@ -1739,9 +2147,9 @@ languageISO_639_2 lang =
     Dimbong -> Nothing
     Dime -> Nothing
     Dimir -> Nothing
-    Dimli_IndividualLanguage -> Nothing
+    Dimli_IndividualLanguage -> Just $ ISO_639_2 "zza"
     Ding -> Nothing
-    Dinka -> Nothing
+    Dinka -> Just $ ISO_639_2 "din"
     Diodio -> Nothing
     DirNyamzakMbarimi -> Nothing
     Dirari -> Nothing
@@ -1754,7 +2162,7 @@ languageISO_639_2 lang =
     Ditidaht -> Nothing
     Diuwe -> Nothing
     DiuxiTilantongoMixtec -> Nothing
-    Divehi -> Nothing
+    Divehi -> Just $ ISO_639_2 "div"
     DixonReef -> Nothing
     Dizi -> Nothing
     Djabwurrung -> Nothing
@@ -1778,9 +2186,9 @@ languageISO_639_2 lang =
     Doghoro -> Nothing
     Dogose -> Nothing
     Dogoso -> Nothing
-    Dogri_Generic -> Nothing
-    Dogri_Specific -> Nothing
-    Dogrib -> Nothing
+    Dogri_Generic -> Just $ ISO_639_2 "doi"
+    Dogri_Specific -> Just $ ISO_639_2 "doi"
+    Dogrib -> Just $ ISO_639_2 "dgr"
     DogulDomDogon -> Nothing
     Dohoi -> Nothing
     Doka -> Nothing
@@ -1814,7 +2222,7 @@ languageISO_639_2 lang =
     Doyayo -> Nothing
     Drents -> Nothing
     Drung -> Nothing
-    Duala -> Nothing
+    Duala -> Just $ ISO_639_2 "dua"
     Duano -> Nothing
     Duau -> Nothing
     Dubli -> Nothing
@@ -1850,7 +2258,7 @@ languageISO_639_2 lang =
     DusunDeyah -> Nothing
     DusunMalang -> Nothing
     DusunWitu -> Nothing
-    Dutch -> Nothing
+    Dutch -> Just $ ISO_639_2 "dut"
     DutchSignLanguage -> Nothing
     DuttonWorldSpeedwords -> Nothing
     Duungooma -> Nothing
@@ -1866,13 +2274,13 @@ languageISO_639_2 lang =
     Dyarim -> Nothing
     Dyirbal -> Nothing
     Dyugun -> Nothing
-    Dyula -> Nothing
+    Dyula -> Just $ ISO_639_2 "dyu"
     Dza -> Nothing
     Dzalakha -> Nothing
     Dzando -> Nothing
     DzaoMin -> Nothing
     Dzodinka -> Nothing
-    Dzongkha -> Nothing
+    Dzongkha -> Just $ ISO_639_2 "dzo"
     Dzuungoo -> Nothing
     E -> Nothing
     EarlyTripuri -> Nothing
@@ -1892,14 +2300,14 @@ languageISO_639_2 lang =
     EasternAcipa -> Nothing
     EasternApurimacQuechua -> Nothing
     EasternArrernte -> Nothing
-    EasternBalochi -> Nothing
+    EasternBalochi -> Just $ ISO_639_2 "bal"
     EasternBolivianGuarani -> Nothing
     EasternBontok -> Nothing
     EasternBru -> Nothing
     EasternCakchiquel -> Nothing
     EasternCham -> Nothing
     EasternDurangoNahuatl -> Nothing
-    EasternFrisian -> Nothing
+    EasternFrisian -> Just $ ISO_639_2 "frs"
     EasternGorkhaTamang -> Nothing
     EasternGurung -> Nothing
     EasternHighlandChatino -> Nothing
@@ -1959,19 +2367,19 @@ languageISO_639_2 lang =
     EdwasBonerifBeneraf -> Nothing
     Efai -> Nothing
     Efe -> Nothing
-    Efik -> Nothing
+    Efik -> Just $ ISO_639_2 "efi"
     Efutop -> Nothing
     Ega -> Nothing
     Eggon -> Nothing
     EgyptSignLanguage -> Nothing
-    Egyptian -> Nothing
+    Egyptian -> Just $ ISO_639_2 "egy"
     Ehueun -> Nothing
     Eipomek -> Nothing
     Eitiep -> Nothing
     Ejagham -> Nothing
     Ejamat -> Nothing
     EkaiChin -> Nothing
-    Ekajuk -> Nothing
+    Ekajuk -> Just $ ISO_639_2 "eka"
     Ekari -> Nothing
     Eki -> Nothing
     Ekit -> Nothing
@@ -1980,7 +2388,7 @@ languageISO_639_2 lang =
     ElHugeirat -> Nothing
     ElMolo -> Nothing
     ElNayarCora -> Nothing
-    Elamite -> Nothing
+    Elamite -> Just $ ISO_639_2 "elx"
     Eleme -> Nothing
     Elepi -> Nothing
     Elip -> Nothing
@@ -2015,7 +2423,7 @@ languageISO_639_2 lang =
     Enga -> Nothing
     Engenni -> Nothing
     Enggano -> Nothing
-    English -> Nothing
+    English -> Just $ ISO_639_2 "eng"
     Enim -> Nothing
     Enlhet -> Nothing
     Enrekang -> Nothing
@@ -2037,7 +2445,7 @@ languageISO_639_2 lang =
     Erromintxela -> Nothing
     Ersu -> Nothing
     Eruwa -> Nothing
-    Erzya -> Nothing
+    Erzya -> Just $ ISO_639_2 "myv"
     Esan -> Nothing
     Ese -> Nothing
     EseEjja -> Nothing
@@ -2045,10 +2453,10 @@ languageISO_639_2 lang =
     Eshtehardi -> Nothing
     Esimbi -> Nothing
     Eskayan -> Nothing
-    Esperanto -> Nothing
+    Esperanto -> Just $ ISO_639_2 "epo"
     Esselen -> Nothing
     EstadoDeMexicoOtomi -> Nothing
-    Estonian -> Nothing
+    Estonian -> Just $ ISO_639_2 "est"
     EstonianSignLanguage -> Nothing
     Esuma -> Nothing
     Etchemin -> Nothing
@@ -2069,8 +2477,8 @@ languageISO_639_2 lang =
     Evenki -> Nothing
     Eviya -> Nothing
     EwageNotu -> Nothing
-    Ewe -> Nothing
-    Ewondo -> Nothing
+    Ewe -> Just $ ISO_639_2 "ewe"
+    Ewondo -> Just $ ISO_639_2 "ewo"
     Extremaduran -> Nothing
     Eyak -> Nothing
     Ezaa -> Nothing
@@ -2089,12 +2497,12 @@ languageISO_639_2 lang =
     Fanamaket -> Nothing
     Fanbak -> Nothing
     Fang_Cameroon -> Nothing
-    Fang_EquatorialGuinea -> Nothing
+    Fang_EquatorialGuinea -> Just $ ISO_639_2 "fan"
     Fania -> Nothing
-    Fanti -> Nothing
+    Fanti -> Just $ ISO_639_2 "fat"
     FarWesternMuria -> Nothing
     Farefare -> Nothing
-    Faroese -> Nothing
+    Faroese -> Just $ ISO_639_2 "fao"
     Fas -> Nothing
     Fasu -> Nothing
     Fataleka -> Nothing
@@ -2105,11 +2513,11 @@ languageISO_639_2 lang =
     FernandoPoCreoleEnglish -> Nothing
     Feroge -> Nothing
     FijiHindi -> Nothing
-    Fijian -> Nothing
-    Filipino -> Nothing
+    Fijian -> Just $ ISO_639_2 "fij"
+    Filipino -> Just $ ISO_639_2 "fil"
     FilomenaMataCoahuitlanTotonac -> Nothing
     Finallig -> Nothing
-    Finnish -> Nothing
+    Finnish -> Just $ ISO_639_2 "fin"
     FinnishSignLanguage -> Nothing
     FinnishSwedishSignLanguage -> Nothing
     Finnish_Kven -> Nothing
@@ -2124,7 +2532,7 @@ languageISO_639_2 lang =
     FoiaFoia -> Nothing
     Folopa -> Nothing
     Foma -> Nothing
-    Fon -> Nothing
+    Fon -> Just $ ISO_639_2 "fon"
     Fongoro -> Nothing
     Foodo -> Nothing
     Forak -> Nothing
@@ -2136,10 +2544,10 @@ languageISO_639_2 lang =
     FranciscoLeonZoque -> Nothing
     FrancoProvencal -> Nothing
     Frankish -> Nothing
-    French -> Nothing
+    French -> Just $ ISO_639_2 "fre"
     FrenchSignLanguage -> Nothing
-    Friulian -> Nothing
-    Fulah -> Nothing
+    Friulian -> Just $ ISO_639_2 "fur"
+    Fulah -> Just $ ISO_639_2 "ful"
     Fulfulde_Adamawa -> Nothing
     Fulfulde_Nigerian -> Nothing
     Fuliiru -> Nothing
@@ -2154,7 +2562,7 @@ languageISO_639_2 lang =
     Fwe -> Nothing
     Fyam -> Nothing
     Fyer -> Nothing
-    Ga -> Nothing
+    Ga -> Just $ ISO_639_2 "gaa"
     Gaa -> Nothing
     Gaam -> Nothing
     Gaanda -> Nothing
@@ -2169,7 +2577,7 @@ languageISO_639_2 lang =
     GadeLohar -> Nothing
     Gadjerawang -> Nothing
     Gadsup -> Nothing
-    Gaelic_Scots -> Nothing
+    Gaelic_Scots -> Just $ ISO_639_2 "gla"
     Gafat -> Nothing
     Gagadu -> Nothing
     Gagauz -> Nothing
@@ -2185,13 +2593,13 @@ languageISO_639_2 lang =
     Galela -> Nothing
     Galeya -> Nothing
     Galice -> Nothing
-    Galician -> Nothing
+    Galician -> Just $ ISO_639_2 "glg"
     Galindan -> Nothing
     GallureseSardinian -> Nothing
     Galoli -> Nothing
     GamaleKham -> Nothing
     Gambera -> Nothing
-    GambianWolof -> Nothing
+    GambianWolof -> Just $ ISO_639_2 "wol"
     Gamilaraay -> Nothing
     Gamit -> Nothing
     Gamkonora -> Nothing
@@ -2231,7 +2639,7 @@ languageISO_639_2 lang =
     GawarBati -> Nothing
     Gawwada -> Nothing
     Gayil -> Nothing
-    Gayo -> Nothing
+    Gayo -> Just $ ISO_639_2 "gay"
     Gazi -> Nothing
     Gbagyi -> Nothing
     Gbanu -> Nothing
@@ -2248,12 +2656,12 @@ languageISO_639_2 lang =
     Gbii -> Nothing
     Gbin -> Nothing
     GbiriNiragu -> Nothing
-    GbolooGrebo -> Nothing
+    GbolooGrebo -> Just $ ISO_639_2 "grb"
     GebaKaren -> Nothing
     Gebe -> Nothing
     Gedaged -> Nothing
     Gedeo -> Nothing
-    Geez -> Nothing
+    Geez -> Just $ ISO_639_2 "gez"
     Geji -> Nothing
     GekoKaren -> Nothing
     Gela -> Nothing
@@ -2263,11 +2671,11 @@ languageISO_639_2 lang =
     Gen -> Nothing
     Gende -> Nothing
     Gengle -> Nothing
-    Georgian -> Nothing
+    Georgian -> Just $ ISO_639_2 "geo"
     Gepo -> Nothing
     Gera -> Nothing
     Gerai -> Nothing
-    German -> Nothing
+    German -> Just $ ISO_639_2 "ger"
     GermanSignLanguage -> Nothing
     Geruma -> Nothing
     GeserGorom -> Nothing
@@ -2286,12 +2694,12 @@ languageISO_639_2 lang =
     Ghotuo -> Nothing
     Ghulfan -> Nothing
     Giangan -> Nothing
-    Gibanawa -> Nothing
+    Gibanawa -> Just $ ISO_639_2 "hau"
     Gidar -> Nothing
     Giiwo -> Nothing
     Gikyode -> Nothing
     Gilaki -> Nothing
-    Gilbertese -> Nothing
+    Gilbertese -> Just $ ISO_639_2 "gil"
     Gilima -> Nothing
     Gilyak -> Nothing
     Gimi_EasternHighlands -> Nothing
@@ -2313,7 +2721,7 @@ languageISO_639_2 lang =
     Glavda -> Nothing
     GlioOubi -> Nothing
     Gnau -> Nothing
-    GoanKonkani -> Nothing
+    GoanKonkani -> Just $ ISO_639_2 "kok"
     Goaria -> Nothing
     Gobasi -> Nothing
     Gobu -> Nothing
@@ -2327,7 +2735,7 @@ languageISO_639_2 lang =
     Gola -> Nothing
     Golin -> Nothing
     Golpa -> Nothing
-    Gondi -> Nothing
+    Gondi -> Just $ ISO_639_2 "gon"
     GoneDau -> Nothing
     Gongduk -> Nothing
     Gonja -> Nothing
@@ -2337,10 +2745,10 @@ languageISO_639_2 lang =
     Gorakor -> Nothing
     Gorap -> Nothing
     Goreng -> Nothing
-    Gorontalo -> Nothing
+    Gorontalo -> Just $ ISO_639_2 "gor"
     Gorovu -> Nothing
     Gorowa -> Nothing
-    Gothic -> Nothing
+    Gothic -> Just $ ISO_639_2 "got"
     Goundo -> Nothing
     Gourmanchema -> Nothing
     Gowlan -> Nothing
@@ -2349,7 +2757,7 @@ languageISO_639_2 lang =
     Gozarkhani -> Nothing
     Grangali -> Nothing
     GrassKoiari -> Nothing
-    Grebo -> Nothing
+    Grebo -> Just $ ISO_639_2 "grb"
     GreekSignLanguage -> Nothing
     Greek_Cappadocian -> Nothing
     GreenGelao -> Nothing
@@ -2364,7 +2772,7 @@ languageISO_639_2 lang =
     Guaja -> Nothing
     Guajajara -> Nothing
     Guambiano -> Nothing
-    Guana_Brazil -> Nothing
+    Guana_Brazil -> Just $ ISO_639_2 "ter"
     Guana_Paraguay -> Nothing
     Guanano -> Nothing
     Guanche -> Nothing
@@ -2392,15 +2800,15 @@ languageISO_639_2 lang =
     Guguyimidjir -> Nothing
     GuhuSamane -> Nothing
     GuianeseCreoleFrench -> Nothing
-    GuibeiZhuang -> Nothing
+    GuibeiZhuang -> Just $ ISO_639_2 "zha"
     GuiberouaBete -> Nothing
     GuibianZhuang -> Nothing
     GuilaZapotec -> Nothing
     GuineaBissauSignLanguage -> Nothing
-    GuineaKpelle -> Nothing
+    GuineaKpelle -> Just $ ISO_639_2 "kpe"
     GuineanSignLanguage -> Nothing
     Guiqiong -> Nothing
-    Gujarati -> Nothing
+    Gujarati -> Just $ ISO_639_2 "guj"
     Gujari -> Nothing
     GulaIro -> Nothing
     Gula_CentralAfricanRepublic -> Nothing
@@ -2456,7 +2864,7 @@ languageISO_639_2 lang =
     Gweno -> Nothing
     Gwere -> Nothing
     Gwi -> Nothing
-    Gwichin -> Nothing
+    Gwichin -> Just $ ISO_639_2 "gwi"
     Gyalsumdo -> Nothing
     Gyele -> Nothing
     Gyem -> Nothing
@@ -2467,13 +2875,13 @@ languageISO_639_2 lang =
     Hadza -> Nothing
     Haeke -> Nothing
     Hahon -> Nothing
-    Haida -> Nothing
+    Haida -> Just $ ISO_639_2 "hai"
     Haigwai -> Nothing
     HainyaxoBozo -> Nothing
     Haiom -> Nothing
     HaiphongSignLanguage -> Nothing
     Haisla -> Nothing
-    Haitian -> Nothing
+    Haitian -> Just $ ISO_639_2 "hat"
     HaitianVodounCultureLanguage -> Nothing
     Haji -> Nothing
     Hajong -> Nothing
@@ -2511,18 +2919,18 @@ languageISO_639_2 lang =
     Hassaniyya -> Nothing
     Hatam -> Nothing
     Hattic -> Nothing
-    Hausa -> Nothing
+    Hausa -> Just $ ISO_639_2 "hau"
     HausaSignLanguage -> Nothing
     HavasupaiWalapaiYavapai -> Nothing
     Haveke -> Nothing
     Havu -> Nothing
     HawaiiCreoleEnglish -> Nothing
     HawaiiPidginSignLanguage -> Nothing
-    Hawaiian -> Nothing
+    Hawaiian -> Just $ ISO_639_2 "haw"
     Haya -> Nothing
     Hazaragi -> Nothing
     Hdi -> Nothing
-    Hebrew -> Nothing
+    Hebrew -> Just $ ISO_639_2 "heb"
     Hehe -> Nothing
     Heiban -> Nothing
     Heiltsuk -> Nothing
@@ -2531,7 +2939,7 @@ languageISO_639_2 lang =
     Hema -> Nothing
     Hemba -> Nothing
     Herde -> Nothing
-    Herero -> Nothing
+    Herero -> Just $ ISO_639_2 "her"
     Hermit -> Nothing
     Hernican -> Nothing
     Hertevin -> Nothing
@@ -2547,13 +2955,13 @@ languageISO_639_2 lang =
     HighlandPopoluca -> Nothing
     HighlandTotonac -> Nothing
     Hijuk -> Nothing
-    Hiligaynon -> Nothing
+    Hiligaynon -> Just $ ISO_639_2 "hil"
     Himarima -> Nothing
-    Hindi -> Nothing
+    Hindi -> Just $ ISO_639_2 "hin"
     Hinduri -> Nothing
     Hinukh -> Nothing
-    HiriMotu -> Nothing
-    Hittite -> Nothing
+    HiriMotu -> Just $ ISO_639_2 "hmo"
+    Hittite -> Just $ ISO_639_2 "hit"
     Hitu -> Nothing
     Hiw -> Nothing
     Hixkaryana -> Nothing
@@ -2562,11 +2970,11 @@ languageISO_639_2 lang =
     Hlersu -> Nothing
     Hmar -> Nothing
     Hmong -> Nothing
-    HmongDaw -> Nothing
-    HmongDo -> Nothing
-    HmongDon -> Nothing
-    HmongNjua -> Nothing
-    HmongShua -> Nothing
+    HmongDaw -> Just $ ISO_639_2 "hmn"
+    HmongDo -> Just $ ISO_639_2 "hmn"
+    HmongDon -> Just $ ISO_639_2 "hmn"
+    HmongNjua -> Just $ ISO_639_2 "hmn"
+    HmongShua -> Just $ ISO_639_2 "hmn"
     Hmwaveke -> Nothing
     Ho -> Nothing
     HoChiMinhCitySignLanguage -> Nothing
@@ -2585,7 +2993,7 @@ languageISO_639_2 lang =
     HongKongSignLanguage -> Nothing
     Honi -> Nothing
     Hopi -> Nothing
-    HornedMiao -> Nothing
+    HornedMiao -> Just $ ISO_639_2 "hmn"
     Horo -> Nothing
     Horom -> Nothing
     Horpa -> Nothing
@@ -2630,7 +3038,7 @@ languageISO_639_2 lang =
     Hunde -> Nothing
     Hung -> Nothing
     Hungana -> Nothing
-    Hungarian -> Nothing
+    Hungarian -> Just $ ISO_639_2 "hun"
     HungarianSignLanguage -> Nothing
     Hungu -> Nothing
     Hungworo -> Nothing
@@ -2638,7 +3046,7 @@ languageISO_639_2 lang =
     Hunnic -> Nothing
     Hunsrik -> Nothing
     Hunzib -> Nothing
-    Hupa -> Nothing
+    Hupa -> Just $ ISO_639_2 "hup"
     Hupde -> Nothing
     Hupla -> Nothing
     Hurrian -> Nothing
@@ -2654,7 +3062,7 @@ languageISO_639_2 lang =
     Iau -> Nothing
     IbaliTeke -> Nothing
     Ibaloi -> Nothing
-    Iban -> Nothing
+    Iban -> Just $ ISO_639_2 "iba"
     Ibanag -> Nothing
     Ibani -> Nothing
     Ibatan -> Nothing
@@ -2664,7 +3072,7 @@ languageISO_639_2 lang =
     Ibino -> Nothing
     Ibu -> Nothing
     Ibuoro -> Nothing
-    Icelandic -> Nothing
+    Icelandic -> Just $ ISO_639_2 "ice"
     IcelandicSignLanguage -> Nothing
     IceveMaci -> Nothing
     Idaan -> Nothing
@@ -2673,7 +3081,7 @@ languageISO_639_2 lang =
     Idere -> Nothing
     Idesa -> Nothing
     Idi -> Nothing
-    Ido -> Nothing
+    Ido -> Just $ ISO_639_2 "ido"
     Idoma -> Nothing
     Idon -> Nothing
     IduMishmi -> Nothing
@@ -2683,7 +3091,7 @@ languageISO_639_2 lang =
     Ifo -> Nothing
     Igala -> Nothing
     Igana -> Nothing
-    Igbo -> Nothing
+    Igbo -> Just $ ISO_639_2 "ibo"
     Igede -> Nothing
     Ignaciano -> Nothing
     Igo -> Nothing
@@ -2714,7 +3122,7 @@ languageISO_639_2 lang =
     IlianenManobo -> Nothing
     Iliuun -> Nothing
     Illyrian -> Nothing
-    Iloko -> Nothing
+    Iloko -> Just $ ISO_639_2 "ilo"
     Ilongot -> Nothing
     Ilue -> Nothing
     ImbaburaHighlandQuichua -> Nothing
@@ -2726,10 +3134,10 @@ languageISO_639_2 lang =
     Inabaknon -> Nothing
     Inapang -> Nothing
     Inapari -> Nothing
-    InariSami -> Nothing
+    InariSami -> Just $ ISO_639_2 "smn"
     IndianSignLanguage -> Nothing
     IndoPortuguese -> Nothing
-    Indonesian -> Nothing
+    Indonesian -> Just $ ISO_639_2 "ind"
     IndonesianBajau -> Nothing
     IndonesianSignLanguage -> Nothing
     Indri -> Nothing
@@ -2739,23 +3147,23 @@ languageISO_639_2 lang =
     Ineseno -> Nothing
     Inga -> Nothing
     Ingrian -> Nothing
-    Ingush -> Nothing
+    Ingush -> Just $ ISO_639_2 "inh"
     InlaodItneg -> Nothing
     InokeYate -> Nothing
     Inonhan -> Nothing
     Inor -> Nothing
     InpuiNaga -> Nothing
     Interglossa -> Nothing
-    Interlingua -> Nothing
-    Interlingue -> Nothing
+    Interlingua -> Just $ ISO_639_2 "ina"
+    Interlingue -> Just $ ISO_639_2 "ile"
     InternationalSign -> Nothing
     Interslavic -> Nothing
     Intha -> Nothing
     InuitSignLanguage -> Nothing
-    Inuktitut -> Nothing
-    Inuktitut_EasternCanadian -> Nothing
-    Inuktitut_WesternCanadian -> Nothing
-    Inupiaq -> Nothing
+    Inuktitut -> Just $ ISO_639_2 "iku"
+    Inuktitut_EasternCanadian -> Just $ ISO_639_2 "iku"
+    Inuktitut_WesternCanadian -> Just $ ISO_639_2 "iku"
+    Inupiaq -> Just $ ISO_639_2 "ipk"
     IowaOto -> Nothing
     IpekaTapuia -> Nothing
     Ipiko -> Nothing
@@ -2773,7 +3181,7 @@ languageISO_639_2 lang =
     Iresim -> Nothing
     IrigaBicolano -> Nothing
     Irigwe -> Nothing
-    Irish -> Nothing
+    Irish -> Just $ ISO_639_2 "gle"
     IrishSignLanguage -> Nothing
     Irula -> Nothing
     Isabi -> Nothing
@@ -2799,7 +3207,7 @@ languageISO_639_2 lang =
     IstroRomanian -> Nothing
     Isu_FakoDivision -> Nothing
     Isu_MenchumDivision -> Nothing
-    Italian -> Nothing
+    Italian -> Just $ ISO_639_2 "ita"
     ItalianSignLanguage -> Nothing
     Itawit -> Nothing
     Itelmen -> Nothing
@@ -2856,7 +3264,7 @@ languageISO_639_2 lang =
     Jandavra -> Nothing
     Jangshung -> Nothing
     Janji -> Nothing
-    Japanese -> Nothing
+    Japanese -> Just $ ISO_639_2 "jpn"
     JapaneseSignLanguage -> Nothing
     Japreria -> Nothing
     Jaqaru -> Nothing
@@ -2869,7 +3277,7 @@ languageISO_639_2 lang =
     Jaruara -> Nothing
     JaujaWancaQuechua -> Nothing
     Jaunsari -> Nothing
-    Javanese -> Nothing
+    Javanese -> Just $ ISO_639_2 "jav"
     Javindo -> Nothing
     Jawe -> Nothing
     Jaya -> Nothing
@@ -2897,7 +3305,7 @@ languageISO_639_2 lang =
     Jimi_Cameroon -> Nothing
     Jimi_Nigeria -> Nothing
     Jina -> Nothing
-    Jingpho -> Nothing
+    Jingpho -> Just $ ISO_639_2 "kac"
     JinyuChinese -> Nothing
     JiongnaiBunu -> Nothing
     Jirel -> Nothing
@@ -2917,13 +3325,13 @@ languageISO_639_2 lang =
     JoyabajQuiche -> Nothing
     Ju -> Nothing
     Juang -> Nothing
-    JudeoArabic -> Nothing
+    JudeoArabic -> Just $ ISO_639_2 "jrb"
     JudeoBerber -> Nothing
     JudeoCrimeanTatar -> Nothing
     JudeoGeorgian -> Nothing
     JudeoIraqiArabic -> Nothing
     JudeoItalian -> Nothing
-    JudeoPersian -> Nothing
+    JudeoPersian -> Just $ ISO_639_2 "jpr"
     JudeoTat -> Nothing
     JudeoTripolitanianArabic -> Nothing
     Juhoan -> Nothing
@@ -2950,7 +3358,7 @@ languageISO_639_2 lang =
     KabaDeme -> Nothing
     KabaNa -> Nothing
     Kabalai -> Nothing
-    Kabardian -> Nothing
+    Kabardian -> Just $ ISO_639_2 "kbd"
     Kabatei -> Nothing
     Kabixi -> Nothing
     Kabiye -> Nothing
@@ -2962,7 +3370,7 @@ languageISO_639_2 lang =
     Kabuverdianu -> Nothing
     Kabwa -> Nothing
     Kabwari -> Nothing
-    Kabyle -> Nothing
+    Kabyle -> Just $ ISO_639_2 "kab"
     KachamaGanjule -> Nothing
     Kachari -> Nothing
     Kachchi -> Nothing
@@ -3023,7 +3431,7 @@ languageISO_639_2 lang =
     Kako -> Nothing
     Kakwa -> Nothing
     KalaLagawYa -> Nothing
-    Kalaallisut -> Nothing
+    Kalaallisut -> Just $ ISO_639_2 "kal"
     Kalaamaya -> Nothing
     Kalabakan -> Nothing
     Kalabari -> Nothing
@@ -3043,7 +3451,7 @@ languageISO_639_2 lang =
     KalispelPendDoreille -> Nothing
     Kalkoti -> Nothing
     Kalkutungu -> Nothing
-    Kalmyk -> Nothing
+    Kalmyk -> Just $ ISO_639_2 "xal"
     KaloFinnishRomani -> Nothing
     Kalou -> Nothing
     Kaluli -> Nothing
@@ -3063,7 +3471,7 @@ languageISO_639_2 lang =
     Kamayo -> Nothing
     Kamayura -> Nothing
     Kamba_Brazil -> Nothing
-    Kamba_Kenya -> Nothing
+    Kamba_Kenya -> Just $ ISO_639_2 "kam"
     Kambaata -> Nothing
     Kambaira -> Nothing
     Kambera -> Nothing
@@ -3086,7 +3494,7 @@ languageISO_639_2 lang =
     Kandas -> Nothing
     Kandawo -> Nothing
     Kande -> Nothing
-    Kanembu -> Nothing
+    Kanembu -> Just $ ISO_639_2 "kbl"
     Kang -> Nothing
     Kanga -> Nothing
     Kangean -> Nothing
@@ -3105,14 +3513,14 @@ languageISO_639_2 lang =
     Kanjari -> Nothing
     Kanju -> Nothing
     Kankanaey -> Nothing
-    Kannada -> Nothing
+    Kannada -> Just $ ISO_639_2 "kan"
     Kanoe -> Nothing
     Kanowit -> Nothing
     Kansa -> Nothing
     Kantosi -> Nothing
     Kanu -> Nothing
     Kanufi -> Nothing
-    Kanuri -> Nothing
+    Kanuri -> Just $ ISO_639_2 "kau"
     Kanyok -> Nothing
     Kao -> Nothing
     Kaonde -> Nothing
@@ -3127,14 +3535,14 @@ languageISO_639_2 lang =
     Kara_Korea -> Nothing
     Kara_PapuaNewGuinea -> Nothing
     Kara_Tanzania -> Nothing
-    KarachayBalkar -> Nothing
+    KarachayBalkar -> Just $ ISO_639_2 "krc"
     Karadjeri -> Nothing
     KaragaMandaya -> Nothing
     Karagas -> Nothing
     Karahawyana -> Nothing
     Karaim -> Nothing
     Karaja -> Nothing
-    Karakalpak -> Nothing
+    Karakalpak -> Just $ ISO_639_2 "kaa"
     Karakhanid -> Nothing
     Karami -> Nothing
     Karamojong -> Nothing
@@ -3149,7 +3557,7 @@ languageISO_639_2 lang =
     Kare_CentralAfricanRepublic -> Nothing
     Kare_PapuaNewGuinea -> Nothing
     Karekare -> Nothing
-    Karelian -> Nothing
+    Karelian -> Just $ ISO_639_2 "krl"
     Karenggapa -> Nothing
     Karey -> Nothing
     Kari -> Nothing
@@ -3176,8 +3584,8 @@ languageISO_639_2 lang =
     Kasanga -> Nothing
     Kasem -> Nothing
     Kashaya -> Nothing
-    Kashmiri -> Nothing
-    Kashubian -> Nothing
+    Kashmiri -> Just $ ISO_639_2 "kas"
+    Kashubian -> Just $ ISO_639_2 "csb"
     Kasiguranin -> Nothing
     Kaska -> Nothing
     Kaskean -> Nothing
@@ -3208,7 +3616,7 @@ languageISO_639_2 lang =
     Kawacha -> Nothing
     Kawaiisu -> Nothing
     Kawe -> Nothing
-    Kawi -> Nothing
+    Kawi -> Just $ ISO_639_2 "kaw"
     Kaxarari -> Nothing
     Kaxuiana -> Nothing
     Kayabi -> Nothing
@@ -3226,7 +3634,7 @@ languageISO_639_2 lang =
     Kaytetye -> Nothing
     KayuAgung -> Nothing
     Kayupulau -> Nothing
-    Kazakh -> Nothing
+    Kazakh -> Just $ ISO_639_2 "kaz"
     Kazukuru -> Nothing
     Keak -> Nothing
     Keapara -> Nothing
@@ -3310,7 +3718,7 @@ languageISO_639_2 lang =
     KharamNaga -> Nothing
     Kharia -> Nothing
     KhariaThar -> Nothing
-    Khasi -> Nothing
+    Khasi -> Just $ ISO_639_2 "kha"
     Khayo -> Nothing
     Khazar -> Nothing
     Khe -> Nothing
@@ -3324,14 +3732,14 @@ languageISO_639_2 lang =
     Khisa -> Nothing
     Khlor -> Nothing
     Khlula -> Nothing
-    Khmer -> Nothing
+    Khmer -> Just $ ISO_639_2 "khm"
     Khmu -> Nothing
     KhoibuNaga -> Nothing
     Khoini -> Nothing
     Kholok -> Nothing
     KhorasaniTurkish -> Nothing
     KhorezmianTurkic -> Nothing
-    Khotanese -> Nothing
+    Khotanese -> Just $ ISO_639_2 "kho"
     Khowar -> Nothing
     Khua -> Nothing
     Khuen -> Nothing
@@ -3345,7 +3753,7 @@ languageISO_639_2 lang =
     Kiche -> Nothing
     Kickapoo -> Nothing
     Kikai -> Nothing
-    Kikuyu -> Nothing
+    Kikuyu -> Just $ ISO_639_2 "kik"
     KildinSami -> Nothing
     Kilivila -> Nothing
     Kiliwa -> Nothing
@@ -3355,7 +3763,7 @@ languageISO_639_2 lang =
     Kimaama -> Nothing
     Kimaragang -> Nothing
     Kimbu -> Nothing
-    Kimbundu -> Nothing
+    Kimbundu -> Just $ ISO_639_2 "kmb"
     Kimki -> Nothing
     Kimre -> Nothing
     Kinabalian -> Nothing
@@ -3365,7 +3773,7 @@ languageISO_639_2 lang =
     Kinnauri -> Nothing
     Kintaq -> Nothing
     Kinuku -> Nothing
-    Kinyarwanda -> Nothing
+    Kinyarwanda -> Just $ ISO_639_2 "kin"
     Kioko -> Nothing
     Kiong -> Nothing
     Kiorr -> Nothing
@@ -3376,7 +3784,7 @@ languageISO_639_2 lang =
     Kire -> Nothing
     Kirike -> Nothing
     Kirikiri -> Nothing
-    Kirmanjki_IndividualLanguage -> Nothing
+    Kirmanjki_IndividualLanguage -> Just $ ISO_639_2 "zza"
     KiryaKonzel -> Nothing
     Kis -> Nothing
     Kisa -> Nothing
@@ -3397,7 +3805,7 @@ languageISO_639_2 lang =
     KlamathModoc -> Nothing
     Klao -> Nothing
     KliasRiverKadazan -> Nothing
-    Klingon -> Nothing
+    Klingon -> Just $ ISO_639_2 "tlh"
     Knaanic -> Nothing
     Ko -> Nothing
     Koalib -> Nothing
@@ -3469,20 +3877,20 @@ languageISO_639_2 lang =
     Konda -> Nothing
     KondaDora -> Nothing
     Koneraw -> Nothing
-    Kongo -> Nothing
+    Kongo -> Just $ ISO_639_2 "kon"
     Konjo -> Nothing
-    Konkani_Generic -> Nothing
+    Konkani_Generic -> Just $ ISO_639_2 "kok"
     Konkani_Specific -> Nothing
     Konkomba -> Nothing
     Konni -> Nothing
-    Kono_Guinea -> Nothing
+    Kono_Guinea -> Just $ ISO_639_2 "kpe"
     Kono_Nigeria -> Nothing
     Kono_SierraLeone -> Nothing
     Konomala -> Nothing
     Konongo -> Nothing
     KonyakNaga -> Nothing
     KonyankaManinka -> Nothing
-    Koongo -> Nothing
+    Koongo -> Just $ ISO_639_2 "kon"
     Koonzime -> Nothing
     Koorete -> Nothing
     Kopar -> Nothing
@@ -3492,8 +3900,8 @@ languageISO_639_2 lang =
     Koraku -> Nothing
     Korana -> Nothing
     Korandje -> Nothing
-    Korean -> Nothing
-    KoreanSignLanguage -> Nothing
+    Korean -> Just $ ISO_639_2 "kor"
+    KoreanSignLanguage -> Just $ ISO_639_2 "sgn"
     Koreguaje -> Nothing
     KoreshERostam -> Nothing
     Korku -> Nothing
@@ -3521,7 +3929,7 @@ languageISO_639_2 lang =
     KosarekYale -> Nothing
     Kosena -> Nothing
     Koshin -> Nothing
-    Kosraean -> Nothing
+    Kosraean -> Just $ ISO_639_2 "kos"
     KotaBangunKutaiMalay -> Nothing
     KotaMaruduTalantang -> Nothing
     KotaMaruduTinagas -> Nothing
@@ -3550,8 +3958,8 @@ languageISO_639_2 lang =
     Kpati -> Nothing
     Kpatili -> Nothing
     Kpeego -> Nothing
-    Kpelle -> Nothing
-    Kpessi -> Nothing
+    Kpelle -> Just $ ISO_639_2 "kpe"
+    Kpessi -> Just $ ISO_639_2 "ewe"
     Kplang -> Nothing
     Krache -> Nothing
     Kraho -> Nothing
@@ -3577,7 +3985,7 @@ languageISO_639_2 lang =
     Kuan -> Nothing
     Kuanhua -> Nothing
     Kuanua -> Nothing
-    Kuanyama -> Nothing
+    Kuanyama -> Just $ ISO_639_2 "kua"
     Kubachi -> Nothing
     Kube -> Nothing
     Kubi -> Nothing
@@ -3631,7 +4039,7 @@ languageISO_639_2 lang =
     Kumhali -> Nothing
     Kumiai -> Nothing
     Kumukio -> Nothing
-    Kumyk -> Nothing
+    Kumyk -> Just $ ISO_639_2 "kum"
     Kumzari -> Nothing
     Kunama -> Nothing
     Kunbarlang -> Nothing
@@ -3664,7 +4072,7 @@ languageISO_639_2 lang =
     KuraEdeNago -> Nothing
     Kurama -> Nothing
     Kuranko -> Nothing
-    Kurdish -> Nothing
+    Kurdish -> Just $ ISO_639_2 "kur"
     Kuri -> Nothing
     Kuria -> Nothing
     Kurichiya -> Nothing
@@ -3683,7 +4091,7 @@ languageISO_639_2 lang =
     Kusu -> Nothing
     Kusunda -> Nothing
     KutangGhale -> Nothing
-    Kutenai -> Nothing
+    Kutenai -> Just $ ISO_639_2 "kut"
     Kutep -> Nothing
     Kuthant -> Nothing
     Kutto -> Nothing
@@ -3741,11 +4149,11 @@ languageISO_639_2 lang =
     Kyenele -> Nothing
     Kyenga -> Nothing
     Kyerung -> Nothing
-    Kyrgyz -> Nothing
+    Kyrgyz -> Just $ ISO_639_2 "kir"
     LaaLaaBwamu -> Nothing
     Laadan -> Nothing
     Laal -> Nothing
-    Laari -> Nothing
+    Laari -> Just $ ISO_639_2 "kon"
     Laba -> Nothing
     Label -> Nothing
     Labi -> Nothing
@@ -3761,7 +4169,7 @@ languageISO_639_2 lang =
     LachixioZapotec -> Nothing
     Ladakhi -> Nothing
     Ladin -> Nothing
-    Ladino -> Nothing
+    Ladino -> Just $ ISO_639_2 "lad"
     LadjiLadji -> Nothing
     LaekoLibuat -> Nothing
     Lafofa -> Nothing
@@ -3771,7 +4179,7 @@ languageISO_639_2 lang =
     Laha_Indonesia -> Nothing
     Laha_VietNam -> Nothing
     Lahanan -> Nothing
-    Lahnda -> Nothing
+    Lahnda -> Just $ ISO_639_2 "lah"
     LahtaKaren -> Nothing
     Lahu -> Nothing
     LahuShi -> Nothing
@@ -3805,7 +4213,7 @@ languageISO_639_2 lang =
     Lamam -> Nothing
     Lamang -> Nothing
     Lamatuka -> Nothing
-    Lamba -> Nothing
+    Lamba -> Just $ ISO_639_2 "lam"
     Lambadi -> Nothing
     LambayequeQuechua -> Nothing
     Lambichhong -> Nothing
@@ -3839,7 +4247,7 @@ languageISO_639_2 lang =
     Lanima -> Nothing
     Lanoh -> Nothing
     Lantanai -> Nothing
-    Lao -> Nothing
+    Lao -> Just $ ISO_639_2 "lao"
     LaoNaga -> Nothing
     Laomian -> Nothing
     Laopang -> Nothing
@@ -3862,10 +4270,10 @@ languageISO_639_2 lang =
     Lasi -> Nothing
     LateMiddleChinese -> Nothing
     Latgalian -> Nothing
-    Latin -> Nothing
+    Latin -> Just $ ISO_639_2 "lat"
     Latu -> Nothing
     Latunde -> Nothing
-    Latvian -> Nothing
+    Latvian -> Just $ ISO_639_2 "lav"
     LatvianSignLanguage -> Nothing
     Lau -> Nothing
     Laua -> Nothing
@@ -3937,14 +4345,14 @@ languageISO_639_2 lang =
     Lewo -> Nothing
     LewoEleng -> Nothing
     Lewotobi -> Nothing
-    Lezghian -> Nothing
+    Lezghian -> Just $ ISO_639_2 "lez"
     Lhokpu -> Nothing
     Lhomi -> Nothing
     Liabuku -> Nothing
     LianaSeti -> Nothing
     LiangmaiNaga -> Nothing
-    LianshanZhuang -> Nothing
-    LiberiaKpelle -> Nothing
+    LianshanZhuang -> Just $ ISO_639_2 "zha"
+    LiberiaKpelle -> Just $ ISO_639_2 "kpe"
     LiberianEnglish -> Nothing
     Libido -> Nothing
     Libinza -> Nothing
@@ -3968,14 +4376,14 @@ languageISO_639_2 lang =
     Limassa -> Nothing
     Limbu -> Nothing
     Limbum -> Nothing
-    LimburganLimburgish -> Nothing
+    LimburganLimburgish -> Just $ ISO_639_2 "lim"
     LimiYi -> Nothing
     Limilngan -> Nothing
     LimosKalinga -> Nothing
     Limousin -> Nothing
     Lindu -> Nothing
     LinearA -> Nothing
-    Lingala -> Nothing
+    Lingala -> Just $ ISO_639_2 "lin"
     Lingao -> Nothing
     Lingarak -> Nothing
     Lingkhim -> Nothing
@@ -3992,11 +4400,11 @@ languageISO_639_2 lang =
     LishanidNoshan -> Nothing
     Lisu -> Nothing
     LiteraryChinese -> Nothing
-    Lithuanian -> Nothing
+    Lithuanian -> Just $ ISO_639_2 "lit"
     LithuanianSignLanguage -> Nothing
     Litzlitz -> Nothing
-    LiujiangZhuang -> Nothing
-    LiuqianZhuang -> Nothing
+    LiujiangZhuang -> Just $ ISO_639_2 "zha"
+    LiuqianZhuang -> Just $ ISO_639_2 "zha"
     Liv_Onian -> Nothing
     Livvi -> Nothing
     Loarki -> Nothing
@@ -4009,9 +4417,9 @@ languageISO_639_2 lang =
     Logol -> Nothing
     Logooli -> Nothing
     Logorik -> Nothing
-    LogudoreseSardinian -> Nothing
+    LogudoreseSardinian -> Just $ ISO_639_2 "srd"
     LojaHighlandQuichua -> Nothing
-    Lojban -> Nothing
+    Lojban -> Just $ ISO_639_2 "jbo"
     Lokaa -> Nothing
     Loko -> Nothing
     Lokoya -> Nothing
@@ -4052,7 +4460,7 @@ languageISO_639_2 lang =
     Loun -> Nothing
     LoupA -> Nothing
     LoupB -> Nothing
-    LowGerman -> Nothing
+    LowGerman -> Just $ ISO_639_2 "nds"
     Lowa -> Nothing
     LowerBurdekin -> Nothing
     LowerChehalis -> Nothing
@@ -4060,7 +4468,7 @@ languageISO_639_2 lang =
     LowerNossob -> Nothing
     LowerPokomo -> Nothing
     LowerSilesian -> Nothing
-    LowerSorbian -> Nothing
+    LowerSorbian -> Just $ ISO_639_2 "dsb"
     LowerSouthernAranda -> Nothing
     LowerTanana -> Nothing
     LowerTanudanKalinga -> Nothing
@@ -4068,12 +4476,12 @@ languageISO_639_2 lang =
     LowlandOaxacaChontal -> Nothing
     LowlandTarahumara -> Nothing
     LoxichaZapotec -> Nothing
-    Lozi -> Nothing
+    Lozi -> Just $ ISO_639_2 "loz"
     Lu -> Nothing
     Lua -> Nothing
     Luang -> Nothing
-    LubaKatanga -> Nothing
-    LubaLulua -> Nothing
+    LubaKatanga -> Just $ ISO_639_2 "lub"
+    LubaLulua -> Just $ ISO_639_2 "lua"
     Lubila -> Nothing
     Lubu -> Nothing
     LubuaganKalinga -> Nothing
@@ -4081,31 +4489,31 @@ languageISO_639_2 lang =
     Lucumi -> Nothing
     Ludian -> Nothing
     Lufu -> Nothing
-    Luganda -> Nothing
+    Luganda -> Just $ ISO_639_2 "lug"
     Lugbara -> Nothing
     Luguru -> Nothing
     Luhu -> Nothing
     Lui -> Nothing
     Luimbi -> Nothing
-    Luiseno -> Nothing
+    Luiseno -> Just $ ISO_639_2 "lui"
     Lukpa -> Nothing
     Lule -> Nothing
-    LuleSami -> Nothing
+    LuleSami -> Just $ ISO_639_2 "smj"
     LumbaYakkha -> Nothing
     Lumbee -> Nothing
     Lumbu -> Nothing
     Lumun -> Nothing
     Luna -> Nothing
     Lunanakha -> Nothing
-    Lunda -> Nothing
+    Lunda -> Just $ ISO_639_2 "lun"
     Lundayeh -> Nothing
     Lungga -> Nothing
     Luo -> Nothing
-    Luo_KenyaAndTanzania -> Nothing
+    Luo_KenyaAndTanzania -> Just $ ISO_639_2 "luo"
     LuopoheHmong -> Nothing
     Luri -> Nothing
     Lusengo -> Nothing
-    Lushai -> Nothing
+    Lushai -> Just $ ISO_639_2 "lus"
     Lushootseed -> Nothing
     Lusi -> Nothing
     Lusitanian -> Nothing
@@ -4113,7 +4521,7 @@ languageISO_639_2 lang =
     Luvale -> Nothing
     Luwati -> Nothing
     Luwo -> Nothing
-    Luxembourgish -> Nothing
+    Luxembourgish -> Just $ ISO_639_2 "ltz"
     Luyana -> Nothing
     Luyia -> Nothing
     Lwalu -> Nothing
@@ -4128,7 +4536,7 @@ languageISO_639_2 lang =
     Maa -> Nothing
     Maaka -> Nothing
     Maanyan -> Nothing
-    MaasinaFulfulde -> Nothing
+    MaasinaFulfulde -> Just $ ISO_639_2 "ful"
     Maay -> Nothing
     Maba_Chad -> Nothing
     Maba_Indonesia -> Nothing
@@ -4140,7 +4548,7 @@ languageISO_639_2 lang =
     Macaguaje -> Nothing
     Macaguan -> Nothing
     Macanese -> Nothing
-    Macedonian -> Nothing
+    Macedonian -> Just $ ISO_639_2 "mac"
     Machame -> Nothing
     Machiguenga -> Nothing
     Machinere -> Nothing
@@ -4158,7 +4566,7 @@ languageISO_639_2 lang =
     Madi -> Nothing
     Madngele -> Nothing
     MadukayangKalinga -> Nothing
-    Madurese -> Nothing
+    Madurese -> Just $ ISO_639_2 "mad"
     Mae -> Nothing
     Maek -> Nothing
     MaengItneg -> Nothing
@@ -4167,7 +4575,7 @@ languageISO_639_2 lang =
     MagAnchiAyta -> Nothing
     MagIndiAyta -> Nothing
     Magahat -> Nothing
-    Magahi -> Nothing
+    Magahi -> Just $ ISO_639_2 "mag"
     MagdalenaPenascoMixtec -> Nothing
     Maghdi -> Nothing
     Magi_MadangProvince -> Nothing
@@ -4176,7 +4584,7 @@ languageISO_639_2 lang =
     Magori -> Nothing
     Maguindanao -> Nothing
     MahakamKenyah -> Nothing
-    Mahali -> Nothing
+    Mahali -> Just $ ISO_639_2 "sat"
     MaharastriPrakrit -> Nothing
     MahasuPahari -> Nothing
     Mahei -> Nothing
@@ -4193,7 +4601,7 @@ languageISO_639_2 lang =
     Mainfrankisch -> Nothing
     Mairasi -> Nothing
     Maisin -> Nothing
-    Maithili -> Nothing
+    Maithili -> Just $ ISO_639_2 "mai"
     Maiwa_Indonesia -> Nothing
     Maiwa_PapuaNewGuinea -> Nothing
     Maiwala -> Nothing
@@ -4207,7 +4615,7 @@ languageISO_639_2 lang =
     Makah -> Nothing
     Makalero -> Nothing
     Makasae -> Nothing
-    Makasar -> Nothing
+    Makasar -> Just $ ISO_639_2 "mak"
     MakassarMalay -> Nothing
     Makayam -> Nothing
     Makhuwa -> Nothing
@@ -4232,7 +4640,7 @@ languageISO_639_2 lang =
     Mala_PapuaNewGuinea -> Nothing
     MalaccanCreoleMalay -> Nothing
     MalaccanCreolePortuguese -> Nothing
-    Malagasy -> Nothing
+    Malagasy -> Just $ ISO_639_2 "mlg"
     Malakhel -> Nothing
     Malakote -> Nothing
     Malalamai -> Nothing
@@ -4247,9 +4655,9 @@ languageISO_639_2 lang =
     MalawiLomwe -> Nothing
     MalawiSena -> Nothing
     MalawianSignLanguage -> Nothing
-    Malay_Generic -> Nothing
-    Malay_IndividualLanguage -> Nothing
-    Malayalam -> Nothing
+    Malay_Generic -> Just $ ISO_639_2 "may"
+    Malay_IndividualLanguage -> Just $ ISO_639_2 "may"
+    Malayalam -> Just $ ISO_639_2 "mal"
     MalayicDayak -> Nothing
     Malaynon -> Nothing
     Malayo -> Nothing
@@ -4273,7 +4681,7 @@ languageISO_639_2 lang =
     Malinguat -> Nothing
     Malo -> Nothing
     Malol -> Nothing
-    Maltese -> Nothing
+    Maltese -> Just $ ISO_639_2 "mlt"
     MalteseSignLanguage -> Nothing
     MaluaBay -> Nothing
     Malvi -> Nothing
@@ -4299,7 +4707,7 @@ languageISO_639_2 lang =
     Manambu -> Nothing
     Manangba -> Nothing
     Manangkari -> Nothing
-    Manchu -> Nothing
+    Manchu -> Just $ ISO_639_2 "mnc"
     Manda_Australia -> Nothing
     Manda_India -> Nothing
     Manda_Tanzania -> Nothing
@@ -4307,7 +4715,7 @@ languageISO_639_2 lang =
     Mandaic -> Nothing
     Mandan -> Nothing
     Mandandanyi -> Nothing
-    Mandar -> Nothing
+    Mandar -> Just $ ISO_639_2 "mdr"
     Mandara -> Nothing
     Mandari -> Nothing
     MandarinChinese -> Nothing
@@ -4320,7 +4728,7 @@ languageISO_639_2 lang =
     MandoboBawah -> Nothing
     Manem -> Nothing
     Mang -> Nothing
-    MangaKanuri -> Nothing
+    MangaKanuri -> Just $ ISO_639_2 "kau"
     Mangala -> Nothing
     Mangarayi -> Nothing
     Mangareva -> Nothing
@@ -4335,7 +4743,7 @@ languageISO_639_2 lang =
     Mango -> Nothing
     Mangole -> Nothing
     Mangseng -> Nothing
-    ManichaeanMiddlePersian -> Nothing
+    ManichaeanMiddlePersian -> Just $ ISO_639_2 "pal"
     ManigriKamboleEdeNago -> Nothing
     Manikion -> Nothing
     Manipa -> Nothing
@@ -4352,14 +4760,14 @@ languageISO_639_2 lang =
     Mantsi -> Nothing
     ManumanawKaren -> Nothing
     Manusela -> Nothing
-    Manx -> Nothing
+    Manx -> Just $ ISO_639_2 "glv"
     Manya -> Nothing
     Manyawa -> Nothing
     Manyika -> Nothing
     Manza -> Nothing
     MaoNaga -> Nothing
     Maonan -> Nothing
-    Maori -> Nothing
+    Maori -> Just $ ISO_639_2 "mao"
     Mape -> Nothing
     Mapena -> Nothing
     Mapia -> Nothing
@@ -4379,7 +4787,7 @@ languageISO_639_2 lang =
     Maranao -> Nothing
     Maranunggu -> Nothing
     Mararit -> Nothing
-    Marathi -> Nothing
+    Marathi -> Just $ ISO_639_2 "mar"
     Marau -> Nothing
     Marba -> Nothing
     MardinSignLanguage -> Nothing
@@ -4393,7 +4801,7 @@ languageISO_639_2 lang =
     Margu -> Nothing
     Mari_EastSepikProvince -> Nothing
     Mari_MadangProvince -> Nothing
-    Mari_Russia -> Nothing
+    Mari_Russia -> Just $ ISO_639_2 "chm"
     Maria_India -> Nothing
     Maria_PapuaNewGuinea -> Nothing
     Maricopa -> Nothing
@@ -4416,7 +4824,7 @@ languageISO_639_2 lang =
     Marovo -> Nothing
     Marriammu -> Nothing
     Marrucinian -> Nothing
-    Marshall -> Nothing
+    Marshall -> Just $ ISO_639_2 "mah"
     Marsian -> Nothing
     MarthasVineyardSignLanguage -> Nothing
     MartiKe -> Nothing
@@ -4424,12 +4832,12 @@ languageISO_639_2 lang =
     Martuyhunira -> Nothing
     Maru -> Nothing
     Marubo -> Nothing
-    Marwari -> Nothing
-    Marwari_India -> Nothing
-    Marwari_Pakistan -> Nothing
+    Marwari -> Just $ ISO_639_2 "mwr"
+    Marwari_India -> Just $ ISO_639_2 "mwr"
+    Marwari_Pakistan -> Just $ ISO_639_2 "mwr"
     Masaba -> Nothing
     MasadiitItneg -> Nothing
-    Masai -> Nothing
+    Masai -> Just $ ISO_639_2 "mas"
     Masalit -> Nothing
     Masana -> Nothing
     MasbateSorsogon -> Nothing
@@ -4437,7 +4845,7 @@ languageISO_639_2 lang =
     MashcoPiro -> Nothing
     Mashi_Nigeria -> Nothing
     Mashi_Zambia -> Nothing
-    MasikoroMalagasy -> Nothing
+    MasikoroMalagasy -> Just $ ISO_639_2 "mlg"
     Masimasi -> Nothing
     Masiwang -> Nothing
     Maskelynes -> Nothing
@@ -4474,7 +4882,7 @@ languageISO_639_2 lang =
     Mawchi -> Nothing
     Mawes -> Nothing
     Maxakali -> Nothing
-    MaxiGbe -> Nothing
+    MaxiGbe -> Just $ ISO_639_2 "fon"
     Maya -> Nothing
     MayaSamo -> Nothing
     Mayaguduna -> Nothing
@@ -4497,7 +4905,7 @@ languageISO_639_2 lang =
     Mba -> Nothing
     Mbabaram -> Nothing
     Mbala -> Nothing
-    Mbalanhu -> Nothing
+    Mbalanhu -> Just $ ISO_639_2 "kua"
     Mbandja -> Nothing
     Mbangala -> Nothing
     Mbangi -> Nothing
@@ -4556,7 +4964,7 @@ languageISO_639_2 lang =
     Mehek -> Nothing
     Mehinaku -> Nothing
     Mehri -> Nothing
-    Meitei -> Nothing
+    Meitei -> Just $ ISO_639_2 "mni"
     Mekeo -> Nothing
     Mekmek -> Nothing
     Mekwei -> Nothing
@@ -4569,7 +4977,7 @@ languageISO_639_2 lang =
     MendalamKayan -> Nothing
     MendankweNkwen -> Nothing
     Mende_PapuaNewGuinea -> Nothing
-    Mende_SierraLeone -> Nothing
+    Mende_SierraLeone -> Just $ ISO_639_2 "men"
     Mengaka -> Nothing
     Mengen -> Nothing
     Mengisa -> Nothing
@@ -4586,7 +4994,7 @@ languageISO_639_2 lang =
     Merlav -> Nothing
     Meroitic -> Nothing
     Meru -> Nothing
-    Merwari -> Nothing
+    Merwari -> Just $ ISO_639_2 "mwr"
     Mesaka -> Nothing
     Mese -> Nothing
     Mesme -> Nothing
@@ -4614,23 +5022,23 @@ languageISO_639_2 lang =
     Michigamea -> Nothing
     MichoacanMazahua -> Nothing
     MichoacanNahuatl -> Nothing
-    Micmac -> Nothing
+    Micmac -> Just $ ISO_639_2 "mic"
     MidGrandValleyDani -> Nothing
     MidSouthernBanda -> Nothing
     MiddleArmenian -> Nothing
-    MiddleBreton -> Nothing
-    MiddleCornish -> Nothing
-    MiddleDutch -> Nothing
-    MiddleEnglish -> Nothing
-    MiddleFrench -> Nothing
-    MiddleHighGerman -> Nothing
-    MiddleHittite -> Nothing
-    MiddleIrish -> Nothing
+    MiddleBreton -> Just $ ISO_639_2 "bre"
+    MiddleCornish -> Just $ ISO_639_2 "cor"
+    MiddleDutch -> Just $ ISO_639_2 "dum"
+    MiddleEnglish -> Just $ ISO_639_2 "enm"
+    MiddleFrench -> Just $ ISO_639_2 "frm"
+    MiddleHighGerman -> Just $ ISO_639_2 "gmh"
+    MiddleHittite -> Just $ ISO_639_2 "hit"
+    MiddleIrish -> Just $ ISO_639_2 "mga"
     MiddleKhmer -> Nothing
     MiddleKorean -> Nothing
     MiddleLowGerman -> Nothing
     MiddleMongolian -> Nothing
-    MiddleNewar -> Nothing
+    MiddleNewar -> Just $ ISO_639_2 "new"
     MiddleWatut -> Nothing
     MiddleWelsh -> Nothing
     Midob -> Nothing
@@ -4651,7 +5059,7 @@ languageISO_639_2 lang =
     Mina_India -> Nothing
     Minaean -> Nothing
     Minang -> Nothing
-    Minangkabau -> Nothing
+    Minangkabau -> Just $ ISO_639_2 "min"
     Minanibai -> Nothing
     Minaveha -> Nothing
     Minderico -> Nothing
@@ -4668,7 +5076,7 @@ languageISO_639_2 lang =
     Mintil -> Nothing
     MinzZhuang -> Nothing
     MiqieYi -> Nothing
-    Mirandese -> Nothing
+    Mirandese -> Just $ ISO_639_2 "mwl"
     MirayaBikol -> Nothing
     Mire -> Nothing
     Mirgan -> Nothing
@@ -4706,7 +5114,7 @@ languageISO_639_2 lang =
     Moba -> Nothing
     Mobilian -> Nothing
     MobumrinAizi -> Nothing
-    MobwaKaren -> Nothing
+    MobwaKaren -> Just $ ISO_639_2 "kar"
     Mocheno -> Nothing
     Mochi -> Nothing
     Mochica -> Nothing
@@ -4720,7 +5128,7 @@ languageISO_639_2 lang =
     Mogholi -> Nothing
     Mogum -> Nothing
     Mohave -> Nothing
-    Mohawk -> Nothing
+    Mohawk -> Just $ ISO_639_2 "moh"
     MoheganMontaukNarragansett -> Nothing
     MoheganPequot -> Nothing
     Moi_Congo -> Nothing
@@ -4737,10 +5145,10 @@ languageISO_639_2 lang =
     Mokole -> Nothing
     Mokpwe -> Nothing
     Moksela -> Nothing
-    Moksha -> Nothing
+    Moksha -> Just $ ISO_639_2 "mdf"
     Molale -> Nothing
     Molbog -> Nothing
-    Moldavian -> Nothing
+    Moldavian -> Just $ ISO_639_2 "mol"
     MoldovaSignLanguage -> Nothing
     Molengue -> Nothing
     Molima -> Nothing
@@ -4759,10 +5167,10 @@ languageISO_639_2 lang =
     MonasticSignLanguage -> Nothing
     Monde -> Nothing
     Mondropolon -> Nothing
-    Mongo -> Nothing
+    Mongo -> Just $ ISO_639_2 "lol"
     Mongol -> Nothing
-    MongoliaBuriat -> Nothing
-    Mongolian -> Nothing
+    MongoliaBuriat -> Just $ ISO_639_2 "bua"
+    Mongolian -> Just $ ISO_639_2 "mon"
     MongolianSignLanguage -> Nothing
     Mongondow -> Nothing
     Moni -> Nothing
@@ -4774,7 +5182,7 @@ languageISO_639_2 lang =
     Monom -> Nothing
     MonsangNaga -> Nothing
     Montagnais -> Nothing
-    Montenegrin -> Nothing
+    Montenegrin -> Just $ ISO_639_2 "cnr"
     Montol -> Nothing
     Monumbo -> Nothing
     Monzombo -> Nothing
@@ -4804,7 +5212,7 @@ languageISO_639_2 lang =
     Mosina -> Nothing
     Mosiro -> Nothing
     Moskona -> Nothing
-    Mossi -> Nothing
+    Mossi -> Just $ ISO_639_2 "mos"
     Mota -> Nothing
     Motlav -> Nothing
     Motu -> Nothing
@@ -5011,8 +5419,8 @@ languageISO_639_2 lang =
     NaukanYupik -> Nothing
     Nauna -> Nothing
     Nauo -> Nothing
-    Nauru -> Nothing
-    Navajo -> Nothing
+    Nauru -> Just $ ISO_639_2 "nau"
+    Navajo -> Just $ ISO_639_2 "nav"
     NavarroLabourdinBasque -> Nothing
     Navut -> Nothing
     Nawaru -> Nothing
@@ -5048,7 +5456,7 @@ languageISO_639_2 lang =
     Ndom -> Nothing
     Ndombe -> Nothing
     NdondeHamba -> Nothing
-    Ndonga -> Nothing
+    Ndonga -> Just $ ISO_639_2 "ndo"
     Ndoola -> Nothing
     Ndragngith -> Nothing
     Nduga -> Nothing
@@ -5060,7 +5468,7 @@ languageISO_639_2 lang =
     Ndwewe -> Nothing
     NdyukaTrioPidgin -> Nothing
     NdzwaniComorian -> Nothing
-    Neapolitan -> Nothing
+    Neapolitan -> Just $ ISO_639_2 "nap"
     NebajIxil -> Nothing
     Nedebang -> Nothing
     Nefamese -> Nothing
@@ -5079,16 +5487,16 @@ languageISO_639_2 lang =
     Nenets -> Nothing
     Nengone -> Nothing
     Neo -> Nothing
-    NeoHittite -> Nothing
+    NeoHittite -> Just $ ISO_639_2 "hit"
     NepaleseSignLanguage -> Nothing
-    Nepali -> Nothing
+    Nepali -> Just $ ISO_639_2 "nep"
     NepaliKurux -> Nothing
-    Nepali_IndividualLanguage -> Nothing
+    Nepali_IndividualLanguage -> Just $ ISO_639_2 "nep"
     Nete -> Nothing
-    NewCaledonianJavanese -> Nothing
-    NewGreek -> Nothing
+    NewCaledonianJavanese -> Just $ ISO_639_2 "jav"
+    NewGreek -> Just $ ISO_639_2 "gre"
     NewZealandSignLanguage -> Nothing
-    Newari -> Nothing
+    Newari -> Just $ ISO_639_2 "new"
     Neyo -> Nothing
     NezPerce -> Nothing
     NgaLa -> Nothing
@@ -5113,7 +5521,7 @@ languageISO_639_2 lang =
     Ngandi -> Nothing
     Ngando_CentralAfricanRepublic -> Nothing
     Ngando_DemocraticRepublicOfCongo -> Nothing
-    Ngandyera -> Nothing
+    Ngandyera -> Just $ ISO_639_2 "kua"
     Ngangam -> Nothing
     Ngantangarra -> Nothing
     Nganyaywana -> Nothing
@@ -5183,7 +5591,7 @@ languageISO_639_2 lang =
     Nhengatu -> Nothing
     Nhirrpi -> Nothing
     Nhuwala -> Nothing
-    Nias -> Nothing
+    Nias -> Just $ ISO_639_2 "nia"
     NicaraguaCreoleEnglish -> Nothing
     NicaraguanSignLanguage -> Nothing
     Niellim -> Nothing
@@ -5218,7 +5626,7 @@ languageISO_639_2 lang =
     Nisi -> Nothing
     Niuafoou -> Nothing
     Niuatoputapu -> Nothing
-    Niuean -> Nothing
+    Niuean -> Just $ ISO_639_2 "niu"
     Nivacle -> Nothing
     NiwerMil -> Nothing
     Njalgulgule -> Nothing
@@ -5231,7 +5639,7 @@ languageISO_639_2 lang =
     Nkari -> Nothing
     NkemNkum -> Nothing
     Nkhumbi -> Nothing
-    Nko_Nko -> Nothing
+    Nko_Nko -> Just $ ISO_639_2 "nqo"
     Nkongho -> Nothing
     Nkonya -> Nothing
     Nkoroo -> Nothing
@@ -5243,7 +5651,7 @@ languageISO_639_2 lang =
     Nobonob -> Nothing
     Nocaman -> Nothing
     NocteNaga -> Nothing
-    Nogai -> Nothing
+    Nogai -> Just $ ISO_639_2 "nog"
     Noipx -> Nothing
     Noiri -> Nothing
     Nokuku -> Nothing
@@ -5262,7 +5670,7 @@ languageISO_639_2 lang =
     Noric -> Nothing
     Norn -> Nothing
     Norra -> Nothing
-    NorthAlaskanInupiatun -> Nothing
+    NorthAlaskanInupiatun -> Just $ ISO_639_2 "ipk"
     NorthAmbrym -> Nothing
     NorthAsmat -> Nothing
     NorthAwyu -> Nothing
@@ -5278,10 +5686,10 @@ languageISO_639_2 lang =
     NorthMofu -> Nothing
     NorthMoluccanMalay -> Nothing
     NorthMuyu -> Nothing
-    NorthNdebele -> Nothing
+    NorthNdebele -> Just $ ISO_639_2 "nde"
     NorthNuaulu -> Nothing
     NorthPicene -> Nothing
-    NorthSlavey -> Nothing
+    NorthSlavey -> Just $ ISO_639_2 "den"
     NorthTairora -> Nothing
     NorthTanna -> Nothing
     NorthTugen -> Nothing
@@ -5292,12 +5700,12 @@ languageISO_639_2 lang =
     NortheastMaidu -> Nothing
     NortheastPashayi -> Nothing
     NortheasternDianHmong -> Nothing
-    NortheasternDinka -> Nothing
+    NortheasternDinka -> Just $ ISO_639_2 "din"
     NortheasternPomo -> Nothing
     NortheasternThai -> Nothing
     NorthernAmamiOshima -> Nothing
     NorthernBai -> Nothing
-    NorthernBetsimisarakaMalagasy -> Nothing
+    NorthernBetsimisarakaMalagasy -> Just $ ISO_639_2 "mlg"
     NorthernBoboMadare -> Nothing
     NorthernBontok -> Nothing
     NorthernCakchiquel -> Nothing
@@ -5306,12 +5714,12 @@ languageISO_639_2 lang =
     NorthernDagara -> Nothing
     NorthernDong -> Nothing
     NorthernEmbera -> Nothing
-    NorthernFrisian -> Nothing
+    NorthernFrisian -> Just $ ISO_639_2 "frr"
     NorthernGhale -> Nothing
-    NorthernGondi -> Nothing
-    NorthernGrebo -> Nothing
+    NorthernGondi -> Just $ ISO_639_2 "gon"
+    NorthernGrebo -> Just $ ISO_639_2 "grb"
     NorthernGuiyangHmong -> Nothing
-    NorthernHaida -> Nothing
+    NorthernHaida -> Just $ ISO_639_2 "hai"
     NorthernHindko -> Nothing
     NorthernHuishuiHmong -> Nothing
     NorthernKalapuya -> Nothing
@@ -5343,7 +5751,7 @@ languageISO_639_2 lang =
     NorthernQiang -> Nothing
     NorthernRengmaNaga -> Nothing
     NorthernRoglai -> Nothing
-    NorthernSami -> Nothing
+    NorthernSami -> Just $ ISO_639_2 "sme"
     NorthernSierraMiwok -> Nothing
     NorthernSubanen -> Nothing
     NorthernTarahumara -> Nothing
@@ -5354,23 +5762,23 @@ languageISO_639_2 lang =
     NorthernToussian -> Nothing
     NorthernTujia -> Nothing
     NorthernTutchone -> Nothing
-    NorthernUzbek -> Nothing
+    NorthernUzbek -> Just $ ISO_639_2 "uzb"
     NorthernYukaghir -> Nothing
-    NorthernZhuang -> Nothing
-    NorthwestAlaskaInupiatun -> Nothing
+    NorthernZhuang -> Just $ ISO_639_2 "zha"
+    NorthwestAlaskaInupiatun -> Just $ ISO_639_2 "ipk"
     NorthwestGbaya -> Nothing
     NorthwestOaxacaMixtec -> Nothing
     NorthwestPashayi -> Nothing
     Northwest_KonkowMaidu -> Nothing
-    NorthwesternDinka -> Nothing
+    NorthwesternDinka -> Just $ ISO_639_2 "din"
     NorthwesternFars -> Nothing
     NorthwesternKolami -> Nothing
     NorthwesternNisu -> Nothing
     NorthwesternOjibwa -> Nothing
     NorthwesternTamang -> Nothing
-    Norwegian -> Nothing
-    NorwegianBokmal -> Nothing
-    NorwegianNynorsk -> Nothing
+    Norwegian -> Just $ ISO_639_2 "nor"
+    NorwegianBokmal -> Just $ ISO_639_2 "nob"
+    NorwegianNynorsk -> Just $ ISO_639_2 "nno"
     NorwegianSignLanguage -> Nothing
     Notre -> Nothing
     Notsi -> Nothing
@@ -5429,7 +5837,7 @@ languageISO_639_2 lang =
     Nyambo -> Nothing
     NyamusaMolo -> Nothing
     Nyamwanga -> Nothing
-    Nyamwezi -> Nothing
+    Nyamwezi -> Just $ ISO_639_2 "nym"
     Nyaneka -> Nothing
     Nyanga -> Nothing
     NyangaLi -> Nothing
@@ -5438,7 +5846,7 @@ languageISO_639_2 lang =
     Nyangga -> Nothing
     Nyangi -> Nothing
     Nyangumarta -> Nothing
-    Nyankole -> Nothing
+    Nyankole -> Just $ ISO_639_2 "nyn"
     NyarafoloSenoufo -> Nothing
     Nyaturu -> Nothing
     Nyaw -> Nothing
@@ -5461,7 +5869,7 @@ languageISO_639_2 lang =
     Nyole -> Nothing
     Nyong -> Nothing
     Nyore -> Nothing
-    Nyoro -> Nothing
+    Nyoro -> Just $ ISO_639_2 "nyo"
     Nyulnyul -> Nothing
     Nyungah -> Nothing
     Nyungwe -> Nothing
@@ -5469,7 +5877,7 @@ languageISO_639_2 lang =
     Nzakambay -> Nothing
     Nzakara -> Nothing
     Nzanyi -> Nothing
-    Nzima -> Nothing
+    Nzima -> Just $ ISO_639_2 "nzi"
     Obanliku -> Nothing
     Obispeno -> Nothing
     Oblo -> Nothing
@@ -5478,8 +5886,8 @@ languageISO_639_2 lang =
     Obolo -> Nothing
     Obulom -> Nothing
     Ocaina -> Nothing
-    Occidental -> Nothing
-    Occitan -> Nothing
+    Occidental -> Just $ ISO_639_2 "ile"
+    Occitan -> Just $ ISO_639_2 "oci"
     Ochichi -> Nothing
     OcotepecMixtec -> Nothing
     OcotlanZapotec -> Nothing
@@ -5500,7 +5908,7 @@ languageISO_639_2 lang =
     Ohlone_Northern -> Nothing
     Ohlone_Southern -> Nothing
     Oirata -> Nothing
-    Ojibwa -> Nothing
+    Ojibwa -> Just $ ISO_639_2 "oji"
     OjitlanChinantec -> Nothing
     Okanagan -> Nothing
     OkiNoErabu -> Nothing
@@ -5517,35 +5925,35 @@ languageISO_639_2 lang =
     Oksapmin -> Nothing
     Oku -> Nothing
     OldAramaic -> Nothing
-    OldAvar -> Nothing
-    OldBreton -> Nothing
+    OldAvar -> Just $ ISO_639_2 "ava"
+    OldBreton -> Just $ ISO_639_2 "bre"
     OldBurmese -> Nothing
     OldCham -> Nothing
     OldChinese -> Nothing
-    OldChurchSlavonic -> Nothing
-    OldCornish -> Nothing
+    OldChurchSlavonic -> Just $ ISO_639_2 "chu"
+    OldCornish -> Just $ ISO_639_2 "cor"
     OldDutch -> Nothing
-    OldFrench -> Nothing
+    OldFrench -> Just $ ISO_639_2 "fro"
     OldFrisian -> Nothing
     OldGeorgian -> Nothing
-    OldHighGerman -> Nothing
-    OldHittite -> Nothing
+    OldHighGerman -> Just $ ISO_639_2 "goh"
+    OldHittite -> Just $ ISO_639_2 "hit"
     OldHungarian -> Nothing
-    OldIrish -> Nothing
+    OldIrish -> Just $ ISO_639_2 "sga"
     OldJapanese -> Nothing
     OldKentishSignLanguage -> Nothing
     OldKhmer -> Nothing
     OldKorean -> Nothing
-    OldLithuanian -> Nothing
+    OldLithuanian -> Just $ ISO_639_2 "lit"
     OldMalay -> Nothing
-    OldManipuri -> Nothing
-    OldMarathi -> Nothing
+    OldManipuri -> Just $ ISO_639_2 "mni"
+    OldMarathi -> Just $ ISO_639_2 "mar"
     OldMon -> Nothing
-    OldNorse -> Nothing
+    OldNorse -> Just $ ISO_639_2 "non"
     OldNubian -> Nothing
     OldOssetic -> Nothing
-    OldPersian -> Nothing
-    OldProvencal -> Nothing
+    OldPersian -> Just $ ISO_639_2 "peo"
+    OldProvencal -> Just $ ISO_639_2 "pro"
     OldRussian -> Nothing
     OldSaxon -> Nothing
     OldSpanish -> Nothing
@@ -5596,8 +6004,8 @@ languageISO_639_2 lang =
     OraonSadri -> Nothing
     Orejon -> Nothing
     Oring -> Nothing
-    Oriya -> Nothing
-    Oriya_IndividualLanguage -> Nothing
+    Oriya -> Just $ ISO_639_2 "ori"
+    Oriya_IndividualLanguage -> Just $ ISO_639_2 "ori"
     OrizabaNahuatl -> Nothing
     Orma -> Nothing
     Ormu -> Nothing
@@ -5610,22 +6018,22 @@ languageISO_639_2 lang =
     Orokaiva -> Nothing
     Oroko -> Nothing
     Orokolo -> Nothing
-    Oromo -> Nothing
+    Oromo -> Just $ ISO_639_2 "orm"
     Oroqen -> Nothing
     Orowe -> Nothing
     Oruma -> Nothing
     Orya -> Nothing
-    Osage -> Nothing
+    Osage -> Just $ ISO_639_2 "osa"
     Osatu -> Nothing
     Oscan -> Nothing
     Osing -> Nothing
     Ososo -> Nothing
-    Ossetian -> Nothing
+    Ossetian -> Just $ ISO_639_2 "oss"
     Otank -> Nothing
     Oti -> Nothing
     Otoro -> Nothing
     Ottawa -> Nothing
-    OttomanTurkish -> Nothing
+    OttomanTurkish -> Just $ ISO_639_2 "ota"
     Otuho -> Nothing
     Otuke -> Nothing
     Ouma -> Nothing
@@ -5665,7 +6073,7 @@ languageISO_639_2 lang =
     PahariPotwari -> Nothing
     Pahi -> Nothing
     Pahlavani -> Nothing
-    Pahlavi -> Nothing
+    Pahlavi -> Just $ ISO_639_2 "pal"
     PaiTavytera -> Nothing
     Paici -> Nothing
     Paipai -> Nothing
@@ -5676,17 +6084,17 @@ languageISO_639_2 lang =
     Pakanha -> Nothing
     PakistanSignLanguage -> Nothing
     Paku -> Nothing
-    PakuKaren -> Nothing
+    PakuKaren -> Just $ ISO_639_2 "kar"
     Pal -> Nothing
     Palaic -> Nothing
     PalakaSenoufo -> Nothing
     PalantlaChinantec -> Nothing
-    Palauan -> Nothing
+    Palauan -> Just $ ISO_639_2 "pau"
     PalePalaung -> Nothing
     Palembang -> Nothing
     Paleni -> Nothing
     Palenquero -> Nothing
-    Pali -> Nothing
+    Pali -> Just $ ISO_639_2 "pli"
     Palikur -> Nothing
     Paliyan -> Nothing
     Pallanganmiddang -> Nothing
@@ -5702,7 +6110,7 @@ languageISO_639_2 lang =
     Pamlico -> Nothing
     Pamona -> Nothing
     Pamosu -> Nothing
-    Pampanga -> Nothing
+    Pampanga -> Just $ ISO_639_2 "pam"
     Pana_BurkinaFaso -> Nothing
     Pana_CentralAfricanRepublic -> Nothing
     PanamanianSignLanguage -> Nothing
@@ -5714,14 +6122,14 @@ languageISO_639_2 lang =
     Pancana -> Nothing
     Panchpargania -> Nothing
     Pande -> Nothing
-    Pangasinan -> Nothing
+    Pangasinan -> Just $ ISO_639_2 "pag"
     Pangseng -> Nothing
     PangutaranSama -> Nothing
     Pangwa -> Nothing
     Pangwali -> Nothing
     Panim -> Nothing
     Paniya -> Nothing
-    Panjabi -> Nothing
+    Panjabi -> Just $ ISO_639_2 "pan"
     Pankarare -> Nothing
     Pankararu -> Nothing
     Pankhu -> Nothing
@@ -5738,7 +6146,7 @@ languageISO_639_2 lang =
     Papavo -> Nothing
     Papel -> Nothing
     Papi -> Nothing
-    Papiamento -> Nothing
+    Papiamento -> Just $ ISO_639_2 "pap"
     Papitalai -> Nothing
     Papora -> Nothing
     PapuaNewGuineanSignLanguage -> Nothing
@@ -5748,7 +6156,7 @@ languageISO_639_2 lang =
     ParaGaviao -> Nothing
     ParaNaga -> Nothing
     Parachi -> Nothing
-    ParaguayanGuarani -> Nothing
+    ParaguayanGuarani -> Just $ ISO_639_2 "grn"
     ParaguayanSignLanguage -> Nothing
     Parakana -> Nothing
     Paranan -> Nothing
@@ -5792,7 +6200,7 @@ languageISO_639_2 lang =
     Pear -> Nothing
     Pech -> Nothing
     Pecheneg -> Nothing
-    PediNorthernSotho -> Nothing
+    PediNorthernSotho -> Just $ ISO_639_2 "nso"
     PeerapperNorthwesternTasmanian -> Nothing
     Peere -> Nothing
     Pei -> Nothing
@@ -5834,7 +6242,7 @@ languageISO_639_2 lang =
     Phende -> Nothing
     PhilippineSignLanguage -> Nothing
     Phimbi -> Nothing
-    Phoenician -> Nothing
+    Phoenician -> Just $ ISO_639_2 "phn"
     Phola -> Nothing
     PhomNaga -> Nothing
     PhongKniang -> Nothing
@@ -5898,7 +6306,7 @@ languageISO_639_2 lang =
     PlainsIndianSignLanguage -> Nothing
     PlainsMiwok -> Nothing
     PlapoKrumen -> Nothing
-    PlateauMalagasy -> Nothing
+    PlateauMalagasy -> Just $ ISO_639_2 "mlg"
     Plautdietsch -> Nothing
     Playero -> Nothing
     Pnar -> Nothing
@@ -5906,14 +6314,14 @@ languageISO_639_2 lang =
     Pochutec -> Nothing
     Podena -> Nothing
     Pogolo -> Nothing
-    Pohnpeian -> Nothing
+    Pohnpeian -> Just $ ISO_639_2 "pon"
     Pokanga -> Nothing
     Poke -> Nothing
     Pokoot -> Nothing
     Polabian -> Nothing
     Polari -> Nothing
     Polci -> Nothing
-    Polish -> Nothing
+    Polish -> Just $ ISO_639_2 "pol"
     PolishSignLanguage -> Nothing
     Polonombauk -> Nothing
     Poluo_PholoYi -> Nothing
@@ -5930,7 +6338,7 @@ languageISO_639_2 lang =
     PortSandwich -> Nothing
     PortSorellTasmanian -> Nothing
     PortVato -> Nothing
-    Portuguese -> Nothing
+    Portuguese -> Just $ ISO_639_2 "por"
     PortugueseBasedCreolesAndPidgins -> Nothing
     PortugueseSignLanguage -> Nothing
     Potawatomi -> Nothing
@@ -5988,7 +6396,7 @@ languageISO_639_2 lang =
     Purubora -> Nothing
     Purum -> Nothing
     PurumNaga -> Nothing
-    Pushto -> Nothing
+    Pushto -> Just $ ISO_639_2 "pus"
     Putai -> Nothing
     Putoh -> Nothing
     Putukwam -> Nothing
@@ -6035,7 +6443,7 @@ languageISO_639_2 lang =
     RabinalAchi -> Nothing
     Rade -> Nothing
     Raetic -> Nothing
-    RaetoRomance -> Nothing
+    RaetoRomance -> Just $ ISO_639_2 "roh"
     Rahambuu -> Nothing
     RajahKabunsuwanManobo -> Nothing
     Rajasthani -> Nothing
@@ -6058,10 +6466,10 @@ languageISO_639_2 lang =
     Rangpuri -> Nothing
     Rao -> Nothing
     Rapa -> Nothing
-    Rapanui -> Nothing
+    Rapanui -> Just $ ISO_639_2 "rap"
     Rapoisi -> Nothing
     Rapting -> Nothing
-    Rarotongan -> Nothing
+    Rarotongan -> Just $ ISO_639_2 "rar"
     Rasawa -> Nothing
     Ratagnon -> Nothing
     Ratahan -> Nothing
@@ -6114,18 +6522,18 @@ languageISO_639_2 lang =
     Rishiwa -> Nothing
     Ritarungo -> Nothing
     Riung -> Nothing
-    RiverainSango -> Nothing
+    RiverainSango -> Just $ ISO_639_2 "sag"
     Rogo -> Nothing
     Rohingya -> Nothing
     Roma -> Nothing
     Romagnol -> Nothing
     Romam -> Nothing
-    Romanian -> Nothing
+    Romanian -> Just $ ISO_639_2 "rum"
     RomanianSignLanguage -> Nothing
     RomanoGreek -> Nothing
     RomanoSerbian -> Nothing
     Romanova -> Nothing
-    Romany -> Nothing
+    Romany -> Just $ ISO_639_2 "rom"
     Romblomanon -> Nothing
     Rombo -> Nothing
     Romkun -> Nothing
@@ -6149,13 +6557,13 @@ languageISO_639_2 lang =
     RumaiPalaung -> Nothing
     Rumu -> Nothing
     Runa -> Nothing
-    Rundi -> Nothing
+    Rundi -> Just $ ISO_639_2 "run"
     Runga -> Nothing
     RungtuChin -> Nothing
     Rungus -> Nothing
     Rungwa -> Nothing
-    RussiaBuriat -> Nothing
-    Russian -> Nothing
+    RussiaBuriat -> Just $ ISO_639_2 "bua"
+    Russian -> Just $ ISO_639_2 "rus"
     RussianSignLanguage -> Nothing
     Rusyn -> Nothing
     RuthenianRusyn -> Nothing
@@ -6196,14 +6604,14 @@ languageISO_639_2 lang =
     Saisiyat -> Nothing
     Sajalong -> Nothing
     SajauBasap -> Nothing
-    SakalavaMalagasy -> Nothing
+    SakalavaMalagasy -> Just $ ISO_639_2 "mlg"
     Sakam -> Nothing
-    Sakan -> Nothing
+    Sakan -> Just $ ISO_639_2 "kho"
     Sakao -> Nothing
     Sakata -> Nothing
     Sake -> Nothing
     Sakechep -> Nothing
-    Sakha -> Nothing
+    Sakha -> Just $ ISO_639_2 "sah"
     Sakirabia -> Nothing
     Sakizaya -> Nothing
     Sala -> Nothing
@@ -6222,7 +6630,7 @@ languageISO_639_2 lang =
     Sam -> Nothing
     Sama -> Nothing
     Samaritan -> Nothing
-    SamaritanAramaic -> Nothing
+    SamaritanAramaic -> Just $ ISO_639_2 "sam"
     Samarokena -> Nothing
     Samatao -> Nothing
     Samay -> Nothing
@@ -6235,7 +6643,7 @@ languageISO_639_2 lang =
     Samburu -> Nothing
     Samei -> Nothing
     Samo -> Nothing
-    Samoan -> Nothing
+    Samoan -> Just $ ISO_639_2 "smo"
     Samogitian -> Nothing
     Samosa -> Nothing
     Sampang -> Nothing
@@ -6267,10 +6675,10 @@ languageISO_639_2 lang =
     SanMiguelElGrandeMixtec -> Nothing
     SanMiguelPiedrasMixtec -> Nothing
     SanPedroQuiatoniZapotec -> Nothing
-    SanSalvadorKongo -> Nothing
+    SanSalvadorKongo -> Just $ ISO_639_2 "kon"
     SanVicenteCoatlanZapotec -> Nothing
     Sanapana -> Nothing
-    Sandawe -> Nothing
+    Sandawe -> Just $ ISO_639_2 "sad"
     Sanga_DemocraticRepublicOfCongo -> Nothing
     Sanga_Nigeria -> Nothing
     SangabMandaya -> Nothing
@@ -6281,7 +6689,7 @@ languageISO_639_2 lang =
     Sangkong -> Nothing
     Sanglechi -> Nothing
     SanglechiIshkashimi -> Nothing
-    Sango -> Nothing
+    Sango -> Just $ ISO_639_2 "sag"
     SangtamNaga -> Nothing
     Sangu_Gabon -> Nothing
     Sangu_Tanzania -> Nothing
@@ -6290,7 +6698,7 @@ languageISO_639_2 lang =
     SaniyoHiyewe -> Nothing
     SankaranManinka -> Nothing
     Sansi -> Nothing
-    Sanskrit -> Nothing
+    Sanskrit -> Just $ ISO_639_2 "san"
     Sansu -> Nothing
     SantaAnaDeTusiPascoQuechua -> Nothing
     SantaCatarinaAlbarradasZapotec -> Nothing
@@ -6304,7 +6712,7 @@ languageISO_639_2 lang =
     SantaMariaQuiegolaniZapotec -> Nothing
     SantaMariaZacatepecMixtec -> Nothing
     SantaTeresaCora -> Nothing
-    Santali -> Nothing
+    Santali -> Just $ ISO_639_2 "sat"
     SantiagoDelEsteroQuichua -> Nothing
     SantiagoLapaguiaZapotec -> Nothing
     SantiagoXanicaZapotec -> Nothing
@@ -6332,7 +6740,7 @@ languageISO_639_2 lang =
     Sarasira -> Nothing
     Saraveca -> Nothing
     SarawakBisaya -> Nothing
-    Sardinian -> Nothing
+    Sardinian -> Just $ ISO_639_2 "srd"
     Sarikoli -> Nothing
     Sarli -> Nothing
     Sarsi -> Nothing
@@ -6340,7 +6748,7 @@ languageISO_639_2 lang =
     Sarua -> Nothing
     Sarudu -> Nothing
     Saruga -> Nothing
-    Sasak -> Nothing
+    Sasak -> Just $ ISO_639_2 "sas"
     Sasaru -> Nothing
     SassareseSardinian -> Nothing
     Satawalese -> Nothing
@@ -6365,14 +6773,14 @@ languageISO_639_2 lang =
     SaxweGbe -> Nothing
     Saya -> Nothing
     SayulaPopoluca -> Nothing
-    Scots -> Nothing
+    Scots -> Just $ ISO_639_2 "sco"
     Scythian -> Nothing
     SeaIslandCreoleEnglish -> Nothing
     Seba -> Nothing
     SebatBetGurage -> Nothing
     Seberuang -> Nothing
     SebobKenyah -> Nothing
-    Sebuyau -> Nothing
+    Sebuyau -> Just $ ISO_639_2 "iba"
     Sechelt -> Nothing
     Secoya -> Nothing
     Sedang -> Nothing
@@ -6401,7 +6809,7 @@ languageISO_639_2 lang =
     Selee -> Nothing
     Selepet -> Nothing
     Selian -> Nothing
-    Selkup -> Nothing
+    Selkup -> Just $ ISO_639_2 "sel"
     SelungaiMurut -> Nothing
     Seluwasan -> Nothing
     Semai -> Nothing
@@ -6435,10 +6843,10 @@ languageISO_639_2 lang =
     SepikIwam -> Nothing
     Sera -> Nothing
     Serawai -> Nothing
-    Serbian -> Nothing
+    Serbian -> Just $ ISO_639_2 "srp"
     SerboCroatian -> Nothing
     Sere -> Nothing
-    Serer -> Nothing
+    Serer -> Just $ ISO_639_2 "srr"
     Seri -> Nothing
     Serili -> Nothing
     Seroa -> Nothing
@@ -6456,7 +6864,7 @@ languageISO_639_2 lang =
     SewaBay -> Nothing
     SeychellesSignLanguage -> Nothing
     Seze -> Nothing
-    SgawKaren -> Nothing
+    SgawKaren -> Just $ ISO_639_2 "kar"
     Sha -> Nothing
     Shabak -> Nothing
     Shabo -> Nothing
@@ -6467,7 +6875,7 @@ languageISO_639_2 lang =
     ShamaSambuga -> Nothing
     Shamang -> Nothing
     Shambala -> Nothing
-    Shan -> Nothing
+    Shan -> Just $ ISO_639_2 "shn"
     Shanenawa -> Nothing
     Shanga -> Nothing
     Shangzhai -> Nothing
@@ -6501,7 +6909,7 @@ languageISO_639_2 lang =
     Shixing -> Nothing
     Sholaga -> Nothing
     ShomPeng -> Nothing
-    Shona -> Nothing
+    Shona -> Just $ ISO_639_2 "sna"
     ShooMindaNye -> Nothing
     Shor -> Nothing
     Shoshoni -> Nothing
@@ -6527,11 +6935,11 @@ languageISO_639_2 lang =
     Sibu -> Nothing
     Sicanian -> Nothing
     Sicel -> Nothing
-    SichuanYi -> Nothing
-    Sicilian -> Nothing
+    SichuanYi -> Just $ ISO_639_2 "iii"
+    Sicilian -> Just $ ISO_639_2 "scn"
     SiciteSenoufo -> Nothing
     SiculoArabic -> Nothing
-    Sidamo -> Nothing
+    Sidamo -> Just $ ISO_639_2 "sid"
     Sidetic -> Nothing
     Sie -> Nothing
     SierraDeJuarezZapotec -> Nothing
@@ -6567,13 +6975,13 @@ languageISO_639_2 lang =
     Sinaugoro -> Nothing
     SindangKelingi -> Nothing
     Sindarin -> Nothing
-    Sindhi -> Nothing
-    SindhiBhil -> Nothing
+    Sindhi -> Just $ ISO_639_2 "snd"
+    SindhiBhil -> Just $ ISO_639_2 "snd"
     SindihuiMixtec -> Nothing
     Singa -> Nothing
     SingaporeSignLanguage -> Nothing
     Singpho -> Nothing
-    Sinhala -> Nothing
+    Sinhala -> Just $ ISO_639_2 "sin"
     SinicahuaMixtec -> Nothing
     Sininkere -> Nothing
     Sinsauru -> Nothing
@@ -6603,13 +7011,13 @@ languageISO_639_2 lang =
     Skagit -> Nothing
     Skalvian -> Nothing
     SkepiCreoleDutch -> Nothing
-    SkoltSami -> Nothing
+    SkoltSami -> Just $ ISO_639_2 "sms"
     Skou -> Nothing
-    Slave_Athapascan -> Nothing
+    Slave_Athapascan -> Just $ ISO_639_2 "den"
     Slavomolisano -> Nothing
-    Slovak -> Nothing
+    Slovak -> Just $ ISO_639_2 "slo"
     SlovakianSignLanguage -> Nothing
-    Slovenian -> Nothing
+    Slovenian -> Just $ ISO_639_2 "slv"
     SmallFloweryMiao -> Nothing
     SmarkyKanum -> Nothing
     Snohomish -> Nothing
@@ -6620,7 +7028,7 @@ languageISO_639_2 lang =
     Sobei -> Nothing
     SochiapanChinantec -> Nothing
     Soga -> Nothing
-    Sogdian -> Nothing
+    Sogdian -> Just $ ISO_639_2 "sog"
     Soi -> Nothing
     Sok -> Nothing
     Sokoro -> Nothing
@@ -6630,7 +7038,7 @@ languageISO_639_2 lang =
     Solong -> Nothing
     Solos -> Nothing
     Som -> Nothing
-    Somali -> Nothing
+    Somali -> Just $ ISO_639_2 "som"
     Somrai -> Nothing
     Somray -> Nothing
     Somyev -> Nothing
@@ -6644,7 +7052,7 @@ languageISO_639_2 lang =
     Songoora -> Nothing
     Sonha -> Nothing
     Sonia -> Nothing
-    Soninke -> Nothing
+    Soninke -> Just $ ISO_639_2 "snk"
     Sonsorol -> Nothing
     Soo -> Nothing
     Sop -> Nothing
@@ -6658,21 +7066,21 @@ languageISO_639_2 lang =
     Sou -> Nothing
     SouletinBasque -> Nothing
     SouthAfricanSignLanguage -> Nothing
-    SouthAzerbaijani -> Nothing
+    SouthAzerbaijani -> Just $ ISO_639_2 "aze"
     SouthBolivianQuechua -> Nothing
     SouthCentralBanda -> Nothing
     SouthCentralCakchiquel -> Nothing
-    SouthCentralDinka -> Nothing
+    SouthCentralDinka -> Just $ ISO_639_2 "din"
     SouthEfate -> Nothing
     SouthFali -> Nothing
     SouthGiziga -> Nothing
     SouthLembata -> Nothing
     SouthMarquesan -> Nothing
     SouthMuyu -> Nothing
-    SouthNdebele -> Nothing
+    SouthNdebele -> Just $ ISO_639_2 "nbl"
     SouthNuaulu -> Nothing
     SouthPicene -> Nothing
-    SouthSlavey -> Nothing
+    SouthSlavey -> Just $ ISO_639_2 "den"
     SouthTairora -> Nothing
     SouthUcayaliAsheninka -> Nothing
     SouthWatut -> Nothing
@@ -6683,7 +7091,7 @@ languageISO_639_2 lang =
     SoutheastIjo -> Nothing
     SoutheastPashayi -> Nothing
     SoutheastTasmanianNuenonne -> Nothing
-    SoutheasternDinka -> Nothing
+    SoutheasternDinka -> Just $ ISO_639_2 "din"
     SoutheasternHuastec -> Nothing
     SoutheasternIxtlanZapotec -> Nothing
     SoutheasternKolami -> Nothing
@@ -6695,10 +7103,10 @@ languageISO_639_2 lang =
     SoutheasternTepehuan -> Nothing
     SouthernAlta -> Nothing
     SouthernAmamiOshima -> Nothing
-    SouthernAymara -> Nothing
+    SouthernAymara -> Just $ ISO_639_2 "aym"
     SouthernBai -> Nothing
-    SouthernBalochi -> Nothing
-    SouthernBetsimisarakaMalagasy -> Nothing
+    SouthernBalochi -> Just $ ISO_639_2 "bal"
+    SouthernBetsimisarakaMalagasy -> Just $ ISO_639_2 "mlg"
     SouthernBirifor -> Nothing
     SouthernBoboMadare -> Nothing
     SouthernBontok -> Nothing
@@ -6709,10 +7117,10 @@ languageISO_639_2 lang =
     SouthernDagaare -> Nothing
     SouthernDong -> Nothing
     SouthernGhale -> Nothing
-    SouthernGondi -> Nothing
+    SouthernGondi -> Just $ ISO_639_2 "gon"
     SouthernGrebo -> Nothing
     SouthernGuiyangHmong -> Nothing
-    SouthernHaida -> Nothing
+    SouthernHaida -> Just $ ISO_639_2 "hai"
     SouthernHindko -> Nothing
     SouthernKalapuya -> Nothing
     SouthernKalinga -> Nothing
@@ -6751,10 +7159,10 @@ languageISO_639_2 lang =
     SouthernRinconZapotec -> Nothing
     SouthernRoglai -> Nothing
     SouthernSama -> Nothing
-    SouthernSami -> Nothing
+    SouthernSami -> Just $ ISO_639_2 "sma"
     SouthernSamo -> Nothing
     SouthernSierraMiwok -> Nothing
-    SouthernSotho -> Nothing
+    SouthernSotho -> Just $ ISO_639_2 "sot"
     SouthernThai -> Nothing
     SouthernTidung -> Nothing
     SouthernTiwa -> Nothing
@@ -6763,13 +7171,13 @@ languageISO_639_2 lang =
     SouthernTutchone -> Nothing
     SouthernUzbek -> Nothing
     SouthernYukaghir -> Nothing
-    SouthernZhuang -> Nothing
+    SouthernZhuang -> Just $ ISO_639_2 "zha"
     SouthwestGbaya -> Nothing
     SouthwestPalawano -> Nothing
     SouthwestPashayi -> Nothing
     SouthwestTanna -> Nothing
     SouthwesternBontok -> Nothing
-    SouthwesternDinka -> Nothing
+    SouthwesternDinka -> Just $ ISO_639_2 "din"
     SouthwesternFars -> Nothing
     SouthwesternGuiyangHmong -> Nothing
     SouthwesternHuishuiHmong -> Nothing
@@ -6783,17 +7191,17 @@ languageISO_639_2 lang =
     SoyaltepecMazatec -> Nothing
     SoyaltepecMixtec -> Nothing
     SpanishSignLanguage -> Nothing
-    Spanish_Castilian -> Nothing
+    Spanish_Castilian -> Just $ ISO_639_2 "spa"
     SpitiBhoti -> Nothing
     Spokane -> Nothing
     Squamish -> Nothing
-    Sranan -> Nothing
+    Sranan -> Just $ ISO_639_2 "srn"
     SriLankanCreoleMalay -> Nothing
     SriLankanSignLanguage -> Nothing
-    StandardEstonian -> Nothing
-    StandardLatvian -> Nothing
+    StandardEstonian -> Just $ ISO_639_2 "est"
+    StandardLatvian -> Just $ ISO_639_2 "lav"
     StandardMalay -> Nothing
-    StandardMoroccanTamazight -> Nothing
+    StandardMoroccanTamazight -> Just $ ISO_639_2 "zgh"
     Stellingwerfs -> Nothing
     StodBhoti -> Nothing
     Stoney -> Nothing
@@ -6816,7 +7224,7 @@ languageISO_639_2 lang =
     Sui -> Nothing
     Suki -> Nothing
     Suku -> Nothing
-    Sukuma -> Nothing
+    Sukuma -> Just $ ISO_639_2 "suk"
     Sukur -> Nothing
     Sukurum -> Nothing
     Sula -> Nothing
@@ -6828,12 +7236,12 @@ languageISO_639_2 lang =
     Sumau -> Nothing
     Sumbawa -> Nothing
     Sumbwa -> Nothing
-    Sumerian -> Nothing
+    Sumerian -> Just $ ISO_639_2 "sux"
     SumiNaga -> Nothing
     SumoMayangna -> Nothing
     SumtuChin -> Nothing
     Sunam -> Nothing
-    Sundanese -> Nothing
+    Sundanese -> Just $ ISO_639_2 "sun"
     Sungkai -> Nothing
     Sunwar -> Nothing
     Suoy -> Nothing
@@ -6850,17 +7258,17 @@ languageISO_639_2 lang =
     Surui -> Nothing
     SuruiDoPara -> Nothing
     Susquehannock -> Nothing
-    Susu -> Nothing
+    Susu -> Just $ ISO_639_2 "sus"
     Susuami -> Nothing
     Suundi -> Nothing
     Suwawa -> Nothing
     Suya -> Nothing
     Svan -> Nothing
     Swabian -> Nothing
-    Swahili_Generic -> Nothing
-    Swahili_Specific -> Nothing
-    Swati -> Nothing
-    Swedish -> Nothing
+    Swahili_Generic -> Just $ ISO_639_2 "swa"
+    Swahili_Specific -> Just $ ISO_639_2 "swa"
+    Swati -> Just $ ISO_639_2 "ssw"
+    Swedish -> Just $ ISO_639_2 "swe"
     SwedishSignLanguage -> Nothing
     SwissFrenchSignLanguage -> Nothing
     SwissGermanSignLanguage -> Nothing
@@ -6891,7 +7299,7 @@ languageISO_639_2 lang =
     TagakauluKalagan -> Nothing
     TagalMurut -> Nothing
     Tagalaka -> Nothing
-    Tagalog -> Nothing
+    Tagalog -> Just $ ISO_639_2 "tgl"
     Tagargrent -> Nothing
     Tagbanwa -> Nothing
     Tagbu -> Nothing
@@ -6901,7 +7309,7 @@ languageISO_639_2 lang =
     Tagoi -> Nothing
     TagwanaSenoufo -> Nothing
     TahaggartTamahaq -> Nothing
-    Tahitian -> Nothing
+    Tahitian -> Just $ ISO_639_2 "tah"
     Tahltan -> Nothing
     Tai -> Nothing
     TaiDaeng -> Nothing
@@ -6928,7 +7336,7 @@ languageISO_639_2 lang =
     TaiwanSignLanguage -> Nothing
     TaizziAdeniSpokenArabic -> Nothing
     Taje -> Nothing
-    Tajik -> Nothing
+    Tajik -> Just $ ISO_639_2 "tgk"
     Tajio -> Nothing
     Tajuasohn -> Nothing
     TajumulcoMam -> Nothing
@@ -6968,7 +7376,7 @@ languageISO_639_2 lang =
     Tambotalo -> Nothing
     TambunanDusun -> Nothing
     Tami -> Nothing
-    Tamil -> Nothing
+    Tamil -> Just $ ISO_639_2 "tam"
     Tamki -> Nothing
     TamnimCitak -> Nothing
     TampiasLobu -> Nothing
@@ -6980,7 +7388,7 @@ languageISO_639_2 lang =
     Tanapag -> Nothing
     Tandaganon -> Nothing
     Tandia -> Nothing
-    TandroyMahafalyMalagasy -> Nothing
+    TandroyMahafalyMalagasy -> Just $ ISO_639_2 "mlg"
     Tanema -> Nothing
     Tangale -> Nothing
     Tangchangya -> Nothing
@@ -6998,7 +7406,7 @@ languageISO_639_2 lang =
     TanimucaRetuara -> Nothing
     Tanjijili -> Nothing
     Tanjong -> Nothing
-    TanosyMalagasy -> Nothing
+    TanosyMalagasy -> Just $ ISO_639_2 "mlg"
     TanzanianSignLanguage -> Nothing
     Tapeba -> Nothing
     Tapei -> Nothing
@@ -7019,7 +7427,7 @@ languageISO_639_2 lang =
     Tasmate -> Nothing
     TataltepecChatino -> Nothing
     Tatana -> Nothing
-    Tatar -> Nothing
+    Tatar -> Just $ ISO_639_2 "tat"
     Tatuyo -> Nothing
     Tauade -> Nothing
     Taulil -> Nothing
@@ -7036,7 +7444,7 @@ languageISO_639_2 lang =
     TawallammatTamajaq -> Nothing
     Tawande -> Nothing
     TawangMonpa -> Nothing
-    Tawara -> Nothing
+    Tawara -> Just $ ISO_639_2 "sna"
     Taworta -> Nothing
     Tawoyan -> Nothing
     TawrChin -> Nothing
@@ -7077,7 +7485,7 @@ languageISO_639_2 lang =
     Tektiteko -> Nothing
     TelaMasbuar -> Nothing
     Telefol -> Nothing
-    Telugu -> Nothing
+    Telugu -> Just $ ISO_639_2 "tel"
     Teluti -> Nothing
     Tem -> Nothing
     TemacineTamazight -> Nothing
@@ -7115,7 +7523,7 @@ languageISO_639_2 lang =
     Tera -> Nothing
     Terebu -> Nothing
     Terei -> Nothing
-    Tereno -> Nothing
+    Tereno -> Just $ ISO_639_2 "ter"
     Teressa -> Nothing
     Tereweng -> Nothing
     Teribe -> Nothing
@@ -7123,7 +7531,7 @@ languageISO_639_2 lang =
     Termanu -> Nothing
     Ternate -> Nothing
     Ternateno -> Nothing
-    TesakaMalagasy -> Nothing
+    TesakaMalagasy -> Just $ ISO_639_2 "mlg"
     Tese -> Nothing
     Teshenawa -> Nothing
     Teso -> Nothing
@@ -7131,8 +7539,8 @@ languageISO_639_2 lang =
     TetelcingoNahuatl -> Nothing
     Tetete -> Nothing
     Tetserret -> Nothing
-    Tetum -> Nothing
-    TetunDili -> Nothing
+    Tetum -> Just $ ISO_639_2 "tet"
+    TetunDili -> Just $ ISO_639_2 "tet"
     Teun -> Nothing
     TeutilaCuicatec -> Nothing
     Tewa_Indonesia -> Nothing
@@ -7145,7 +7553,7 @@ languageISO_639_2 lang =
     Tha -> Nothing
     Thachanadan -> Nothing
     ThadoChin -> Nothing
-    Thai -> Nothing
+    Thai -> Just $ ISO_639_2 "tha"
     ThaiSignLanguage -> Nothing
     ThaiSong -> Nothing
     Thai_Northern -> Nothing
@@ -7167,14 +7575,14 @@ languageISO_639_2 lang =
     ThuLao -> Nothing
     Thudam -> Nothing
     Thulung -> Nothing
-    Thur -> Nothing
+    Thur -> Just $ ISO_639_2 "ach"
     Thurawal -> Nothing
     Thuri -> Nothing
     TiagbamrinAizi -> Nothing
     Tiale -> Nothing
     Tiang -> Nothing
     Tibea -> Nothing
-    Tibetan -> Nothing
+    Tibetan -> Just $ ISO_639_2 "tib"
     TibetanSignLanguage -> Nothing
     Tichurong -> Nothing
     Ticuna -> Nothing
@@ -7189,8 +7597,8 @@ languageISO_639_2 lang =
     Tifal -> Nothing
     Tigak -> Nothing
     TigonMbembe -> Nothing
-    Tigre -> Nothing
-    Tigrinya -> Nothing
+    Tigre -> Just $ ISO_639_2 "tig"
+    Tigrinya -> Just $ ISO_639_2 "tir"
     Tii -> Nothing
     TijaltepecMixtec -> Nothing
     Tikar -> Nothing
@@ -7202,7 +7610,7 @@ languageISO_639_2 lang =
     Tilung -> Nothing
     Tima -> Nothing
     Timbe -> Nothing
-    Time -> Nothing
+    Time -> Just $ ISO_639_2 "tem"
     TimorPidgin -> Nothing
     Timucua -> Nothing
     TimugonMurut -> Nothing
@@ -7222,7 +7630,7 @@ languageISO_639_2 lang =
     Tiruray -> Nothing
     Tita -> Nothing
     Titan -> Nothing
-    Tiv -> Nothing
+    Tiv -> Just $ ISO_639_2 "tiv"
     Tiwa -> Nothing
     Tiwi -> Nothing
     Tiyaa -> Nothing
@@ -7237,7 +7645,7 @@ languageISO_639_2 lang =
     TlalitzlipaNahuatl -> Nothing
     TlamacazapaNahuatl -> Nothing
     TlazoyaltepecMixtec -> Nothing
-    Tlingit -> Nothing
+    Tlingit -> Just $ ISO_639_2 "tli"
     To -> Nothing
     Toabaita -> Nothing
     Toala -> Nothing
@@ -7261,9 +7669,9 @@ languageISO_639_2 lang =
     Togoyo -> Nothing
     TohonoOodham -> Nothing
     Tojolabal -> Nothing
-    TokPisin -> Nothing
+    TokPisin -> Just $ ISO_639_2 "tpi"
     Tokano -> Nothing
-    Tokelau -> Nothing
+    Tokelau -> Just $ ISO_639_2 "tkl"
     TokharianA -> Nothing
     TokharianB -> Nothing
     TokiPona -> Nothing
@@ -7286,9 +7694,9 @@ languageISO_639_2 lang =
     Tomyang -> Nothing
     Tondano -> Nothing
     TondiSongwayKiini -> Nothing
-    Tonga_Nyasa -> Nothing
+    Tonga_Nyasa -> Just $ ISO_639_2 "tog"
     Tonga_Thailand -> Nothing
-    Tonga_TongaIslands -> Nothing
+    Tonga_TongaIslands -> Just $ ISO_639_2 "ton"
     Tonga_Zambia -> Nothing
     Tongwe -> Nothing
     Tonjon -> Nothing
@@ -7350,13 +7758,13 @@ languageISO_639_2 lang =
     Tshangla -> Nothing
     Tsikimba -> Nothing
     Tsimane -> Nothing
-    TsimihetyMalagasy -> Nothing
-    Tsimshian -> Nothing
+    TsimihetyMalagasy -> Just $ ISO_639_2 "mlg"
+    Tsimshian -> Just $ ISO_639_2 "tsi"
     Tsishingini -> Nothing
     Tso -> Nothing
     Tsoa -> Nothing
     Tsogo -> Nothing
-    Tsonga -> Nothing
+    Tsonga -> Just $ ISO_639_2 "tso"
     Tsotsitaal -> Nothing
     Tsotso -> Nothing
     Tsou -> Nothing
@@ -7366,8 +7774,8 @@ languageISO_639_2 lang =
     Tsuvadi -> Nothing
     Tsuvan -> Nothing
     Tswa -> Nothing
-    Tswana -> Nothing
-    Tswapong -> Nothing
+    Tswana -> Just $ ISO_639_2 "tsn"
+    Tswapong -> Just $ ISO_639_2 "nso"
     Tu -> Nothing
     Tuamotuan -> Nothing
     Tubar -> Nothing
@@ -7390,12 +7798,12 @@ languageISO_639_2 lang =
     TuluBohuai -> Nothing
     TumaIrumu -> Nothing
     Tumak -> Nothing
-    TumariKanuri -> Nothing
+    TumariKanuri -> Just $ ISO_639_2 "kau"
     TumbalaChol -> Nothing
-    Tumbuka -> Nothing
+    Tumbuka -> Just $ ISO_639_2 "tum"
     Tumi -> Nothing
     Tumleo -> Nothing
-    Tumshuqese -> Nothing
+    Tumshuqese -> Just $ ISO_639_2 "kho"
     Tumtum -> Nothing
     TumulungSisaala -> Nothing
     Tumzabt -> Nothing
@@ -7421,9 +7829,9 @@ languageISO_639_2 lang =
     Turka -> Nothing
     Turkana -> Nothing
     TurkicKhalaj -> Nothing
-    Turkish -> Nothing
+    Turkish -> Just $ ISO_639_2 "tur"
     TurkishSignLanguage -> Nothing
-    Turkmen -> Nothing
+    Turkmen -> Just $ ISO_639_2 "tuk"
     TurksAndCaicosCreoleEnglish -> Nothing
     Turoyo -> Nothing
     Turumsa -> Nothing
@@ -7437,8 +7845,8 @@ languageISO_639_2 lang =
     Tutuba -> Nothing
     TututepecMixtec -> Nothing
     Tututni -> Nothing
-    Tuvalu -> Nothing
-    Tuvinian -> Nothing
+    Tuvalu -> Just $ ISO_639_2 "tvl"
+    Tuvinian -> Just $ ISO_639_2 "tyv"
     TuwaliIfugao -> Nothing
     Tuwari -> Nothing
     Tuwuli -> Nothing
@@ -7448,7 +7856,7 @@ languageISO_639_2 lang =
     Twana -> Nothing
     Twendi -> Nothing
     Twents -> Nothing
-    Twi -> Nothing
+    Twi -> Just $ ISO_639_2 "twi"
     Tyap -> Nothing
     Tyaraity -> Nothing
     TyerrenoterpannerNorthMidlandsTasmanian -> Nothing
@@ -7465,15 +7873,15 @@ languageISO_639_2 lang =
     Uda -> Nothing
     Udi -> Nothing
     Udihe -> Nothing
-    Udmurt -> Nothing
+    Udmurt -> Just $ ISO_639_2 "udm"
     Uduk -> Nothing
     Ufim -> Nothing
     UgandanSignLanguage -> Nothing
-    Ugaritic -> Nothing
+    Ugaritic -> Just $ ISO_639_2 "uga"
     Ughele -> Nothing
     Ugong -> Nothing
     Uhami -> Nothing
-    Uighur -> Nothing
+    Uighur -> Just $ ISO_639_2 "uig"
     Uisai -> Nothing
     Ujir -> Nothing
     Ukaan -> Nothing
@@ -7481,7 +7889,7 @@ languageISO_639_2 lang =
     Ukit -> Nothing
     UkpeBayobiri -> Nothing
     UkpetEhom -> Nothing
-    Ukrainian -> Nothing
+    Ukrainian -> Just $ ISO_639_2 "ukr"
     UkrainianSignLanguage -> Nothing
     Ukue -> Nothing
     Ukuriguma -> Nothing
@@ -7502,7 +7910,7 @@ languageISO_639_2 lang =
     Umbrian -> Nothing
     UmbuUngu -> Nothing
     Umbugarla -> Nothing
-    Umbundu -> Nothing
+    Umbundu -> Just $ ISO_639_2 "umb"
     Umbuygamu -> Nothing
     UmeSami -> Nothing
     Umeda -> Nothing
@@ -7520,7 +7928,7 @@ languageISO_639_2 lang =
     Unggumi -> Nothing
     Ungkue -> Nothing
     Uni -> Nothing
-    Unserdeutsch -> Nothing
+    Unserdeutsch -> Just $ ISO_639_2 "crp"
     Unua -> Nothing
     Unubahe -> Nothing
     Uokha -> Nothing
@@ -7533,7 +7941,7 @@ languageISO_639_2 lang =
     UpperNecaxaTotonac -> Nothing
     UpperPokomo -> Nothing
     UpperSaxon -> Nothing
-    UpperSorbian -> Nothing
+    UpperSorbian -> Just $ ISO_639_2 "hsb"
     UpperTanana -> Nothing
     UpperTanudanKalinga -> Nothing
     UpperTaoih -> Nothing
@@ -7548,7 +7956,7 @@ languageISO_639_2 lang =
     Urarina -> Nothing
     Urartian -> Nothing
     Urat -> Nothing
-    Urdu -> Nothing
+    Urdu -> Just $ ISO_639_2 "urd"
     Urhobo -> Nothing
     Uri -> Nothing
     Urigina -> Nothing
@@ -7581,7 +7989,7 @@ languageISO_639_2 lang =
     Utu -> Nothing
     Uvbie -> Nothing
     Uya -> Nothing
-    Uzbek -> Nothing
+    Uzbek -> Just $ ISO_639_2 "uzb"
     Uzekwe -> Nothing
     VaagriBooli -> Nothing
     Vafsi -> Nothing
@@ -7589,7 +7997,7 @@ languageISO_639_2 lang =
     Vaghri -> Nothing
     Vaghua -> Nothing
     Vagla -> Nothing
-    Vai -> Nothing
+    Vai -> Just $ ISO_639_2 "vai"
     Vaiphei -> Nothing
     Vale -> Nothing
     ValencianSignLanguage -> Nothing
@@ -7615,7 +8023,7 @@ languageISO_639_2 lang =
     Vehes -> Nothing
     Veluws -> Nothing
     VemgoMabas -> Nothing
-    Venda -> Nothing
+    Venda -> Just $ ISO_639_2 "ven"
     Venetian -> Nothing
     Venetic -> Nothing
     VenezuelanSignLanguage -> Nothing
@@ -7628,7 +8036,7 @@ languageISO_639_2 lang =
     Vestinian -> Nothing
     Vidunda -> Nothing
     Viemo -> Nothing
-    Vietnamese -> Nothing
+    Vietnamese -> Just $ ISO_639_2 "vie"
     Vilela -> Nothing
     Vili -> Nothing
     VillaViciosaAgta -> Nothing
@@ -7641,11 +8049,11 @@ languageISO_639_2 lang =
     Vitou -> Nothing
     VlaamseGebarentaal -> Nothing
     VlaxRomani -> Nothing
-    Volapuk -> Nothing
+    Volapuk -> Just $ ISO_639_2 "vol"
     Volscian -> Nothing
     Vono -> Nothing
     Voro -> Nothing
-    Votic -> Nothing
+    Votic -> Just $ ISO_639_2 "vot"
     Vumbu -> Nothing
     Vunapu -> Nothing
     Vunjo -> Nothing
@@ -7703,7 +8111,7 @@ languageISO_639_2 lang =
     Walio -> Nothing
     WallaWalla -> Nothing
     Wallisian -> Nothing
-    Walloon -> Nothing
+    Walloon -> Just $ ISO_639_2 "wln"
     Walmajarri -> Nothing
     WaloKumbeDogon -> Nothing
     Walser -> Nothing
@@ -7753,7 +8161,7 @@ languageISO_639_2 lang =
     Warapu -> Nothing
     WaraySorsogon -> Nothing
     Waray_Australia -> Nothing
-    Waray_Philippines -> Nothing
+    Waray_Philippines -> Just $ ISO_639_2 "war"
     Wardaman -> Nothing
     Wardandi -> Nothing
     Warduji -> Nothing
@@ -7777,10 +8185,10 @@ languageISO_639_2 lang =
     Waruna -> Nothing
     Warungu -> Nothing
     WarwarFeni -> Nothing
-    Wasa -> Nothing
+    Wasa -> Just $ ISO_639_2 "aka"
     WascoWishram -> Nothing
     Wasembo -> Nothing
-    Washo -> Nothing
+    Washo -> Just $ ISO_639_2 "was"
     Waskia -> Nothing
     Wasu -> Nothing
     Watakataui -> Nothing
@@ -7807,10 +8215,10 @@ languageISO_639_2 lang =
     Welaun -> Nothing
     Welaung -> Nothing
     Weliki -> Nothing
-    Welsh -> Nothing
+    Welsh -> Just $ ISO_639_2 "wel"
     WelshRomani -> Nothing
     WembaWemba -> Nothing
-    WemeGbe -> Nothing
+    WemeGbe -> Just $ ISO_639_2 "fon"
     Wendat -> Nothing
     Were -> Nothing
     Wergaia -> Nothing
@@ -7822,7 +8230,7 @@ languageISO_639_2 lang =
     WestBerawan -> Nothing
     WestCentralBanda -> Nothing
     WestCentralLimba -> Nothing
-    WestCentralOromo -> Nothing
+    WestCentralOromo -> Just $ ISO_639_2 "orm"
     WestCentralQuiche -> Nothing
     WestCoastBajau -> Nothing
     WestDamar -> Nothing
@@ -7837,7 +8245,7 @@ languageISO_639_2 lang =
     WesternAbnaki -> Nothing
     WesternArmenian -> Nothing
     WesternArrarnta -> Nothing
-    WesternBalochi -> Nothing
+    WesternBalochi -> Just $ ISO_639_2 "bal"
     WesternBolivianGuarani -> Nothing
     WesternBru -> Nothing
     WesternBukidnonManobo -> Nothing
@@ -7847,7 +8255,7 @@ languageISO_639_2 lang =
     WesternDurangoNahuatl -> Nothing
     WesternFarsi -> Nothing
     WesternFijian -> Nothing
-    WesternFrisian -> Nothing
+    WesternFrisian -> Just $ ISO_639_2 "fry"
     WesternGurung -> Nothing
     WesternHighlandChatino -> Nothing
     WesternHighlandPurepecha -> Nothing
@@ -7872,7 +8280,7 @@ languageISO_639_2 lang =
     WesternNeoAramaic -> Nothing
     WesternNigerFulfulde -> Nothing
     WesternOjibwa -> Nothing
-    WesternPanjabi -> Nothing
+    WesternPanjabi -> Just $ ISO_639_2 "pan"
     WesternParbate -> Nothing
     WesternPenan -> Nothing
     WesternPokomchi -> Nothing
@@ -7888,7 +8296,7 @@ languageISO_639_2 lang =
     Western_XishanbaLaloYi -> Nothing
     Westphalien -> Nothing
     Wetamut -> Nothing
-    Wewaw -> Nothing
+    Wewaw -> Just $ ISO_639_2 "kar"
     Weyto -> Nothing
     WhiteGelao -> Nothing
     WhiteLachi -> Nothing
@@ -7922,12 +8330,12 @@ languageISO_639_2 lang =
     Woi -> Nothing
     Woiwurrung -> Nothing
     Wojenaka -> Nothing
-    Wolaitta -> Nothing
+    Wolaitta -> Just $ ISO_639_2 "wal"
     Wolane -> Nothing
     Wolani -> Nothing
     Woleaian -> Nothing
     Wolio -> Nothing
-    Wolof -> Nothing
+    Wolof -> Just $ ISO_639_2 "wol"
     Wom_Nigeria -> Nothing
     Wom_PapuaNewGuinea -> Nothing
     Womo -> Nothing
@@ -7941,7 +8349,7 @@ languageISO_639_2 lang =
     Wotjobaluk -> Nothing
     Wotu -> Nothing
     WounMeu -> Nothing
-    WrittenOirat -> Nothing
+    WrittenOirat -> Just $ ISO_639_2 "xal"
     WuChinese -> Nothing
     WudingLuquanYi -> Nothing
     Wudu -> Nothing
@@ -7976,7 +8384,7 @@ languageISO_639_2 lang =
     Xegwi -> Nothing
     Xerente -> Nothing
     Xeta -> Nothing
-    Xhosa -> Nothing
+    Xhosa -> Just $ ISO_639_2 "xho"
     Xiandao -> Nothing
     XiangChinese -> Nothing
     Xibe -> Nothing
@@ -8037,7 +8445,7 @@ languageISO_639_2 lang =
     Yami -> Nothing
     Yaminahua -> Nothing
     Yamna -> Nothing
-    Yamongeri -> Nothing
+    Yamongeri -> Just $ ISO_639_2 "lol"
     Yamphe -> Nothing
     Yamphu -> Nothing
     YanNhanguSignLanguage -> Nothing
@@ -8064,9 +8472,9 @@ languageISO_639_2 lang =
     Yanomamo -> Nothing
     Yansi -> Nothing
     Yanyuwa -> Nothing
-    Yao -> Nothing
+    Yao -> Just $ ISO_639_2 "yao"
     Yaoure -> Nothing
-    Yapese -> Nothing
+    Yapese -> Just $ ISO_639_2 "yap"
     Yapunda -> Nothing
     Yaqay -> Nothing
     Yaqui -> Nothing
@@ -8124,7 +8532,7 @@ languageISO_639_2 lang =
     Yetfa -> Nothing
     Yevanic -> Nothing
     Yeyi -> Nothing
-    Yiddish -> Nothing
+    Yiddish -> Just $ ISO_639_2 "yid"
     YiddishSignLanguage -> Nothing
     Yidgha -> Nothing
     Yidiny -> Nothing
@@ -8160,7 +8568,7 @@ languageISO_639_2 lang =
     YolnguSignLanguage -> Nothing
     YoloxochitlMixtec -> Nothing
     Yom -> Nothing
-    Yombe -> Nothing
+    Yombe -> Just $ ISO_639_2 "kon"
     Yonaguni -> Nothing
     Yong -> Nothing
     YongbeiZhuang -> Nothing
@@ -8170,7 +8578,7 @@ languageISO_639_2 lang =
     Yora -> Nothing
     Yoron -> Nothing
     YortaYorta -> Nothing
-    Yoruba -> Nothing
+    Yoruba -> Just $ ISO_639_2 "yor"
     Yos -> Nothing
     YosonduaMixtec -> Nothing
     Yotti -> Nothing
@@ -8229,7 +8637,7 @@ languageISO_639_2 lang =
     Zay -> Nothing
     ZayeinKaren -> Nothing
     ZayseZergulla -> Nothing
-    Zaza -> Nothing
+    Zaza -> Just $ ISO_639_2 "zza"
     Zazao -> Nothing
     Zeem -> Nothing
     Zeeuws -> Nothing
@@ -8237,13 +8645,13 @@ languageISO_639_2 lang =
     ZemeNaga -> Nothing
     Zemgalian -> Nothing
     Zenag -> Nothing
-    Zenaga -> Nothing
+    Zenaga -> Just $ ISO_639_2 "zen"
     ZenzontepecChatino -> Nothing
     Zhaba -> Nothing
     ZhangZhung -> Nothing
     Zhire -> Nothing
     Zhoa -> Nothing
-    Zhuang -> Nothing
+    Zhuang -> Just $ ISO_639_2 "zha"
     Zia -> Nothing
     Zialo -> Nothing
     Zigula -> Nothing
@@ -8265,9 +8673,9 @@ languageISO_639_2 lang =
     Zul -> Nothing
     Zula -> Nothing
     ZulgoGemzek -> Nothing
-    Zulu -> Nothing
+    Zulu -> Just $ ISO_639_2 "zul"
     Zumaya -> Nothing
     Zumbun -> Nothing
-    Zuni -> Nothing
-    ZuojiangZhuang -> Nothing
+    Zuni -> Just $ ISO_639_2 "zun"
+    ZuojiangZhuang -> Just $ ISO_639_2 "zha"
     Zyphe -> Nothing

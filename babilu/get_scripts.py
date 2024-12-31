@@ -134,24 +134,28 @@ def __process_name(name):
         return f"{constructor}Script"
 
 
+def __empty_script(names, code, number, unicode_alias):
+    return {
+        'constructor': __process_name(names),
+        'names': None,
+        'type': None,
+        'axis': None,
+        'direction': None,
+        'parent': None,
+        'endonym': None,
+        'romanized': None,
+        'iso-15924-code': code,
+        'iso-15924-number': number,
+        'unicode_alias': unicode_alias,
+        'unicode_range': None
+    }
+
+
 async def scrape_script(link, names, code, number, unicode_alias):
     soup = await get_soup(link)
 
     if soup is None:
-        return {
-            'constructor': __process_name(names),
-            'names': None,
-            'type': None,
-            'axis': None,
-            'direction': None,
-            'parent': None,
-            'endonym': None,
-            'romanized': None,
-            'iso-15924-code': code,
-            'iso-15924-number': number,
-            'unicode_alias': unicode_alias,
-            'unicode_range': None
-            }
+        return __empty_script(names, code, number, unicode_alias)
 
     rows = soup.find('tbody').find_all('tr')
     cell_map = {}

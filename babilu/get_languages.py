@@ -70,6 +70,69 @@ def __parse_scope_and_type(txt):
     else:
         return [__LANGUAGE_SCOPE[pieces[0]], __LANGUAGE_TYPE[pieces[1]]]
 
+def __empty_language(names, scope_and_type, code):
+    return {
+        'constructor': __process_name(names[0]),
+        'names': names,
+        'scope': scope_and_type[0],
+        'type': scope_and_type[1],
+        'endonyms': None,
+        'romanized': None,
+        'family': None,
+        'dialects': None,
+        'scripts': None,
+        'official_language_in': None,
+        'iso-639-1': None,
+        'iso-639-2': None,
+        'iso-639-3': code.get_text()
+    }
+
+
+async def __scrape_lang(code, parent_cells):
+    scope_and_type = __parse_scope_and_type(parent_cells[2].get_text())
+    names = list(map(lambda x: x.strip(), __chunk_words(parent_cells[5].get_text())))
+
+    link = code.get('href')
+    soup = await get_soup(link)
+
+    if soup is None:
+        return __empty_language(names, scope_and_type, code)
+
+    rows = soup.find('tbody').find_all('tr')
+    cell_map = {}
+
+    for row in rows:
+        th = row.find('th')
+        td = row.find('td')
+
+        if th and td:
+            cell_map[th.get_text(strip=True)] = td
+
+    iso_639_1 = cell_map.get('ISO 639-1')
+    iso_639_1_code = iso_639_1.get_text()[0:3].strip() if iso_639_1 is not None else None
+
+    iso_639_2 = cell_map.get('ISO 639-2')
+    iso_639_2_code = iso_639_2.get_text()[0:3].strip() if iso_639_2 is not None else None
+
+    if scope_and_type == []:
+        return None
+
+    return {
+        'constructor': __process_name(names[0]),
+        'names': names,
+        'scope': None, # scope_and_type[0],
+        'type': None, # scope_and_type[1],
+        'endonyms': None,
+        'romanized': None,
+        'family': None,
+        'dialects': None,
+        'scripts': None,
+        'official_language_in': None,
+        'iso-639-1': iso_639_1_code,
+        'iso-639-2': iso_639_2_code,
+        'iso-639-3': code.get_text()
+    }
+
 
 def __get_code(row):
     th = row.find('th')
@@ -118,29 +181,10 @@ async def __parse_languages(rows):
             continue
 
         cells = row.find_all('td')
-        scope_and_type = __parse_scope_and_type(cells[2].get_text())
+        language = await __scrape_lang(code, cells)
 
-        if scope_and_type == []:
+        if language is None:
             continue
-
-        names = list(map(lambda x: x.strip(), __chunk_words(cells[5].get_text())))
-        # lang_page = await get_soup(code.get('href'))
-
-        language = {
-            'constructor': __process_name(names[0]),
-            'names': names,
-            'scope': scope_and_type[0],
-            'type': scope_and_type[1],
-            'endonyms': None,
-            'romanized': None,
-            'family': None,
-            'dialects': None,
-            'scripts': None,
-            'official_language_in': None,
-            'iso-639-1': None,
-            'iso-639-2': None,
-            'iso-639-3': code.get_text()
-        }
 
         languages[language['constructor']] = language
 

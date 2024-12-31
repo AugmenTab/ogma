@@ -4,6 +4,10 @@ from pathlib import Path
 from helpers import indent, with_prepend
 
 
+def __unique_codes(langs, field):
+    return list(set(filter(lambda x: x is not None, map(lambda x: x[field], langs))))
+
+
 def __write_module(langs, val):
     field = 'iso-639-' + val
     maybe = any(map(lambda x: x[field] is None, langs))
@@ -34,12 +38,9 @@ def __write_module(langs, val):
         f.write(f"iso_639_{val}FromText txt =\n")
         f.write(indent(2) + "case T.toLower txt of\n")
 
-        for lang in langs:
-            if lang[field] is None:
-                continue
-            else:
-                f.write(f"{indent(4)}\"{lang[field]}\" -> ")
-                f.write(f"Right $ ISO_639_{val} \"{lang[field]}\"\n")
+        for lang in sorted(__unique_codes(langs, field)):
+            f.write(f"{indent(4)}\"{lang}\" -> ")
+            f.write(f"Right $ ISO_639_{val} \"{lang}\"\n")
 
         f.write(f"{indent(4)}_ -> Left $ \"Unknown ISO_639_{val}: \" <> T.unpack txt\n")
 

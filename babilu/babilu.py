@@ -14,7 +14,7 @@ async def main():
     write_code_module(scripts)
     write_number_module(scripts)
 
-    script_types = list(set(map(lambda x: x['type'], scripts))).sort()
+    # script_types = list(set(map(lambda x: x['type'], scripts))).sort()
     # write_script_type_module(script_types)
 
     write_unicode_module(scripts)
