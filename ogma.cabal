@@ -25,6 +25,7 @@ source-repository head
 library
   exposed-modules:
       Ogma
+      Ogma.BCP_47
       Ogma.Internal.Language.ISO_639_1
       Ogma.Internal.Language.ISO_639_2
       Ogma.Internal.Language.ISO_639_3
