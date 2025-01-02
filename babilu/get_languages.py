@@ -73,10 +73,10 @@ def __parse_scope_and_type(txt):
 def __empty_language(names, scope_and_type, code):
     return {
         'constructor': __process_name(names[0]),
-        'names': names,
+        'name': names[0],
         'scope': scope_and_type[0],
         'type': scope_and_type[1],
-        'endonyms': None,
+        'endonym': None,
         'romanized': None,
         'family': None,
         'dialects': None,
@@ -113,16 +113,17 @@ async def __scrape_lang(code, parent_cells):
 
     iso_639_2 = cell_map.get('ISO 639-2')
     iso_639_2_code = iso_639_2.get_text()[0:3].strip() if iso_639_2 is not None else None
+    endonym_cell = parent_cells[4].get_text().strip()
 
     if scope_and_type == []:
         return None
 
     return {
         'constructor': __process_name(names[0]),
-        'names': names,
+        'name': names[0],
         'scope': scope_and_type[0],
         'type': scope_and_type[1],
-        'endonyms': None,
+        'endonym': endonym_cell if endonym_cell != "" else None,
         'romanized': None,
         'family': None,
         'dialects': None,

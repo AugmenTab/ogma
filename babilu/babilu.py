@@ -24,6 +24,9 @@ async def main():
     iso_639.write_iso_639_2_module(languages)
     iso_639.write_iso_639_3_module(languages)
 
+    iso_639.write_language_name_module(languages)
+    iso_639.write_language_endonym_module(languages)
+
     iso_639.write_language_scope_module(languages)
     iso_639.write_language_type_module(languages)
 

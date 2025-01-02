@@ -4,6 +4,75 @@ from pathlib import Path
 from helpers import indent, with_prepend
 
 
+def __write_simple_language_module(languages, field):
+    field_name = field.capitalize()
+    maybe = any(map(lambda x: x[field] is None, languages))
+    module_comment = '''-- | TODO: Write module documentation
+--
+-- A complete list of the codes and their details (from which this module was
+-- assembled) can be found here:
+--
+-- https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes
+--
+'''
+    open(str(Path.cwd()) + f'/src/Ogma/Internal/Language/{field_name}.hs', 'w').close()
+
+    with open(str(Path.cwd()) + f'/src/Ogma/Internal/Language/{field_name}.hs', 'a') as f:
+        f.write(module_comment)
+        f.write(f"module Ogma.Internal.Language.{field_name}")
+        f.write(with_prepend(2, "(", f"language{field_name}ToBytes"))
+        f.write(with_prepend(2, ",", f"language{field_name}ToText"))
+        f.write("\n" + indent(2) + ") where\n")
+
+        f.write("\n" + "import Data.ByteString.Lazy qualified as LBS\n")
+        f.write("import Data.Text qualified as T\n")
+        f.write("\n" + "import Ogma.Internal.Language.Language (Language (..))\n")
+
+        f.write(f"\nlanguage{field_name}ToBytes :: Language -> ")
+
+        if maybe:
+            f.write("Maybe ")
+
+        f.write("LBS.ByteString")
+        f.write(f"\nlanguage{field_name}ToBytes {field} =")
+        f.write(f"\n{indent(2)}case {field} of")
+
+        for language in languages:
+            f.write(f'\n{indent(4)}{language["constructor"]} -> ')
+
+            if maybe:
+                if language[field] is None:
+                    f.write("Nothing")
+
+                else:
+                    f.write(f'Just "{language[field]}"')
+
+            else:
+                f.write(f'"{language[field]}"')
+
+        f.write(f"\n\nlanguage{field_name}ToText :: Language -> ")
+
+        if maybe:
+            f.write("Maybe ")
+
+        f.write("T.Text")
+        f.write(f"\nlanguage{field_name}ToText {field} =")
+        f.write(f"\n{indent(2)}case {field} of")
+
+        for language in languages:
+            f.write(f'\n{indent(4)}{language["constructor"]} -> ')
+
+            if maybe:
+                if language[field] is None:
+                    f.write("Nothing")
+
+                else:
+                    f.write(f'Just "{language[field]}"')
+
+            else:
+                f.write(f'"{language[field]}"')
+
+
 def __write_language_scope_and_type_module(languages, field):
     field_arg = "type_" if field == "type" else field
     field_name = field.capitalize()
@@ -164,9 +233,18 @@ def write_iso_639_3_module(langs):
     __write_module(langs, "3")
 
 
+def write_language_name_module(langs):
+    __write_simple_language_module(langs, "name")
+
+
+def write_language_endonym_module(langs):
+    __write_simple_language_module(langs, "endonym")
+
+
 def write_language_scope_module(langs):
     __write_language_scope_and_type_module(langs, "scope")
 
 
 def write_language_type_module(langs):
     __write_language_scope_and_type_module(langs, "type")
+
