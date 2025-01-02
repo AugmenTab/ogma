@@ -120,8 +120,8 @@ async def __scrape_lang(code, parent_cells):
     return {
         'constructor': __process_name(names[0]),
         'names': names,
-        'scope': None, # scope_and_type[0],
-        'type': None, # scope_and_type[1],
+        'scope': scope_and_type[0],
+        'type': scope_and_type[1],
         'endonyms': None,
         'romanized': None,
         'family': None,

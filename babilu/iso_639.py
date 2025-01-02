@@ -4,6 +4,86 @@ from pathlib import Path
 from helpers import indent, with_prepend
 
 
+def __write_language_scope_and_type_module(languages, field):
+    field_arg = "type_" if field == "type" else field
+    field_name = field.capitalize()
+    filtered = (filter(lambda x: x[field] is not None, languages))
+    vals = sorted(list(set(map(lambda x: x[field], filtered))))
+    maybe = any(map(lambda x: x[field] is None, languages))
+    module_comment = '''-- | TODO: Write module documentation
+--
+-- A complete list of the codes and their details (from which this module was
+-- assembled) can be found here:
+--
+-- https://en.wikipedia.org/wiki/List_of_ISO_639-3_codes
+--
+'''
+    open(str(Path.cwd()) + f'/src/Ogma/Internal/Language/{field_name}.hs', 'w').close()
+
+    with open(str(Path.cwd()) + f'/src/Ogma/Internal/Language/{field_name}.hs', 'a') as f:
+        f.write(module_comment)
+        f.write(f"module Ogma.Internal.Language.{field_name}")
+        f.write(with_prepend(2, "(", f"Language{field_name}"))
+        f.write(with_prepend(6, "(", vals[0]))
+
+        for val in vals[1:]:
+            f.write(with_prepend(6, ",", val))
+
+        f.write("\n" + indent(6) + ")")
+        f.write(with_prepend(2, ",", f"language{field_name}ToBytes"))
+        f.write(with_prepend(2, ",", f"language{field_name}ToText"))
+        f.write(with_prepend(2, ",", f"language{field_name}"))
+        f.write("\n" + indent(2) + ") where\n")
+
+        f.write("\n" + "import Data.ByteString.Lazy qualified as LBS\n")
+        f.write("import Data.Text qualified as T\n")
+        f.write("\n" + "import Ogma.Internal.Language.Language (Language (..))\n")
+
+        f.write("\n" + f"data Language{field_name}")
+        f.write(with_prepend(2, "=", vals[0]))
+
+        for val in vals[1:]:
+            f.write(with_prepend(2, "|", val))
+
+        f.write("\n" + indent(2) + "deriving stock (Bounded, Enum, Eq, Show)")
+
+        f.write(f"\n\nlanguage{field_name}ToBytes :: Language{field_name} -> LBS.ByteString")
+        f.write(f"\nlanguage{field_name}ToBytes {field_arg} =")
+        f.write(f"\n{indent(2)}case {field_arg} of")
+
+        for val in vals:
+            f.write(f'\n{indent(4)}{val} -> "{val}"')
+
+        f.write(f"\n\nlanguage{field_name}ToText :: Language{field_name} -> T.Text")
+        f.write(f"\nlanguage{field_name}ToText {field_arg} =")
+        f.write(f"\n{indent(2)}case {field_arg} of")
+
+        for val in vals:
+            f.write(f'\n{indent(4)}{val} -> "{val}"')
+
+        f.write(f"\n\nlanguage{field_name} :: Language -> ")
+
+        if maybe:
+            f.write("Maybe ")
+
+        f.write(f"Language{field_name}")
+        f.write(f"\nlanguage{field_name} language =")
+        f.write(f"\n{indent(2)}case language of")
+
+        for language in languages:
+            f.write(f'\n{indent(4)}{language["constructor"]} -> ')
+
+            if maybe:
+                if language[field] is None:
+                    f.write("Nothing")
+
+                else:
+                    f.write(f"Just {language[field]}")
+
+            else:
+                f.write(language[field])
+
+
 def __unique_codes(langs, field):
     return list(set(filter(lambda x: x is not None, map(lambda x: x[field], langs))))
 
@@ -83,3 +163,10 @@ def write_iso_639_2_module(langs):
 def write_iso_639_3_module(langs):
     __write_module(langs, "3")
 
+
+def write_language_scope_module(langs):
+    __write_language_scope_and_type_module(langs, "scope")
+
+
+def write_language_type_module(langs):
+    __write_language_scope_and_type_module(langs, "type")
