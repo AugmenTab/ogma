@@ -1,6 +1,6 @@
 services:
   html:
-    image: ghcr.io/flipstone/haskell-tools:debian-stable-ghc-9.4.7-2023-10-31-3286ef4
+    image: ghcr.io/flipstone/haskell-tools:debian-stable-ghc-9.6.6-2024-12-10-9810a49
     volumes:
       - .:${PROJECT_DIR}
       - launchpad_stack_root:/stack-root
