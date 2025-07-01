@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "================================"
-echo "====== Fetching Languages ======"
-echo "================================"
-
-docker compose --file compose.language.yml up --abort-on-container-exit
-

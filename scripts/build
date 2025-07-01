@@ -2,4 +2,19 @@
 
 set -e
 
-./scripts/build_code
+source scripts/lib/run-in-container.sh
+
+echo "=============================="
+echo "====== Generating  Ogma ======"
+echo "=============================="
+
+stack build ogma:ogma-gen --fast "$@"
+rm -r ./src/Ogma/Generated
+stack run ogma:ogma-gen
+
+echo "============================"
+echo "====== Building  Ogma ======"
+echo "============================"
+
+stack build ogma:lib --fast --test "$@"
+

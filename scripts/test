@@ -2,5 +2,7 @@
 
 set -e
 
-./scripts/build_code "$@"
+source scripts/lib/run-in-container.sh
+
+stack build --fast --test ogma:lib ogma:ogma-gen "$@"
 

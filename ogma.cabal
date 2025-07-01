@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.36.0.
+-- This file has been generated from package.yaml by hpack version 0.37.0.
 --
 -- see: https://github.com/sol/hpack
 
@@ -17,6 +17,7 @@ license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
+    data/language-subtag-registry.txt
 
 source-repository head
   type: git
@@ -25,34 +26,33 @@ source-repository head
 library
   exposed-modules:
       Ogma
-      Ogma.BCP_47
-      Ogma.Internal.Language.Endonym
-      Ogma.Internal.Language.ISO_639_1
-      Ogma.Internal.Language.ISO_639_2
-      Ogma.Internal.Language.ISO_639_3
-      Ogma.Internal.Language.Language
-      Ogma.Internal.Language.Name
-      Ogma.Internal.Language.Scope
-      Ogma.Internal.Language.Type
-      Ogma.Internal.Script.ISO_15924_Code
-      Ogma.Internal.Script.ISO_15924_Number
-      Ogma.Internal.Script.Script
-      Ogma.Internal.Script.UnicodeRange
   other-modules:
+      Ogma.BCP_47
       Paths_ogma
   autogen-modules:
       Paths_ogma
   hs-source-dirs:
       src
   default-extensions:
-      DeriveDataTypeable
-      DerivingStrategies
-      FlexibleContexts
-      GeneralizedNewtypeDeriving
       ImportQualifiedPost
-      MultiParamTypeClasses
-      OverloadedStrings
   ghc-options: -j -Werror -Wall -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fno-warn-orphans
+  build-depends:
+      base
+    , bytestring
+    , text
+  default-language: Haskell2010
+
+executable ogma-gen
+  main-is: Main.hs
+  other-modules:
+      Paths_ogma
+  autogen-modules:
+      Paths_ogma
+  hs-source-dirs:
+      codegen
+  default-extensions:
+      ImportQualifiedPost
+  ghc-options: -j -Werror -Wall -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fno-warn-orphans -Wall
   build-depends:
       base
     , bytestring
@@ -69,13 +69,7 @@ test-suite ogma-test
   hs-source-dirs:
       test
   default-extensions:
-      DeriveDataTypeable
-      DerivingStrategies
-      FlexibleContexts
-      GeneralizedNewtypeDeriving
       ImportQualifiedPost
-      MultiParamTypeClasses
-      OverloadedStrings
   ghc-options: -j -Werror -Wall -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -fno-warn-orphans -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base

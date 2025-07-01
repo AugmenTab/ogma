@@ -6,8 +6,11 @@ author:              "Tyler Baum"
 maintainer:          "tyler.baum@protonmail.com"
 copyright:           "2024 Tyler Baum"
 
+language: Haskell2010
+
 extra-source-files:
-- README.md
+  - README.md
+  - data/**
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -19,40 +22,44 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/AugmenTab/ogma#readme>
 
 default-extensions:
-- DeriveDataTypeable
-- DerivingStrategies
-- FlexibleContexts
-- GeneralizedNewtypeDeriving
-- ImportQualifiedPost
-- MultiParamTypeClasses
-- OverloadedStrings
+  - ImportQualifiedPost
 
 dependencies:
-- base
-- bytestring
-- text
+  - base
+  - bytestring
+  - text
 
 ghc-options:
-- -j
-- -Werror
-- -Wall
-- -Widentities
-- -Wincomplete-record-updates
-- -Wincomplete-uni-patterns
-- -Wpartial-fields
-- -Wredundant-constraints
-- -fno-warn-orphans
+  - -j
+  - -Werror
+  - -Wall
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wpartial-fields
+  - -Wredundant-constraints
+  - -fno-warn-orphans
 
 library:
   source-dirs: src
+  exposed-modules:
+    - Ogma
+
+executables:
+  ogma-gen:
+    main:        Main.hs
+    source-dirs: codegen
+    ghc-options: -Wall
+    dependencies:
+      - base
 
 tests:
   ogma-test:
-    main:                Spec.hs
-    source-dirs:         test
+    main:        Spec.hs
+    source-dirs: test
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
     dependencies:
-    - ogma
+      - ogma
