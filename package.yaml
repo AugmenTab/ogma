@@ -10,7 +10,6 @@ language: Haskell2010
 
 extra-source-files:
   - README.md
-  - data/**
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -27,6 +26,7 @@ default-extensions:
 dependencies:
   - base
   - bytestring
+  - string-interpolate
   - text
 
 ghc-options:
@@ -52,6 +52,14 @@ executables:
     ghc-options: -Wall
     dependencies:
       - base
+      - bytestring
+      - containers
+      - directory
+      - filepath
+      - http-conduit
+      - http-types
+      - text
+      - unicode-transforms
 
 tests:
   ogma-test:
