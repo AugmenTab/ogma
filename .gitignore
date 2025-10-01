@@ -29,3 +29,4 @@ __pycache__
 # Project-specific
 babilu/cache
 .env
+test-all-logs/

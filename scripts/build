@@ -1,19 +1,33 @@
-#!/bin/bash
+#!/bin/sh
 
-set -e
+# Generate once with the default stack.yaml, then test the lib across GHCs.
 
-source scripts/lib/run-in-container.sh
+. scripts/lib/run-in-container.sh
 
-echo "=============================="
-echo "====== Generating  Ogma ======"
-echo "=============================="
+echo "Generating Ogma sources..."
+stack --stack-yaml "stack-ghc-9.10.yaml" install ogma:exe:ogma-gen --no-test --no-bench --local-bin-path .codegen-bin
+./.codegen-bin/ogma-gen
 
-stack build ogma:ogma-gen --only-dependencies --fast "$@"
-stack exec ogma-gen
+rm -rf test-all-logs
+mkdir test-all-logs
 
-echo "============================"
-echo "====== Building  Ogma ======"
-echo "============================"
+for stack_file in stack-ghc*.yaml; do
+  log_file="./test-all-logs/$stack_file.log"
 
-stack build ogma:lib --fast --test "$@"
+  echo "Testing with $stack_file... "
+  if stack --stack-yaml "$stack_file" build ogma:lib --fast --test >"$log_file" 2>&1; then
+    echo "Passed"
+  else
+    SOME_TEST_FAILED=1
+    echo "Failed, see $log_file for details"
+  fi
+done
+
+if [ "$SOME_TEST_FAILED" ]; then
+  echo ""
+  echo "!!"
+  echo "!! At least one test failed above. Be sure to check it out!"
+  echo "!!"
+  exit 1
+fi
 

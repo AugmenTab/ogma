@@ -6,7 +6,6 @@ module Subtags.Subtag
   , parseSubtags
   ) where
 
-import Data.List (foldl')
 import Data.List.NonEmpty qualified as NEL
 import Data.Map.Strict (Map)
 import Data.Map.Strict qualified as Map

@@ -33,7 +33,9 @@ generateCoreLanguageModule fp subtags =
     TIO.writeFile fp
       . T.unlines
       . concat
-      $ [ [ "module Ogma.Language.Language"
+      $ [ [ "{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}\n"
+          ]
+        , [ "module Ogma.Language.Language"
           , "  ( Language"
           , "      ( " <> subtagConstructor (NEL.head subtags)
           ]
@@ -67,7 +69,8 @@ generateLanguageToNameModule fp subtags =
     TIO.writeFile fp
       . T.unlines
       . concat
-      $ [ [ "{-# LANGUAGE QuasiQuotes #-}\n"
+      $ [ [ "{-# LANGUAGE QuasiQuotes #-}"
+          , "{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}\n"
           , "module Ogma.Language.LanguageName"
           , "  ( languageToNameBytes"
           , "  , languageToNameText"
@@ -107,7 +110,8 @@ generateLanguageFromISO639Module fp subtags =
     TIO.writeFile fp
       . T.unlines
       . concat
-      $ [ [ "module Ogma.Language.LanguageFromISO639"
+      $ [ [ "{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}\n"
+          , "module Ogma.Language.LanguageFromISO639"
           , "  ( languageFromISO639Bytes"
           , "  , languageFromISO639Text"
           , "  ) where\n"
@@ -150,7 +154,8 @@ generateLanguageToISO639Module fp subtags =
     TIO.writeFile fp
       . T.unlines
       . concat
-      $ [ [ "{-# LANGUAGE QuasiQuotes #-}\n"
+      $ [ [ "{-# LANGUAGE QuasiQuotes #-}"
+          , "{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}\n"
           , "module Ogma.Language.LanguageToISO639"
           , "  ( languageToISO639Bytes"
           , "  , languageToISO639Text"

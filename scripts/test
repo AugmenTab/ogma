@@ -4,5 +4,5 @@ set -e
 
 source scripts/lib/run-in-container.sh
 
-stack build --fast --test ogma:lib ogma:ogma-gen "$@"
+stack --stack-yaml "stack-ghc-9.10.yaml" build --fast --test ogma:lib ogma:ogma-gen "$@"
 
