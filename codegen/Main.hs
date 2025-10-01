@@ -18,7 +18,7 @@ main :: IO ()
 main = do
   req <- HTTP.parseRequest subtagRegistry
   response <-
-    HTTP.httpLBS $
+    HTTP.httpBS $
       HTTP.setRequestHeader
         hUserAgent
         ["ogma/0.1 (https://github.com/AugmenTab/ogma)"]
@@ -26,14 +26,18 @@ main = do
 
   let
     (_allFields, _usedConstructors, _valsPerTag, subtags) =
-      parseSubtags
-        . TE.decodeUtf8
-        . LBS.toStrict
-        $ HTTP.getResponseBody response
+      parseSubtags . TE.decodeUtf8 $ HTTP.getResponseBody response
 
   case NEL.nonEmpty $ Map.elems subtags of
-    Just neSubtags -> generateLanguageModules neSubtags
-    Nothing -> putStrLn "Whoopsie"
+    Just neSubtags -> do
+      generateLanguageModules neSubtags
+
+      Async.forConcurrently (Map.keys subtags) $ \subtag -> do
+        response <-
+          HTTP.httpBS =<< HTTP.parseRequest (mkLocalizationURL subtag)
+
+    Nothing ->
+      putStrLn "Whoopsie"
 
   -- putStrLn $ "All Fields: " <> show allFields
   -- putStrLn $ "Values per Tag: " <> show valsPerTag
@@ -46,3 +50,9 @@ main = do
 subtagRegistry :: String
 subtagRegistry =
   "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
+
+mkLocalizationURL :: String -> String
+mkLocalizationURL lang =
+  "https://raw.githubusercontent.com/unicode-org/cldr-json/refs/heads/main/cldr-json/cldr-localenames-full/main/"
+    <> lang
+    <> "/languages.json"
