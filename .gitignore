@@ -22,6 +22,7 @@ cabal.project.local
 cabal.project.local~
 .HTF/
 .ghc.environment.*
+*-bin/
 
 # Python
 __pycache__
