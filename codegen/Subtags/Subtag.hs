@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TupleSections #-}
 
@@ -6,6 +7,9 @@ module Subtags.Subtag
   , parseSubtags
   ) where
 
+#if __GLASGOW_HASKELL__ < 910
+import Data.Foldable (foldl')
+#endif
 import Data.List.NonEmpty qualified as NEL
 import Data.Map.Strict (Map)
 import Data.Map.Strict qualified as Map
