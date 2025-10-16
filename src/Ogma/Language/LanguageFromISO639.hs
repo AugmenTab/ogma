@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}
+
 module Ogma.Language.LanguageFromISO639
   ( languageFromISO639Bytes
   , languageFromISO639Text
@@ -1335,7 +1337,7 @@ languageFromISO639Bytes bytes =
     "clj" -> Right LaituChin
     "clk" -> Right IduMishmi
     "cll" -> Right Chala
-    "clm" -> Right Clallam
+    "clm" -> Right Klallam
     "clo" -> Right LowlandOaxacaChontal
     "cls" -> Right ClassicalSanskrit
     "clt" -> Right LautuChin
@@ -3465,7 +3467,7 @@ languageFromISO639Bytes bytes =
     "kwh" -> Right Kowiai
     "kwi" -> Right AwaCuaiquer
     "kwj" -> Right Kwanga
-    "kwk" -> Right Kwakiutl
+    "kwk" -> Right KwakWala
     "kwl" -> Right Kofyar
     "kwm" -> Right Kwambi
     "kwn" -> Right Kwangali
@@ -7960,7 +7962,7 @@ languageFromISO639Bytes bytes =
     "zmm" -> Right Marimanindji
     "zmn" -> Right Mbangwe
     "zmo" -> Right Molo
-    "zmp" -> Right Mpuono
+    "zmp" -> Right Mbuun
     "zmq" -> Right Mituku
     "zmr" -> Right Maranunggu
     "zms" -> Right Mbesa
@@ -9376,7 +9378,7 @@ languageFromISO639Text text =
     "clj" -> Right LaituChin
     "clk" -> Right IduMishmi
     "cll" -> Right Chala
-    "clm" -> Right Clallam
+    "clm" -> Right Klallam
     "clo" -> Right LowlandOaxacaChontal
     "cls" -> Right ClassicalSanskrit
     "clt" -> Right LautuChin
@@ -11506,7 +11508,7 @@ languageFromISO639Text text =
     "kwh" -> Right Kowiai
     "kwi" -> Right AwaCuaiquer
     "kwj" -> Right Kwanga
-    "kwk" -> Right Kwakiutl
+    "kwk" -> Right KwakWala
     "kwl" -> Right Kofyar
     "kwm" -> Right Kwambi
     "kwn" -> Right Kwangali
@@ -16001,7 +16003,7 @@ languageFromISO639Text text =
     "zmm" -> Right Marimanindji
     "zmn" -> Right Mbangwe
     "zmo" -> Right Molo
-    "zmp" -> Right Mpuono
+    "zmp" -> Right Mbuun
     "zmq" -> Right Mituku
     "zmr" -> Right Maranunggu
     "zms" -> Right Mbesa

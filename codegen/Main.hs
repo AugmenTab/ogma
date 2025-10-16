@@ -1,3 +1,4 @@
+{-# LANGUAGE NumericUnderscores #-}
 {-# LANGUAGE OverloadedStrings #-}
 
 module Main
@@ -8,6 +9,7 @@ import Data.ByteString.Lazy qualified as LBS
 import Data.List.NonEmpty qualified as NEL
 import Data.Map.Strict qualified as Map
 import Data.Text.Encoding qualified as TE
+import Network.HTTP.Client qualified as HTTP
 import Network.HTTP.Simple qualified as HTTP
 import Network.HTTP.Types.Header (hUserAgent)
 
@@ -16,7 +18,10 @@ import Subtags.Subtag (parseSubtags)
 
 main :: IO ()
 main = do
-  req <- HTTP.parseRequest subtagRegistry
+  req <-
+    HTTP.setRequestResponseTimeout (HTTP.responseTimeoutMicro 30_000_000)
+      <$> HTTP.parseRequest subtagRegistry
+
   response <-
     HTTP.httpLBS $
       HTTP.setRequestHeader

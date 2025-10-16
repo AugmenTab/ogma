@@ -1,4 +1,5 @@
 {-# LANGUAGE QuasiQuotes #-}
+{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}
 
 module Ogma.Language.LanguageToISO639
   ( languageToISO639Bytes
@@ -1337,7 +1338,7 @@ languageToISO639Bytes lang =
     LaituChin -> [Interpolate.i|clj|]
     IduMishmi -> [Interpolate.i|clk|]
     Chala -> [Interpolate.i|cll|]
-    Clallam -> [Interpolate.i|clm|]
+    Klallam -> [Interpolate.i|clm|]
     LowlandOaxacaChontal -> [Interpolate.i|clo|]
     ClassicalSanskrit -> [Interpolate.i|cls|]
     LautuChin -> [Interpolate.i|clt|]
@@ -3467,7 +3468,7 @@ languageToISO639Bytes lang =
     Kowiai -> [Interpolate.i|kwh|]
     AwaCuaiquer -> [Interpolate.i|kwi|]
     Kwanga -> [Interpolate.i|kwj|]
-    Kwakiutl -> [Interpolate.i|kwk|]
+    KwakWala -> [Interpolate.i|kwk|]
     Kofyar -> [Interpolate.i|kwl|]
     Kwambi -> [Interpolate.i|kwm|]
     Kwangali -> [Interpolate.i|kwn|]
@@ -7962,7 +7963,7 @@ languageToISO639Bytes lang =
     Marimanindji -> [Interpolate.i|zmm|]
     Mbangwe -> [Interpolate.i|zmn|]
     Molo -> [Interpolate.i|zmo|]
-    Mpuono -> [Interpolate.i|zmp|]
+    Mbuun -> [Interpolate.i|zmp|]
     Mituku -> [Interpolate.i|zmq|]
     Maranunggu -> [Interpolate.i|zmr|]
     Mbesa -> [Interpolate.i|zms|]
@@ -9377,7 +9378,7 @@ languageToISO639Text lang =
     LaituChin -> [Interpolate.i|clj|]
     IduMishmi -> [Interpolate.i|clk|]
     Chala -> [Interpolate.i|cll|]
-    Clallam -> [Interpolate.i|clm|]
+    Klallam -> [Interpolate.i|clm|]
     LowlandOaxacaChontal -> [Interpolate.i|clo|]
     ClassicalSanskrit -> [Interpolate.i|cls|]
     LautuChin -> [Interpolate.i|clt|]
@@ -11507,7 +11508,7 @@ languageToISO639Text lang =
     Kowiai -> [Interpolate.i|kwh|]
     AwaCuaiquer -> [Interpolate.i|kwi|]
     Kwanga -> [Interpolate.i|kwj|]
-    Kwakiutl -> [Interpolate.i|kwk|]
+    KwakWala -> [Interpolate.i|kwk|]
     Kofyar -> [Interpolate.i|kwl|]
     Kwambi -> [Interpolate.i|kwm|]
     Kwangali -> [Interpolate.i|kwn|]
@@ -16002,7 +16003,7 @@ languageToISO639Text lang =
     Marimanindji -> [Interpolate.i|zmm|]
     Mbangwe -> [Interpolate.i|zmn|]
     Molo -> [Interpolate.i|zmo|]
-    Mpuono -> [Interpolate.i|zmp|]
+    Mbuun -> [Interpolate.i|zmp|]
     Mituku -> [Interpolate.i|zmq|]
     Maranunggu -> [Interpolate.i|zmr|]
     Mbesa -> [Interpolate.i|zms|]

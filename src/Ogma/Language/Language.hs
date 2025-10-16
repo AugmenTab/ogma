@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -O0 -fno-specialise -fno-strictness -fno-worker-wrapper #-}
+
 module Ogma.Language.Language
   ( Language
       ( Afar
@@ -1323,7 +1325,7 @@ module Ogma.Language.Language
       , LaituChin
       , IduMishmi
       , Chala
-      , Clallam
+      , Klallam
       , LowlandOaxacaChontal
       , ClassicalSanskrit
       , LautuChin
@@ -3453,7 +3455,7 @@ module Ogma.Language.Language
       , Kowiai
       , AwaCuaiquer
       , Kwanga
-      , Kwakiutl
+      , KwakWala
       , Kofyar
       , Kwambi
       , Kwangali
@@ -7948,7 +7950,7 @@ module Ogma.Language.Language
       , Marimanindji
       , Mbangwe
       , Molo
-      , Mpuono
+      , Mbuun
       , Mituku
       , Maranunggu
       , Mbesa
@@ -9363,7 +9365,7 @@ data Language
   | LaituChin
   | IduMishmi
   | Chala
-  | Clallam
+  | Klallam
   | LowlandOaxacaChontal
   | ClassicalSanskrit
   | LautuChin
@@ -11493,7 +11495,7 @@ data Language
   | Kowiai
   | AwaCuaiquer
   | Kwanga
-  | Kwakiutl
+  | KwakWala
   | Kofyar
   | Kwambi
   | Kwangali
@@ -15988,7 +15990,7 @@ data Language
   | Marimanindji
   | Mbangwe
   | Molo
-  | Mpuono
+  | Mbuun
   | Mituku
   | Maranunggu
   | Mbesa
