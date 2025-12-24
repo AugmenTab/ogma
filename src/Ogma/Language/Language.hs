@@ -8041,6 +8041,8 @@ module Ogma.Language.Language
       )
   ) where
 
+import Data.Hashable (Hashable, hashUsing, hashWithSalt)
+
 data Language
   = Afar
   | Ghotuo
@@ -16079,3 +16081,6 @@ data Language
   | Zaza
   | ZuojiangZhuang
   deriving (Bounded, Enum, Eq, Ord, Show)
+
+instance Hashable Language where
+  hashWithSalt = hashUsing fromEnum

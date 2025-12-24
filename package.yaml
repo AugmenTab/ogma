@@ -1,5 +1,5 @@
 name:                ogma
-version:             0.1.0.0
+version:             0.1.0.1
 github:              "AugmenTab/ogma"
 license:             BSD-3-Clause
 author:              "Tyler Baum"
@@ -26,6 +26,7 @@ default-extensions:
 dependencies:
   - base
   - bytestring
+  - hashable
   - string-interpolate
   - text
 

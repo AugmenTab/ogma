@@ -43,11 +43,16 @@ generateCoreLanguageModule fp subtags =
         , [ "      )"
           , "  ) where\n"
           ]
+        , [ "import Data.Hashable (Hashable, hashUsing, hashWithSalt)\n"
+          ]
         , [ "data Language"
           , "  = " <> subtagConstructor (NEL.head subtags)
           ]
         , mkADT <$> NEL.tail subtags
-        , [ "  deriving (Bounded, Enum, Eq, Ord, Show)"
+        , [ "  deriving (Bounded, Enum, Eq, Ord, Show)\n"
+          ]
+        , [ "instance Hashable Language where"
+          , "  hashWithSalt = hashUsing fromEnum"
           ]
         ]
 
